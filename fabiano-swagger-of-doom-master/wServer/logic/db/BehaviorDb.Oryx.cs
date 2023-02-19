@@ -21,7 +21,7 @@ namespace wServer.logic
                     )
                 ),
                 new Threshold(0.001,
-                new ItemLoot("Covering of Winter Goddess", 0.0016),
+                new ItemLoot("Covering of Winter Goddess", 0.002),
                 new TierLoot(10, ItemType.Weapon, 0.07),
                 new TierLoot(5, ItemType.Ability, 0.07),
                 new TierLoot(11, ItemType.Armor, 0.07),
@@ -38,7 +38,7 @@ namespace wServer.logic
                     )
                 ),
                 new Threshold(0.001,
-                new ItemLoot("Santa's Battlesuit", 0.0016),
+                new ItemLoot("Santa's Battle Attire", 0.002),
                 new TierLoot(10, ItemType.Weapon, 0.07),
                 new TierLoot(5, ItemType.Ability, 0.07),
                 new TierLoot(11, ItemType.Armor, 0.07),
@@ -55,7 +55,7 @@ namespace wServer.logic
                     )
                 ),
                 new Threshold(0.001,
-                new ItemLoot("Christmas Garments", 0.0016),
+                new ItemLoot("Christmas Garments", 0.002),
                 new TierLoot(10, ItemType.Weapon, 0.07),
                 new TierLoot(5, ItemType.Ability, 0.07),
                 new TierLoot(11, ItemType.Armor, 0.07),
@@ -104,7 +104,7 @@ namespace wServer.logic
                 new ItemLoot("North Pole's Orb", 0.009),
                 new ItemLoot("Chocolate Cookie", 0.009),
                 new ItemLoot("Robe of Celebration", 0.009),
-                new ItemLoot("Santa's Battle Attire", 0.009),
+                new ItemLoot("Santa's Battlesuit", 0.009),
                 new ItemLoot("Kurisumasu no Uwagi", 0.009),
                 new ItemLoot("Santa's Coat", 0.009),
                 new ItemLoot("Santa Hat", 0.009),

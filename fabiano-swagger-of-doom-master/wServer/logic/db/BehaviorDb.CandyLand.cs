@@ -54,8 +54,8 @@ namespace wServer.logic
                     new Shoot(15, 1, 0, angleOffset: 30 / 3, projectileIndex: 1, coolDown: 1950)
                 ),
                 new Threshold(0.001,
-                new ItemLoot("Harbinger", 0.004),
-                new ItemLoot("Insurgency Amulet", 0.01),
+                new ItemLoot("Harbinger", 0.005),
+                new ItemLoot("Insurgency Amulet", 0.016),
                 new ItemLoot("Candy-Coated Armor", 0.05),
                 new ItemLoot("Pixie-Enchanted Sword", 0.02),
                 new ItemLoot("Seal of the Enchanted Forest", 0.03),
@@ -95,7 +95,7 @@ namespace wServer.logic
                     new Shoot(20, 3, 15, angleOffset: 20 / 3, projectileIndex: 1, coolDown: 2000)
                 ),
                 new Threshold(0.001,
-                new ItemLoot("Bonemail of the Fallen", 0.004),
+                new ItemLoot("Bonemail of the Fallen", 0.005),
                 new ItemLoot("Candy-Coated Armor", 0.05),
                 new ItemLoot("Pixie-Enchanted Sword", 0.02),
                 new ItemLoot("Seal of the Enchanted Forest", 0.03),
@@ -130,7 +130,7 @@ namespace wServer.logic
                     new Spawn("Big Creampuff", maxChildren: 2, initialSpawn: 2, coolDown: 5000)
                 ),
                 new Threshold(0.001,
-                new ItemLoot("Ji Robe", 0.0005),
+                new ItemLoot("Ji Robe", 0.0006),
                 new ItemLoot("Candy-Coated Armor", 0.05),
                 new ItemLoot("Pixie-Enchanted Sword", 0.02),
                 new ItemLoot("Seal of the Enchanted Forest", 0.03),

@@ -1180,7 +1180,7 @@
          <Size>100</Size>
          <LifetimeMS>1300</LifetimeMS>
       </Projectile>
-      <Size>120</Size>
+      <Size>160</Size>
       <Defense>45</Defense>
       <XpMult>1</XpMult>
       <DisplayId>{encounters.Protection_Crystal}</DisplayId>
@@ -1590,7 +1590,7 @@
       <KeepDamageRecord/>
       <DisplayId>{encounters.Pentaract_Tower}</DisplayId>
       <Projectile id="0">
-         <ObjectId>White Shield</ObjectId>
+         <ObjectId>Silver Shield</ObjectId>
          <Speed>60</Speed>
          <Damage>160</Damage>
          <LifetimeMS>550</LifetimeMS>

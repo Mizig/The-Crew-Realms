@@ -752,8 +752,8 @@ namespace wServer.realm.entities.player
                     {
                         Enemy start = null;
                         double angle = Math.Atan2(target.Y - Y, target.X - X);
-                        double diff = Math.PI/1.5; //was /3
-                        Owner.Aoe(target, 10, false, enemy => //was 6
+                        double diff = Math.PI; //was /3
+                        Owner.Aoe(target, 9, false, enemy => //was 6
                         {
                             if (!(enemy is Enemy)) return;
                             double x = Math.Atan2(enemy.Y - Y, enemy.X - X);
@@ -771,11 +771,11 @@ namespace wServer.realm.entities.player
                         for (int i = 0; i < targets.Length; i++)
                         {
                             targets[i] = current;
-                            Enemy next = current.GetNearestEntity(10, false, //was 6? or 8
+                            Enemy next = current.GetNearestEntity(9, false, //was 6? or 8
                                 enemy =>
                                     enemy is Enemy &&
                                     Array.IndexOf(targets, enemy) == -1 &&
-                                    this.Dist(enemy) <= 10) as Enemy; //was 6
+                                    this.Dist(enemy) <= 9) as Enemy; //was 6
 
                             if (next == null) break;
                             current = next;

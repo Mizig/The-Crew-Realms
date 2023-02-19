@@ -17,8 +17,8 @@ namespace wServer.logic
                     new DropPortalOnDeath("Chicken House Portal", 100),
                     new StayCloseToSpawn(0.3, range: 7),
                            new Wander(0.5),
-                             new Shoot(10, count: 16, predictive: 0.6, shootAngle: 8, coolDown: 900),
-                             new Shoot(10, count: 9, predictive: 0.2, shootAngle: 6, coolDown: 1500, coolDownOffset: 300),
+                             new Shoot(10, count: 14, predictive: 0.6, shootAngle: 8, coolDown: 900),
+                             new Shoot(10, count: 9, projectileIndex: 1, predictive: 0.2, shootAngle: 6, coolDown: 1500, coolDownOffset: 300),
                              new Spawn("Cube Overseer", maxChildren: 3, initialSpawn: 1, coolDown: 100000),
                              new Spawn("Cube Defender", maxChildren: 3, initialSpawn: 2, coolDown: 100000),
                              new Spawn("Cube Blaster", maxChildren: 3, initialSpawn: 2, coolDown: 100000)

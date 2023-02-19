@@ -13,9 +13,9 @@ namespace wServer.logic
                  new State("idle",
                      new Wander(0.2),
                      new Follow(2, 10, coolDown: 0),
-                     new Spawn("Mini Larva", coolDown: 2500, maxChildren: 10, initialSpawn: 2),
-                     new Shoot(25, projectileIndex: 0, count: 6, shootAngle: 30, coolDown: 500, coolDownOffset: 500),
-                     new Shoot(25, projectileIndex: 1, count: 1, shootAngle: 0, coolDown: 1, coolDownOffset: 1)
+                     new Spawn("Mini Larva", coolDown: 2500, maxChildren: 8, initialSpawn: 1),
+                     new Shoot(25, projectileIndex: 0, count: 10, shootAngle: 36, coolDown: 600, coolDownOffset: 400),
+                     new Shoot(25, projectileIndex: 1, count: 1, shootAngle: 0, coolDown: 600, coolDownOffset: 600)
                      )
                  ),
                 new Threshold(0.001,

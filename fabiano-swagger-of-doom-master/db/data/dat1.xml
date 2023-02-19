@@ -23400,7 +23400,7 @@
          <Size>100</Size>
          <LifetimeMS>1300</LifetimeMS>
       </Projectile>
-      <Size>120</Size>
+      <Size>160</Size>
       <Defense>45</Defense>
       <XpMult>1</XpMult>
       <DisplayId>{encounters.Protection_Crystal}</DisplayId>
@@ -23810,7 +23810,7 @@
       <KeepDamageRecord/>
       <DisplayId>{encounters.Pentaract_Tower}</DisplayId>
       <Projectile id="0">
-         <ObjectId>White Shield</ObjectId>
+         <ObjectId>Silver Shield</ObjectId>
          <Speed>60</Speed>
          <Damage>160</Damage>
          <LifetimeMS>550</LifetimeMS>
@@ -63393,7 +63393,7 @@
       <Projectile id="0">
          <ObjectId>Fire Boomerang</ObjectId>
          <Damage>125</Damage>
-         <Speed>25</Speed>
+         <Speed>50</Speed>
          <Size>75</Size>
          <LifetimeMS>5000</LifetimeMS>
          <ConditionEffect duration="3">Quiet</ConditionEffect>
@@ -63403,7 +63403,7 @@
       <Projectile id="1">
          <ObjectId>Yellow Energy Shot</ObjectId>
          <Damage>125</Damage>
-         <Speed>90</Speed>
+         <Speed>70</Speed>
          <Size>100</Size>
          <LifetimeMS>2000</LifetimeMS>
          <ConditionEffect duration="3">Weak</ConditionEffect>
@@ -74156,15 +74156,15 @@
       <BloodProb>1.0</BloodProb>
       <SlotTypes>1, 5, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
       <Equipment>0xa00, 0x0a08, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
-      <MaxHitPoints max="770">200</MaxHitPoints>
+      <MaxHitPoints max="830">220</MaxHitPoints>
       <MaxMagicPoints max="252">100</MaxMagicPoints>
-      <Attack max="50">15</Attack>
+      <Attack max="60">15</Attack>
       <Defense max="40">0</Defense>
-      <Speed max="50">7</Speed>
+      <Speed max="45">7</Speed>
       <Dexterity max="50">10</Dexterity>
       <HpRegen max="75">10</HpRegen>
       <MpRegen max="50">10</MpRegen>
-      <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
+      <LevelIncrease min="20" max="32">MaxHitPoints</LevelIncrease>
       <LevelIncrease min="2" max="8">MaxMagicPoints</LevelIncrease>
       <LevelIncrease min="1" max="2">Attack</LevelIncrease>
       <LevelIncrease min="0" max="0">Defense</LevelIncrease>
@@ -75720,8 +75720,8 @@
     <Projectile>
       <ObjectId>Atonement Shot</ObjectId>
       <Speed>180</Speed>
-      <MinDamage>255</MinDamage>
-      <MaxDamage>345</MaxDamage>
+      <MinDamage>235</MinDamage>
+      <MaxDamage>325</MaxDamage>
       <LifetimeMS>475</LifetimeMS>
       <Amplitude>0.5</Amplitude>
       <Frequency>2</Frequency>
@@ -75779,9 +75779,8 @@
     <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
     <Activate stat="0" amount="125" duration="6" range="5" noStack="true" useWisMod="true">StatBoostAura</Activate>
     <Activate effect="Healing" duration="6" range="5" useWisMod="true">ConditionEffectAura</Activate>
-    <Activate effect="Armored" duration="6" range="5" useWisMod="true">ConditionEffectAura</Activate>
+    <Activate effect="Damaging" duration="6" range="5" useWisMod="true">ConditionEffectAura</Activate>
     <Activate effect="Invulnerable" duration="1" range="5" useWisMod="true">ConditionEffectAura</Activate>
-    <Activate range="5" amount="75" useWisMod="true">HealNova</Activate>
     <Usable/>
     <BagType>9</BagType>
     <FameBonus>7</FameBonus>
@@ -75987,13 +75986,13 @@
     </Texture>
     <SlotType>3</SlotType>
     <Description>Once, the Harlequin fought side by side with the Puppet Master. With their end, the powerful crossbow was given to one of the Puppet Master's servants.</Description>
-    <RateOfFire>1.6</RateOfFire>
+    <RateOfFire>1.7</RateOfFire>
     <Sound>weapon/heavy_crossbow</Sound>
     <Projectile>
       <ObjectId>Harlequin's Crossbow Shot</ObjectId>
       <Speed>165</Speed>
-      <MinDamage>240</MinDamage>
-      <MaxDamage>295</MaxDamage>
+      <MinDamage>190</MinDamage>
+      <MaxDamage>255</MaxDamage>
       <LifetimeMS>460</LifetimeMS>
       <MultiHit/>
       <ArmorPiercing/>
@@ -76101,8 +76100,8 @@
     <Projectile>
       <ObjectId>Clarent Shot</ObjectId>
       <Speed>100</Speed>
-      <MinDamage>650</MinDamage>
-      <MaxDamage>750</MaxDamage>
+      <MinDamage>680</MinDamage>
+      <MaxDamage>780</MaxDamage>
       <LifetimeMS>375</LifetimeMS>
       <ArmorPiercing/>
       <MultiHit/>
@@ -76316,10 +76315,10 @@
     <SlotType>7</SlotType>
     <Description>A serene armor of the Ascended that shattered the traitorous steel of the First of Men. Slain, their blackened souls are doomed to wander for all of time within the labyrinth inscribed on its plates.</Description>
     <ActivateOnEquip stat="0" amount="250">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="21" amount="30">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="25">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="26" amount="30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
     <BagType>14</BagType>
     <FameBonus>8</FameBonus>
     <feedPower>4000</feedPower>
@@ -76335,17 +76334,16 @@
     </Texture>
     <SlotType>16</SlotType>
     <Description>The helmet once worn by Oryx himself, finally reassembled. It pulsates with unending, unstoppable rage. Oryx's power is now yours to wield..</Description>
-    <ActivateOnEquip stat="0" amount="125">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="175">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="15">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
     <Usable/>
     <BagType>14</BagType>
     <FameBonus>8</FameBonus>
-    <MpCost>125</MpCost>
-    <Activate effect="Berserk" duration="5.5" range="5">ConditionEffectAura</Activate>
-    <Activate effect="Damaging" duration="4.5" range="3">ConditionEffectAura</Activate>
-    <Activate effect="Healing" duration="5.5">ConditionEffectSelf</Activate>
+    <MpCost>110</MpCost>
+    <Activate effect="Berserk" duration="5" range="5">ConditionEffectAura</Activate>
+    <Activate effect="Damaging" duration="5" range="5">ConditionEffectAura</Activate>
+    <Activate effect="Healing" duration="5">ConditionEffectSelf</Activate>
     <feedPower>4000</feedPower>
     <ARTier/>
     <DisplayId>Harbinger of Fury</DisplayId>
@@ -76937,7 +76935,7 @@
     <Usable/>
     <BagType>9</BagType>
     <FameBonus>7</FameBonus>
-    <MpCost>110</MpCost>
+    <MpCost>100</MpCost>
     <Activate effect="Berserk" duration="6" range="5">ConditionEffectAura</Activate>
     <Activate effect="Speedy" duration="6">ConditionEffectSelf</Activate>
     <Activate effect="Damaging" duration="3.5">ConditionEffectSelf</Activate>
@@ -77732,10 +77730,10 @@
     </Texture>
     <SlotType>7</SlotType>
     <Description>Thusala</Description>
-    <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="175">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="21" amount="50">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="22" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="15">IncrementStat</ActivateOnEquip>
     <BagType>12</BagType>
     <FameBonus>8</FameBonus>
     <feedPower>4000</feedPower>
@@ -77789,9 +77787,8 @@
     </Texture>
     <SlotType>16</SlotType>
     <Description>No</Description>
-    <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="21" amount="12">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="20" amount="16">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
     <Usable/>
     <BagType>12</BagType>
     <FameBonus>8</FameBonus>
@@ -77800,6 +77797,7 @@
     <Activate effect="Berserk" duration="6" range="4.5">ConditionEffectAura</Activate>
     <Activate effect="Damaging" duration="6" range="3.5">ConditionEffectAura</Activate>
     <Activate effect="Armored" duration="6">ConditionEffectSelf</Activate>
+    <Activate effect="Invulnerable" duration="1.5">ConditionEffectSelf</Activate>
     <feedPower>4000</feedPower>
     <PrimalTier/>
     <DisplayId>Helm of the Necropolis</DisplayId>
@@ -78344,7 +78342,7 @@
       <ObjectId>Thusala Slasher Shot</ObjectId>
       <Speed>195</Speed>
       <MinDamage>15</MinDamage>
-      <MaxDamage>1300</MaxDamage>
+      <MaxDamage>1375</MaxDamage>
       <LifetimeMS>416</LifetimeMS>
       <ArmorPiercing/>
       <MultiHit/>
@@ -78354,8 +78352,7 @@
     <PrimalTier/>
     <OldSound>bladeSwing</OldSound>
     <feedPower>4000</feedPower>
-    <ActivateOnEquip stat="22" amount="15">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="14">IncrementStat</ActivateOnEquip>
     <DisplayId>Thusala's Slasher</DisplayId>
   </Object>
   <Object type="0x3087" id="Thusala Slasher Shot">
@@ -78380,8 +78377,8 @@
     <Projectile>
       <ObjectId>Decapitator Shot</ObjectId>
       <Speed>100</Speed>
-      <MinDamage>725</MinDamage>
-      <MaxDamage>800</MaxDamage>
+      <MinDamage>775</MinDamage>
+      <MaxDamage>850</MaxDamage>
       <LifetimeMS>292</LifetimeMS>
       <ArmorPiercing/>
       <PassesCover/>
@@ -78392,7 +78389,7 @@
     <ConditionEffect duration="0.8">Slowed</ConditionEffect>
     <OldSound>bladeSwing</OldSound>
     <feedPower>4000</feedPower>
-    <ActivateOnEquip stat="20" amount="7">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
     <DisplayId>Bel's Decapitator</DisplayId>
     <PrimalTier/>
@@ -78537,8 +78534,8 @@
     <Projectile>
       <ObjectId>AnniStaff Shot</ObjectId>
       <Speed>200</Speed>
-      <MinDamage>205</MinDamage>
-      <MaxDamage>295</MaxDamage>
+      <MinDamage>195</MinDamage>
+      <MaxDamage>275</MaxDamage>
       <LifetimeMS>450</LifetimeMS>
     </Projectile>
     <BagType>20</BagType>
@@ -78572,8 +78569,8 @@
       <ActivateOnEquip stat="27" amount="50">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="20" amount="-15">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="28" amount="-15">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="20" amount="-10">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="28" amount="-10">IncrementStat</ActivateOnEquip>
       <Usable/>
       <BagType>20</BagType>
       <FameBonus>20</FameBonus>
@@ -78583,7 +78580,7 @@
      </ExtraTooltipData>
       <Activate radius="10" totalDamage="25000" duration="5" color="8fa547">PoisonGrenade</Activate>
       <Activate effect="Invulnerable" duration="0.5" useWisMod="false">ConditionEffectSelf</Activate>
-      <Activate effect="Stunned" duration="1.2" useWisMod="false">ConditionEffectSelf</Activate>
+      <Activate effect="Stunned" duration="1" useWisMod="false">ConditionEffectSelf</Activate>
       <feedPower>10000000</feedPower>
      <CosmicTier/>
       <DisplayId>Soulfester</DisplayId>
@@ -78643,8 +78640,8 @@
     <Projectile>
       <ObjectId>ReapersBow Shot</ObjectId>
       <Speed>120</Speed>
-      <MinDamage>350</MinDamage>
-      <MaxDamage>450</MaxDamage>
+      <MinDamage>280</MinDamage>
+      <MaxDamage>380</MaxDamage>
       <Size>110</Size>
       <LifetimeMS>870</LifetimeMS>
       <Amplitude>0.66</Amplitude>
@@ -78887,8 +78884,8 @@
     <Description>Epic</Description>
     <ActivateOnEquip stat="0" amount="150">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="21" amount="25">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="20" amount="14">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="28" amount="14">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="15">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
     <BagType>12</BagType>
     <FameBonus>8</FameBonus>
@@ -78910,8 +78907,8 @@
     <Projectile>
       <ObjectId>Sword of Oryx Shot</ObjectId>
       <Speed>120</Speed>
-      <MinDamage>385</MinDamage>
-      <MaxDamage>490</MaxDamage>
+      <MinDamage>410</MinDamage>
+      <MaxDamage>495</MaxDamage>
       <LifetimeMS>325</LifetimeMS>
       <ArmorPiercing/>
       <MultiHit/>
@@ -79017,11 +79014,11 @@
     </Texture>
     <SlotType>7</SlotType>
     <Description>Dex</Description>
-    <ActivateOnEquip stat="0" amount="90">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="21" amount="22">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="28" amount="14">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="26" amount="12">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="27" amount="12">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="24">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="16">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="14">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="14">IncrementStat</ActivateOnEquip>
     <BagType>12</BagType>
     <FameBonus>7</FameBonus>
     <feedPower>2000</feedPower>
@@ -80686,8 +80683,8 @@
     <Projectile>
       <ObjectId>Thusala Slasher Shot</ObjectId>
       <Speed>195</Speed>
-      <MinDamage>1200</MinDamage>
-      <MaxDamage>1300</MaxDamage>
+      <MinDamage>1275</MinDamage>
+      <MaxDamage>1375</MaxDamage>
       <LifetimeMS>416</LifetimeMS>
       <ArmorPiercing/>
       <MultiHit/>
@@ -80697,8 +80694,7 @@
     <OldSound>bladeSwing</OldSound>
     <feedPower>10000000</feedPower>
     <CosmicTier/>
-    <ActivateOnEquip stat="22" amount="15">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="14">IncrementStat</ActivateOnEquip>
     <DisplayId>Lucky Slasher</DisplayId>
   </Object>
   <Object type="0x315e" id="Cosmic Bag">
@@ -80907,8 +80903,8 @@
     <Projectile>
       <ObjectId>Raven Bow Shot</ObjectId>
       <Speed>190</Speed>
-      <MinDamage>490</MinDamage>
-      <MaxDamage>610</MaxDamage>
+      <MinDamage>450</MinDamage>
+      <MaxDamage>570</MaxDamage>
       <LifetimeMS>490</LifetimeMS>
       <Size>100</Size>
       <MultiHit/>
@@ -80917,6 +80913,7 @@
     <FameBonus>20</FameBonus>
     <CosmicTier/>
     <NumProjectiles>2</NumProjectiles>
+    <ArcGap>8</ArcGap>
     <OldSound>arrowShoot</OldSound>
     <feedPower>10000000</feedPower>
     <DisplayId>Raven's Personal Bow</DisplayId>
@@ -81162,14 +81159,15 @@
     </Texture>
       <SlotType>3</SlotType>
       <Description>It was Boshy Time.</Description>
-      <RateOfFire>0.5</RateOfFire>
+      <RateOfFire>0.45</RateOfFire>
       <Sound>weapon/golden_bow</Sound>
       <Projectile>
          <ObjectId>Boshy Bullet</ObjectId>
          <Speed>130</Speed>
+         <Size>80</Size>
          <MinDamage>500</MinDamage>
          <MaxDamage>700</MaxDamage>
-         <LifetimeMS>1231</LifetimeMS>
+         <LifetimeMS>1076</LifetimeMS>
          <PassesCover/>
          <MultiHit/>
       </Projectile>
@@ -81203,8 +81201,8 @@
       <Projectile>
          <ObjectId>Z Saber Proj</ObjectId>
          <Speed>125</Speed>
-         <MinDamage>1000</MinDamage>
-         <MaxDamage>1050</MaxDamage>
+         <MinDamage>1050</MinDamage>
+         <MaxDamage>1100</MaxDamage>
          <LifetimeMS>340</LifetimeMS>
          <MultiHit/>   
          <PassesCover/>
@@ -81368,8 +81366,8 @@
       <ObjectId>Purity Shot</ObjectId>
          <Size>110</Size>
          <Speed>200</Speed>
-      <MinDamage>480</MinDamage>
-      <MaxDamage>500</MaxDamage>
+      <MinDamage>440</MinDamage>
+      <MaxDamage>450</MaxDamage>
          <LifetimeMS>437</LifetimeMS>
          <Amplitude>0.55</Amplitude>
          <Frequency>2</Frequency>
@@ -82058,14 +82056,14 @@
     <Description>Winner!</Description>
     <ActivateOnEquip stat="0" amount="50">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="20" amount="12">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="28" amount="7">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="10">IncrementStat</ActivateOnEquip>
     <Usable/>
     <BagType>12</BagType>
     <FameBonus>8</FameBonus>
     <Cooldown>6</Cooldown>
-    <MpCost>130</MpCost>
+    <MpCost>125</MpCost>
     <Activate effect="Berserk" duration="6.5" range="5">ConditionEffectAura</Activate>
-    <Activate effect="Damaging" duration="6" range="2.5">ConditionEffectAura</Activate>
+    <Activate effect="Damaging" duration="6" range="4">ConditionEffectAura</Activate>
     <Activate effect="Speedy" duration="5.5">ConditionEffectSelf</Activate>
     <feedPower>4000</feedPower>
     <PrimalTier/>
@@ -82080,8 +82078,8 @@
     </Texture>
     <SlotType>9</SlotType>
     <Description>Rare</Description>
-    <ActivateOnEquip stat="0" amount="200">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="3" amount="200">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="180">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="180">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="22" amount="8">IncrementStat</ActivateOnEquip>
@@ -82103,12 +82101,11 @@
     </Texture>
     <SlotType>7</SlotType>
     <Description>What, did you expect the deathmages to have good disease control? Of course they had the plague!</Description>
-    <ActivateOnEquip stat="0" amount="260">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="275">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="21" amount="35">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="20" amount="25">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="28" amount="15">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="27" amount="25">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="26" amount="-15">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="15">IncrementStat</ActivateOnEquip>
     <BagType>20</BagType>
       <FameBonus>20</FameBonus>
       <feedPower>10000000</feedPower>
@@ -82212,7 +82209,7 @@
     <SlotType>9</SlotType>
     <Description>Finally cosmic tier...</Description>
     <ActivateOnEquip stat="0" amount="400">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="21" amount="75">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="55">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="20" amount="15">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="22" amount="15">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="26" amount="15">IncrementStat</ActivateOnEquip>
@@ -82409,8 +82406,8 @@
     <Projectile>
       <ObjectId>Blondie's Claws Shot</ObjectId>
       <Speed>155</Speed>
-      <MinDamage>295</MinDamage>
-      <MaxDamage>345</MaxDamage>
+      <MinDamage>265</MinDamage>
+      <MaxDamage>315</MaxDamage>
       <LifetimeMS>355</LifetimeMS>
          <Amplitude>0.2</Amplitude>
          <Frequency>0.35</Frequency>
@@ -82418,9 +82415,9 @@
 		<ArmorPiercing/>
 		<Wavy/>
     </Projectile>
-    <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="22" amount="16">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="26" amount="16">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="12">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
       <NumProjectiles>3</NumProjectiles>
       <ArcGap>6</ArcGap>
     <OldSound>daggerSwing</OldSound>
@@ -82711,8 +82708,8 @@
     <Projectile>
       <ObjectId>Rigormortis Shot</ObjectId>
       <Speed>120</Speed>
-      <MinDamage>280</MinDamage>
-      <MaxDamage>380</MaxDamage>
+      <MinDamage>275</MinDamage>
+      <MaxDamage>375</MaxDamage>
       <LifetimeMS>370</LifetimeMS>
 	 	<PassesCover/>
 		<MultiHit/>
@@ -83612,7 +83609,7 @@
     <Usable/>
     <BagType>20</BagType>
     <FameBonus>20</FameBonus>
-    <MpCost>160</MpCost>
+    <MpCost>145</MpCost>
     <Activate effect="Curse" duration="6" range="6.5" color="0x808080" target="enemy" center="mouse" visualEffect="8" useWisMod="true">GenericActivate</Activate>
     <Activate effect="ArmorBroken" duration="3" range="3.5" color="0x808080" target="enemy" center="mouse" visualEffect="8" useWisMod="true">GenericActivate</Activate>
     <Activate effect="Healing" duration="3" useWisMod="true">ConditionEffectSelf</Activate>
@@ -83716,7 +83713,7 @@
       <HitSound>monster/elves_hit</HitSound>
       <DeathSound>monster/elves_death</DeathSound>
     <Size>140</Size>
-    <MaxHitPoints>125000</MaxHitPoints>
+    <MaxHitPoints>145000</MaxHitPoints>
     <Defense>10</Defense>
     <Quest/>
     <God/>
@@ -83745,7 +83742,7 @@
     </Projectile>
     <Projectile id="2">
       <ObjectId>Cowhoof Shot</ObjectId>
-      <Damage>240</Damage>
+      <Damage>210</Damage>
       <Speed>55</Speed>
       <LifetimeMS>1500</LifetimeMS>
       <Size>120</Size>
@@ -84148,7 +84145,7 @@
     <RateOfFire>1.35</RateOfFire>
     <Sound>weapon/wand_of_death</Sound>
       <Projectile>
-         <ObjectId>WoC</ObjectId>
+         <ObjectId>WoC Shot</ObjectId>
          <Speed>190</Speed>
          <MinDamage>55</MinDamage>
          <MaxDamage>115</MaxDamage>
@@ -84199,7 +84196,7 @@
     <Item/>
     <Texture>
       <File>lofiParts</File>
-      <Index>0x14</Index>
+      <Index>0x5a</Index>
     </Texture>
     <SlotType>6</SlotType>
     <Description>Darkness</Description>
@@ -84225,7 +84222,7 @@
     <ActivateOnEquip stat="0" amount="120">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="21" amount="28">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="20" amount="12">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="10">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="26" amount="12">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
     <BagType>10</BagType>
@@ -84367,8 +84364,8 @@
       <Speed>200</Speed>
       <Size>100</Size>
       <LifetimeMS>550</LifetimeMS>
-      <MinDamage>655</MinDamage>
-      <MaxDamage>860</MaxDamage>
+      <MinDamage>605</MinDamage>
+      <MaxDamage>810</MaxDamage>
       <ArmorPiercing/>
       <MultiHit/>
       <PassesCover/>
@@ -84667,7 +84664,7 @@
       <SlotType>20</SlotType>
       <Description>The ground may seem solid, but above and below it are cosmically powerful entities predicting your every move. Act smart.</Description>
       <ActivateOnEquip stat="20" amount="60">IncrementStat</ActivateOnEquip>
-      <ActivateOnEquip stat="28" amount="-30">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="28" amount="-20">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="22" amount="20">IncrementStat</ActivateOnEquip>
       <ActivateOnEquip stat="26" amount="10">IncrementStat</ActivateOnEquip>
@@ -84675,9 +84672,9 @@
       <Usable/>
       <BagType>20</BagType>
       <FameBonus>20</FameBonus>
-      <MpCost>145</MpCost>
-      <Activate radius="4" totalDamage="12000" condEffect="Paralyzed" condDuration="5">Trap</Activate>
-      <Activate radius="8" totalDamage="4500" condDuration="5.5">Trap</Activate>
+      <MpCost>130</MpCost>
+      <Activate radius="4.5" totalDamage="10000" condEffect="Paralyzed" condDuration="5">Trap</Activate>
+      <Activate radius="8" totalDamage="4000" condDuration="5.5">Trap</Activate>
       <Activate effect="Damaging" duration="3.5" useWisMod="true">ConditionEffectSelf</Activate>
       <Activate effect="Berserk" duration="3" useWisMod="true">ConditionEffectSelf</Activate>
       <Activate effect="Armored" duration="2.5" useWisMod="true">ConditionEffectSelf</Activate>
@@ -84707,8 +84704,8 @@
     <Projectile>
       <ObjectId>ODecap Shot</ObjectId>
       <Speed>140</Speed>
-      <MinDamage>395</MinDamage>
-      <MaxDamage>425</MaxDamage>
+      <MinDamage>375</MinDamage>
+      <MaxDamage>415</MaxDamage>
       <LifetimeMS>343</LifetimeMS>
 		<MultiHit/>
     </Projectile>
@@ -85053,7 +85050,8 @@
       <Speed>120</Speed>
       <MinDamage>205</MinDamage>
       <MaxDamage>225</MaxDamage>
-      <LifetimeMS>500</LifetimeMS>
+      <LifetimeMS>530</LifetimeMS>
+      <MultiHit/>
     </Projectile>
     <ActivateOnEquip stat="22" amount="15">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="27" amount="25">IncrementStat</ActivateOnEquip>
@@ -85142,7 +85140,7 @@
     <Projectile>
       <ObjectId>MorningstarHoney Shot</ObjectId>
       <Speed>150</Speed>
-      <Size>110</Size>
+      <Size>130</Size>
       <MinDamage>245</MinDamage>
       <MaxDamage>400</MaxDamage>
       <LifetimeMS>560</LifetimeMS>
@@ -85191,7 +85189,7 @@
       <Index>0xca</Index>
     </Texture>
     <SlotType>13</SlotType>
-    <Description>Darkness</Description>
+    <Description>A cloak given to high-level light empire warriors to allow them to travel at the speed of light. Prehaps they should have used it to run away.</Description>
     <Sound>spell/fire_nova</Sound>
     <ActivateOnEquip stat="22" amount="35">IncrementStat</ActivateOnEquip>
     <ActivateOnEquip stat="20" amount="-15">IncrementStat</ActivateOnEquip>
@@ -85223,10 +85221,10 @@
     <Projectile>
       <ObjectId>Super Trident</ObjectId>
       <Speed>150</Speed>
-      <MinDamage>2500</MinDamage>
-      <MaxDamage>3500</MaxDamage>
+      <MinDamage>2260</MinDamage>
+      <MaxDamage>2800</MaxDamage>
       <LifetimeMS>1300</LifetimeMS>
-      <Size>100</Size>
+      <Size>125</Size>
       <ConditionEffect duration="5">Paralyzed</ConditionEffect>
       <ConditionEffect duration="5">Slowed</ConditionEffect>
       <ConditionEffect duration="5">Dazed</ConditionEffect>
@@ -85240,12 +85238,12 @@
       <Amplitude>0.2</Amplitude>
       <Frequency>1</Frequency>
     </Projectile>
-    <ActivateOnEquip stat="21" amount="28">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="0" amount="155">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="3" amount="155">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="20" amount="18">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="28" amount="18">IncrementStat</ActivateOnEquip>
-    <ActivateOnEquip stat="26" amount="18">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="24">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="170">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="140">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="14">IncrementStat</ActivateOnEquip>
     <ConditionEffect duration="5">Paralyzed</ConditionEffect>
     <ConditionEffect duration="5">Slowed</ConditionEffect>
     <ConditionEffect duration="5">Dazed</ConditionEffect>
@@ -85258,7 +85256,6 @@
     <NumProjectiles>3</NumProjectiles>
     <ArcGap>7</ArcGap>
     <MpCost>160</MpCost>
-    <Cooldown>1.5</Cooldown>
     <Activate>Shoot</Activate>
     <CosmicTier/>
     <feedPower>10000000</feedPower>
@@ -85457,11 +85454,11 @@
     <Sound>weapon/fire_dagger</Sound>
     <Projectile>
       <ObjectId>Ectoplasm Blade Shot</ObjectId>
-      <Speed>75</Speed>
-      <Size>150</Size>
+      <Speed>50</Speed>
+      <Size>175</Size>
       <MinDamage>950</MinDamage>
       <MaxDamage>1175</MaxDamage>
-      <LifetimeMS>900</LifetimeMS>
+      <LifetimeMS>1100</LifetimeMS>
       <Boomerang/>
       <MultiHit/>
       <ArmorPiercing/>
@@ -85480,25 +85477,25 @@
     <Class>Equipment</Class>
     <Item/>
     <Texture>
-      <File>lofiObj4</File>
-      <Index>0x97</Index>
+      <File>lofiParts</File>
+      <Index>0xc0</Index>
     </Texture>
     <SlotType>17</SlotType>
     <Description>A trophy of victory that has been created by one of the most talented demon hunters after mercilessly killing thousands of demons to fuel his pride.</Description>
-    <RateOfFire>0.25</RateOfFire>
+    <RateOfFire>0.3</RateOfFire>
     <Sound>weapon/wand_of_death</Sound>
     <Projectile>
       <ObjectId>Demon Lord's Wrath Shot</ObjectId>
-      <Speed>160</Speed>
+      <Speed>150</Speed>
       <MinDamage>365</MinDamage>
-      <MaxDamage>385</MaxDamage>
-      <LifetimeMS>500</LifetimeMS>
+      <MaxDamage>395</MaxDamage>
+      <LifetimeMS>533</LifetimeMS>
       <Amplitude>0.5</Amplitude>
-      <Frequency>2</Frequency>
+      <Frequency>1.5</Frequency>
       <MultiHit/>
     </Projectile>
     <NumProjectiles>3</NumProjectiles>
-    <ArcGap>4</ArcGap>
+    <ArcGap>5</ArcGap>
     <OldSound>magicShoot</OldSound>
     <BagType>11</BagType>
     <FameBonus>8</FameBonus>
@@ -85530,4 +85527,54 @@
          <Index>0xb1</Index>
       </Texture>
    </Object>
+  <Ground type="0x325b" id="Volcano Rock Bright">
+    <Texture>
+      <File>lofiObj6</File>
+      <Index>0x0f</Index>
+    </Texture>
+    <BlendPriority>18</BlendPriority>
+  </Ground>
+  <Ground type="0x325c" id="Volcano Rock Medium">
+    <Texture>
+      <File>lofiObj6</File>
+      <Index>0x1f</Index>
+    </Texture>
+    <BlendPriority>18</BlendPriority>
+  </Ground>
+  <Ground type="0x325d" id="Volcano Rock Dark">
+    <Texture>
+      <File>lofiObj6</File>
+      <Index>0x2f</Index>
+    </Texture>
+    <BlendPriority>18</BlendPriority>
+  </Ground>
+  <Ground type="0x325e" id="Volcano Rock Warm">
+    <Texture>
+      <File>lofiObj6</File>
+      <Index>0x0e</Index>
+    </Texture>
+    <BlendPriority>18</BlendPriority>
+  </Ground>
+  <Ground type="0x325f" id="Volcano Fire">
+    <Texture>
+      <File>lofiObj6</File>
+      <Index>0x1e</Index>
+    </Texture>
+    <MinDamage>45</MinDamage>
+    <MaxDamage>45</MaxDamage>
+    <Animate dx=".6" dy=".6">Flow</Animate>
+    <BlendPriority>3</BlendPriority>
+  </Ground>
+  <Ground type="0x3260" id="Volcano Magma">
+    <Texture>
+      <File>lofiObj6</File>
+      <Index>0x2e</Index>
+    </Texture>
+    <MinDamage>150</MinDamage>
+    <MaxDamage>150</MaxDamage>
+    <Animate dx=".3" dy=".3">Flow</Animate>
+    <Sink/>
+    <Speed>.666</Speed>
+    <BlendPriority>2</BlendPriority>
+  </Ground>
 </Objects>

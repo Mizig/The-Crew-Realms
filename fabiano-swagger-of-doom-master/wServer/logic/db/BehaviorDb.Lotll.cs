@@ -25,11 +25,11 @@ namespace wServer.logic
                         new PlayerWithinTransition(10, "wander")
                         ),
                     new State("wander",
-                        new SetAltTexture(0),
+                        new SetAltTexture(3),
                         new Taunt("HALT!"),
                         new Wander(0.3),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new PlayerWithinTransition(8, "beginning")
+                        new TimedTransition(4000, "beginning")
                         ),
                     new State("beginning",
                         new SetAltTexture(0),
@@ -40,18 +40,19 @@ namespace wServer.logic
                         new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 1000, angleOffset: 90, coolDown: 2000),
                         new Shoot(12, count: 7, shootAngle: 7, coolDown: 2000),
                         new Shoot(12, count: 7, shootAngle: 7, angleOffset: 180, coolDown: 2000),
-                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 1500, randomToss: false),
+                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 2400, randomToss: false),
                         new HpLessTransition(0.66, "shotgun")
                         ),
                     new State("shotgun",
                         new SetAltTexture(0),
+                        new Taunt("CHARGE!"),
                         new Follow(0.3, range: 1),
-                        new Shoot(12, count: 3, shootAngle: 10, projectileIndex: 1, coolDown: 1000, coolDownOffset: 400),
+                        new Shoot(12, count: 3, shootAngle: 16, projectileIndex: 1, coolDown: 1000, coolDownOffset: 400),
                         new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 1000, angleOffset: 270, coolDown: 2000),
                         new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 1000, angleOffset: 90, coolDown: 2000),
                         new Shoot(12, count: 7, shootAngle: 7, coolDown: 2000),
                         new Shoot(12, count: 7, shootAngle: 7, angleOffset: 180, coolDown: 2000),
-                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 1500, randomToss: false),
+                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 2400, randomToss: false),
                         new HpLessTransition(0.33, "crystalstart")
                         ),
                     new State("crystalstart",
@@ -63,26 +64,26 @@ namespace wServer.logic
                     new State("crystalmid",
                         new SetAltTexture(1),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new TossObject("Protection Crystal", 6, 90, coolDown: 9999999, randomToss: false),
-                        new TossObject("Protection Crystal", 6, 270, coolDown: 9999999, randomToss: false),
+                        new TossObject("Protection Crystal", 5, 0, coolDown: 9999999, randomToss: false),
+                        new TossObject("Protection Crystal", 5, 180, coolDown: 9999999, randomToss: false),
                         new TimedTransition(2100, "checkforcrystals")
                         ),
                     new State("checkforcrystals",
                         new SetAltTexture(1),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 2000, randomToss: false),
+                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 3000, randomToss: false),
                         new EntitiesNotExistsTransition(9999, "final", "Protection Crystal")
                         ),
                     new State("final",
                         new SetAltTexture(0),
                         new Taunt("I MUST DEFEND OUR LANDS!"),
                         new Wander(0.3),
-                        new Shoot(12, count: 1, projectileIndex: 1, predictive: 1, coolDown: 300),
-                        new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 600, angleOffset: 270, coolDown: 1200),
-                        new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 800, angleOffset: 90, coolDown: 1200),
-                        new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 200, coolDown: 1200),
-                        new Shoot(12, count: 7, shootAngle: 7, angleOffset: 180, coolDown: 1200),
-                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 1000, randomToss: false),
+                        new Shoot(12, count: 1, projectileIndex: 1, predictive: 1, coolDown: 250),
+                        new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 600, angleOffset: 270, coolDown: 1000),
+                        new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 800, angleOffset: 90, coolDown: 1000),
+                        new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 200, coolDown: 1000),
+                        new Shoot(12, count: 7, shootAngle: 7, angleOffset: 180, coolDown: 1000),
+                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 1700, randomToss: false),
                         new HpLessTransition(0.05, "death")
                         ),
                     new State("death",
@@ -91,8 +92,8 @@ namespace wServer.logic
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable, true),
                         new Flash(0xFF0000, 0.2, 3),
                         new Shoot(25, count: 30, shootAngle: 12, fixedAngle: 0, projectileIndex: 0, coolDownOffset: 3800, coolDown: 99999),
-                        new Shoot(25, count: 30, shootAngle: 12, fixedAngle: 4, projectileIndex: 1, coolDownOffset: 4000, coolDown: 99999),
-                        new Shoot(25, count: 25, shootAngle: 15, fixedAngle: 9, projectileIndex: 2, coolDownOffset: 4200, coolDown: 99999),
+                        new Shoot(25, count: 25, shootAngle: 15, fixedAngle: 9, projectileIndex: 2, coolDownOffset: 4000, coolDown: 99999),
+                        new Shoot(25, count: 12, shootAngle: 30, fixedAngle: 4, projectileIndex: 1, coolDownOffset: 4200, coolDown: 99999),
                         new TimedTransition(4400, "dead")
                         ),
                     new State("dead",
@@ -134,41 +135,41 @@ namespace wServer.logic
             )
             .Init("Protection Crystal",
                 new State(
-                    new Shoot(8.4, count: 4, projectileIndex: 0, shootAngle: 11, coolDown: 600),
+                    new Shoot(8.4, count: 4, projectileIndex: 0, shootAngle: 11, coolDown: 500),
                     new State("Begin",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new TimedTransition(2500, "Twirl1")
                         ),
                     new State("Twirl1",
-                        new Shoot(20, count: 1, projectileIndex: 1, fixedAngle: 0, coolDown: 1000),
+                        new Shoot(20, count: 3, shootAngle: 11, projectileIndex: 1, fixedAngle: 0, coolDown: 1000),
                         new TimedTransition(100, "Twirl2")
                         ),
                     new State("Twirl2",
-                        new Shoot(20, count: 1, projectileIndex: 1, fixedAngle: 45, coolDown: 1000),
+                        new Shoot(20, count: 3, shootAngle: 11, projectileIndex: 1, fixedAngle: 45, coolDown: 1000),
                         new TimedTransition(100, "Twirl3")
                         ),
                     new State("Twirl3",
-                        new Shoot(20, count: 1, projectileIndex: 1, fixedAngle: 90, coolDown: 1000),
+                        new Shoot(20, count: 3, shootAngle: 11, projectileIndex: 1, fixedAngle: 90, coolDown: 1000),
                         new TimedTransition(100, "Twirl4")
                         ),
                     new State("Twirl4",
-                        new Shoot(20, count: 1, projectileIndex: 1, fixedAngle: 135, coolDown: 1000),
+                        new Shoot(20, count: 3, shootAngle: 11, projectileIndex: 1, fixedAngle: 135, coolDown: 1000),
                         new TimedTransition(100, "Twirl5")
                         ),
                     new State("Twirl5",
-                        new Shoot(20, count: 1, projectileIndex: 1, fixedAngle: 180, coolDown: 1000),
+                        new Shoot(20, count: 3, shootAngle: 11, projectileIndex: 1, fixedAngle: 180, coolDown: 1000),
                         new TimedTransition(100, "Twirl6")
                         ),
                     new State("Twirl6",
-                        new Shoot(20, count: 1, projectileIndex: 1, fixedAngle: 225, coolDown: 1000),
+                        new Shoot(20, count: 3, shootAngle: 11, projectileIndex: 1, fixedAngle: 225, coolDown: 1000),
                         new TimedTransition(100, "Twirl7")
                         ),
                     new State("Twirl7",
-                        new Shoot(20, count: 1, projectileIndex: 1, fixedAngle: 270, coolDown: 1000),
+                        new Shoot(20, count: 3, shootAngle: 11, projectileIndex: 1, fixedAngle: 270, coolDown: 1000),
                         new TimedTransition(100, "Twirl8")
                         ),
                     new State("Twirl8",
-                        new Shoot(20, count: 1, projectileIndex: 1, fixedAngle: 315, coolDown: 1000),
+                        new Shoot(20, count: 3, shootAngle: 11, projectileIndex: 1, fixedAngle: 315, coolDown: 1000),
                         new TimedTransition(100, "Twirl1")
                         )
                     )

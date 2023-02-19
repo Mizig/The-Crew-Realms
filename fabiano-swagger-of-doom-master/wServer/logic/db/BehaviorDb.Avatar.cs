@@ -916,7 +916,7 @@ namespace wServer.logic
                             new TossObject("shtrs blobomb", 5, 225, coolDown: 3500, coolDownOffset: 1900),
                             new TossObject("shtrs blobomb", 5, 270, coolDown: 3500, coolDownOffset: 1900),
                             new TossObject("shtrs blobomb", 5, 315, coolDown: 3500, coolDownOffset: 1900),
-                                new TimedTransition(6000, "stars after blo")
+                                new TimedTransition(6600, "stars after blo")
                                 )
                             ),
                     new State("stars after blo",

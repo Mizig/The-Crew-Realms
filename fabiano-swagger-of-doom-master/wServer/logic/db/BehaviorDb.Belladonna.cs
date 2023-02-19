@@ -336,10 +336,10 @@ namespace wServer.logic
                     ),
                     new State("Fight",
                     new Wander(0.22),
-                    new Shoot(25, projectileIndex: 0, count: 12, shootAngle: 30, coolDown: 4000), //armorbreak
+                    new Shoot(25, projectileIndex: 0, count: 12, shootAngle: 30, coolDown: 4000, coolDownOffset: 400), //armorbreak
                     new Shoot(25, projectileIndex: 1, count: 1, coolDown: 200), //trident
                     new Shoot(25, projectileIndex: 2, count: 5, shootAngle: 12, predictive: 0.4, coolDown: 2000), //supertrident
-                    new Shoot(25, projectileIndex: 3, count: 15, shootAngle: 24, fixedAngle: 0, coolDownOffset: 3000, coolDown: 5000) //weaken
+                    new Shoot(25, projectileIndex: 3, count: 20, shootAngle: 18, fixedAngle: 0, coolDownOffset: 3000, coolDown: 5000) //weaken
                     )
                 ),
                 new Threshold(0.001,
@@ -413,7 +413,7 @@ namespace wServer.logic
                 new ItemLoot("Lucky Slasher", 0.0005),
                 new ItemLoot("Karen Jacket", 0.0005),
                 new ItemLoot("Elicia Blanket", 0.0005),
-                new ItemLoot("Ji Robe", 0.0005),
+                new ItemLoot("Ji Robe", 0.0006),
                 new ItemLoot("Boshy Gun", 0.0005),
                 new ItemLoot("Butcher's Plate", 0.0005),
                 new ItemLoot("Breastplate of the Plague", 0.0005),
@@ -426,7 +426,7 @@ namespace wServer.logic
                 new ItemLoot("Wand of the Galaxy", 0.0005),
                 new ItemLoot("Old Farmer's Leather Book", 0.0005),
                 new ItemLoot("Quasar Piercer", 0.0005),
-                new ItemLoot("Poseidon's Trident", 0.005)
+                new ItemLoot("Poseidon's Trident", 0.0005)
                 )
             )
             .Init("Evil Fake Chest",
@@ -469,7 +469,7 @@ namespace wServer.logic
                 new ItemLoot("Wand of the Galaxy", 0.0005),
                 new ItemLoot("Old Farmer's Leather Book", 0.0005),
                 new ItemLoot("Quasar Piercer", 0.0005),
-                new ItemLoot("Poseidon's Trident", 0.005)
+                new ItemLoot("Poseidon's Trident", 0.0005)
                 )
             )
             .Init("Final Chest",
