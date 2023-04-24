@@ -29,7 +29,12 @@ namespace wServer.logic
                     )
                 ),
                 new Threshold(0.001,
+                new ItemLoot("The One True Ring", 0.00004),
+                new ItemLoot("Jon's Handcannon", 0.01),
+                new ItemLoot("Dreadstump's Lost Anchor", 0.04),
                 new ItemLoot("Path of Loot Key", 0.000125),
+                new ItemLoot("Transformation Shard", 0.001),
+                new ItemLoot("Gold Cache", 0.05),
                 new ItemLoot("Potion of Attack", 0.25),
                 new ItemLoot("Potion of Defense", 0.25),
                 new ItemLoot("Pirate Rum", 0.50),

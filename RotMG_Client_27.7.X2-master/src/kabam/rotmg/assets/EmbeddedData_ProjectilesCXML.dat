@@ -2644,6 +2644,7 @@
          <File>lofiObj3</File>
          <Index>0x374</Index>
       </Texture>
+   <AngleCorrection>1</AngleCorrection>
    </Object>
    <Object type="0x214d" id="Icey Magic Attack">
       <Class>Projectile</Class>
@@ -2651,6 +2652,7 @@
          <File>lofiObj3</File>
          <Index>0x375</Index>
       </Texture>
+   <AngleCorrection>1</AngleCorrection>
    </Object>
    <Object type="0x214e" id="Yetti Attack SM">
       <Class>Projectile</Class>

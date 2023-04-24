@@ -70,4 +70,30 @@
       <ActivateOnEquipAll stat="22" amount="2">IncrementStat</ActivateOnEquipAll>
       <ActivateOnEquipAll stat="27" amount="5">IncrementStat</ActivateOnEquipAll>
    </EquipmentSet>
+  <EquipmentSet type="0x0005" id="Stair Girls Set">
+    <Setpiece slot="0" itemtype="0x3281">Equipment</Setpiece>
+    <Setpiece slot="1" itemtype="0x3280">Equipment</Setpiece>
+    <Setpiece slot="2" itemtype="0x329a">Equipment</Setpiece>
+    <Setpiece slot="3" itemtype="0x3283">Equipment</Setpiece>
+    <ActivateOnEquipAll stat="0" amount="75">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll stat="3" amount="75">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll stat="20" amount="12">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll stat="26" amount="10">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll stat="27" amount="10">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll skinType="0x3285" size="100" color="0x92A9BA">ChangeSkin</ActivateOnEquipAll>
+  </EquipmentSet>
+  <EquipmentSet type="0x0006" id="Cloud Angel Huntress Set">
+    <Setpiece slot="0" itemtype="0x339c">Equipment</Setpiece>
+    <Setpiece slot="1" itemtype="0x339e">Equipment</Setpiece>
+    <Setpiece slot="2" itemtype="0x339f">Equipment</Setpiece>
+    <Setpiece slot="3" itemtype="0x33a0">Equipment</Setpiece>
+    <ActivateOnEquipAll stat="28" amount="25">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll stat="27" amount="35">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll stat="26" amount="35">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll stat="22" amount="35">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll stat="20" amount="10">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll stat="0" amount="150">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll stat="3" amount="50">IncrementStat</ActivateOnEquipAll>
+    <ActivateOnEquipAll skinType="0x3285" size="100" color="0x4AB4DF" bulletType="Cloud Angel Shot">ChangeSkin</ActivateOnEquipAll>
+  </EquipmentSet>
 </EquipmentSets>

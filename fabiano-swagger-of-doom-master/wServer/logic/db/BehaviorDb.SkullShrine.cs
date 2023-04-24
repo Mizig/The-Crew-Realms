@@ -1,77 +1,85 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using wServer.realm;
-using wServer.logic.attack;
-using wServer.logic.movement;
+﻿#region
+
+using wServer.logic.behaviors;
 using wServer.logic.loot;
-using wServer.logic.taunt;
-using wServer.logic.cond;
+using wServer.logic.transitions;
+
+#endregion
 
 namespace wServer.logic
 {
     partial class BehaviorDb
     {
-        static _ SkullShrine = Behav()
-            .Init(0x0d56, Behaves("Skull Shrine",
-                    NullBehavior.Instance,
-                    Cooldown.Instance(750, PredictiveMultiAttack.Instance(25, 10 * (float)Math.PI / 180, 9, 1)),
-                    IfNot.Instance(
-                        Once.Instance(new RunBehaviors(
-                            SpawnMinionImmediate.Instance(0x0d57, 5, 8, 10),
-                            SpawnMinionImmediate.Instance(0x0d58, 5, 4, 8)
-                        )),
-                        Cooldown.Instance(5000,
-                            If.Instance(
-                                EntityGroupLesserThan.Instance(10, 20, "Flaming Skulls"),
-                                Rand.Instance(
-                                    SpawnMinionImmediate.Instance(0x0d57, 5, 2, 4),
-                                    SpawnMinionImmediate.Instance(0x0d58, 5, 2, 4)
-                                )
-                            )
-                        )
-                    ),
-                    loot: new LootBehavior(LootDef.Empty,
-                        Tuple.Create(100, new LootDef(0, 3, 0, 8,
-                            Tuple.Create(0.001, (ILoot)new ItemLoot("Orb of Conflict")),
-
-                            Tuple.Create(0.01, (ILoot)new TierLoot(11, ItemType.Weapon)),
-                            Tuple.Create(0.01, (ILoot)new TierLoot(11, ItemType.Armor)),
-                            Tuple.Create(0.01, (ILoot)new TierLoot(5, ItemType.Ring)),
-
-                            Tuple.Create(0.02, (ILoot)new TierLoot(10, ItemType.Weapon)),
-                            Tuple.Create(0.02, (ILoot)new TierLoot(10, ItemType.Armor)),
-
-                            Tuple.Create(0.03, (ILoot)new TierLoot(9, ItemType.Weapon)),
-                            Tuple.Create(0.03, (ILoot)new TierLoot(5, ItemType.Ability)),
-                            Tuple.Create(0.03, (ILoot)new TierLoot(9, ItemType.Armor)),
-
-                            Tuple.Create(0.05, (ILoot)new StatPotionsLoot(1, 2)),
-                            Tuple.Create(0.05, (ILoot)new TierLoot(4, ItemType.Ring)),
-
-                            Tuple.Create(0.1, (ILoot)new TierLoot(4, ItemType.Ability)),
-                            Tuple.Create(0.1, (ILoot)new TierLoot(8, ItemType.Armor)),
-
-                            Tuple.Create(0.2, (ILoot)new TierLoot(8, ItemType.Weapon)),
-                            Tuple.Create(0.2, (ILoot)new TierLoot(7, ItemType.Armor)),
-                            Tuple.Create(0.2, (ILoot)new TierLoot(3, ItemType.Ring))
-                        ))
+        private _ SkullShrine = () => Behav()
+            .Init("Skull Shrine",
+                new State(
+                    new DropPortalOnDeath("The Nest Portal", 100),
+                    new Shoot(25, 9, 10, predictive: 1),
+                    new Spawn("Red Flaming Skull", 8, coolDown: 5000),
+                    new Spawn("Blue Flaming Skull", 10, coolDown: 1000),
+                    new Reproduce("Red Flaming Skull", 10, 8, 5000),
+                    new Reproduce("Blue Flaming Skull", 10, 10, 1000)
+                ),
+                new Threshold(0.001,
+                new ItemLoot("The One True Ring", 0.00001),
+                new ItemLoot("Butcher's Plate", 0.0005),
+                new ItemLoot("Atonement", 0.004),
+                new ItemLoot("Blazing Machete", 0.004),
+                new ItemLoot("Flaming Horizons Anchor", 0.004),
+                new ItemLoot("Nightmare Gem Gem's Gem", 0.004),
+                new ItemLoot("Necrotic Boneplate", 0.004),
+                new ItemLoot("The Flamarang", 0.005),
+                new ItemLoot("Crown of War", 0.0098),
+                new ItemLoot("Devil Dice", 0.01),
+                new ItemLoot("Demon Summoning Tome", 0.01),
+                new ItemLoot("The Infernus", 0.01),
+                new ItemLoot("Orb of Conflict", 0.05),
+                new ItemLoot("Hell's Breastplate", 0.04),
+                new ItemLoot("Flaming Boomerang", 0.05),
+                new ItemLoot("Path of Loot Key", 0.00025),
+                new ItemLoot("Transformation Shard", 0.001),
+                new ItemLoot("Gold Cache", 0.5),
+                new ItemLoot("Potion of Life", 0.5),
+                new ItemLoot("Potion of Mana", 0.5),
+                new ItemLoot("Greater Potion of Attack", 1.0),
+                new ItemLoot("Potion of Defense", 1.0),
+                new ItemLoot("Potion of Speed", 1.0),
+                new ItemLoot("Potion of Vitality", 1.0),
+                new ItemLoot("Potion of Dexterity", 1.0),
+                new ItemLoot("Potion of Wisdom", 1.0),
+                new TierLoot(9, ItemType.Weapon, 0.15),
+                new TierLoot(10, ItemType.Weapon, 0.15),
+                new TierLoot(11, ItemType.Weapon, 0.15),
+                new TierLoot(4, ItemType.Ability, 0.17),
+                new TierLoot(5, ItemType.Ability, 0.17),
+                new TierLoot(10, ItemType.Armor, 0.12),
+                new TierLoot(11, ItemType.Armor, 0.12),
+                new TierLoot(12, ItemType.Armor, 0.12),
+                new TierLoot(4, ItemType.Ring, 0.13),
+                new TierLoot(5, ItemType.Ring, 0.13),
+                new EggLoot(EggRarity.Common, 0.1),
+                new EggLoot(EggRarity.Uncommon, 0.05),
+                new EggLoot(EggRarity.Rare, 0.01),
+                new EggLoot(EggRarity.Legendary, 0.001)
+                )
+            )
+            .Init("Red Flaming Skull",
+                new State(
+                    new Prioritize(
+                        new Wander(.6),
+                        new Follow(.6, 20, 3)
+                        ),
+                    new Shoot(15, 2, 5, 0, predictive: 1, coolDown: 750)
                     )
-                ))
-            .Init(0x0d57, Behaves("Red Flaming Skull",
-                    IfNot.Instance(
-                        Chasing.Instance(2, 20, 3, 0x0d56),
-                        SimpleWandering.Instance(2, .5f)
-                    ),
-                    Cooldown.Instance(750, PredictiveMultiAttack.Instance(15, 5 * (float)Math.PI / 180, 2, 1))
-                ))
-            .Init(0x0d58, Behaves("Blue Flaming Skull",
-                    IfNot.Instance(
-                        Circling.Instance(15, 20, 20, 0x0d56),
-                        SimpleWandering.Instance(20)
-                    ),
-                    Cooldown.Instance(750, PredictiveMultiAttack.Instance(15, 5 * (float)Math.PI / 180, 2, 1))
-                ));
+            )
+            .Init("Blue Flaming Skull",
+                new State(
+                    new Prioritize(
+                        new Orbit(1, 20, target: "Skull Shrine", radiusVariance: 0.5),
+                        new Wander(.6)
+                        ),
+                    new Shoot(15, 2, 5, 0, predictive: 1, coolDown: 750)
+                    )
+            );
     }
 }

@@ -1531,17 +1531,23 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.001,
+                new ItemLoot("The One True Ring", 0.00001),
                 new ItemLoot("Breastplate of the Plague", 0.0005),
                 new ItemLoot("Cursed Wand of the Corrupted", 0.004),
                 new ItemLoot("Favor of Fortune", 0.004),
                 new ItemLoot("Necklace of Fangs", 0.004),
+                new ItemLoot("Oathsworn's Staff", 0.008),
+                new ItemLoot("Oathsworn's Garments", 0.008),
                 new ItemLoot("The Forgotten Conduit", 0.009),
                 new ItemLoot("Cremation", 0.01),
+                new ItemLoot("The King's Tablet", 0.01),
                 new ItemLoot("The Executioner", 0.01),
                 new ItemLoot("Sons Sparkling", 0.04),
                 new ItemLoot("Tablet of the King's Avatar", 0.05),
                 new ItemLoot("Pizza Ring", 0.05),
                 new ItemLoot("Path of Loot Key", 0.00025),
+                new ItemLoot("Transformation Shard", 0.001),
+                new ItemLoot("Gold Cache", 0.7),
                 new ItemLoot("Potion of Life", 0.5),
                 new ItemLoot("Potion of Mana", 0.5),
                 new ItemLoot("Potion of Attack", 1.0),
@@ -1589,8 +1595,14 @@ namespace wServer.logic
             .Init("shtrs eyeswarmer",
                 new State(
                     new State("shoot",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Orbit(1.0, 2, 5, "shtrs Defense System"),
-                        new Shoot(20, 1, projectileIndex: 0, coolDown: 5000)
+                        new Shoot(20, 1, projectileIndex: 0, coolDown: 5000, coolDownOffset: 600),
+                        new TimedTransition(1200, "shoot2")
+                        ),
+                    new State("shoot2",
+                        new Orbit(1.0, 2, 5, "shtrs Defense System"),
+                        new Shoot(20, 1, projectileIndex: 0, coolDown: 800)
                         )
                     )
             )

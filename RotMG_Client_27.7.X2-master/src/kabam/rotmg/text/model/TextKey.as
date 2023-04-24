@@ -9,7 +9,9 @@ public class TextKey {
     public static const PRIMALTIER:String = "PR";
     public static const ARTIER:String = "AR";
     public static const LIGHTTIER:String = "LI";
-    public static const COSMICTIER:String = "CO";
+    public static const ANGELICTIER:String = "AN";
+    public static const COSMICTIER:String = "CS";
+    public static const OMNIVERSALTIER:String = "OMNI";
     public static const OPTIONS_EXPERIMENTAL:String = "Particles";
     public static const LOADING_TEXT:String = "Loading.text";
     public static const EMPTY_LEGENDS_LIST:String = "Legends.EmptyList";
@@ -584,8 +586,8 @@ public class TextKey {
     public static const CONDITIONEFFECT_PARALYZEDIMMUNE:String = "conditionEffect.ParalyzedImmune";
     public static const CONDITIONEFFECT_PETRIFIED:String = "conditionEffect.Petrify";
     public static const CONDITIONEFFECT_PETRIFY_IMMUNE:String = "conditionEffect.PetrifyImmune";
-    public static const CONDITIONEFFECT_CURSE:String = "conditionEffect.Curse";
-    public static const CONDITIONEFFECT_CURSE_IMMUNE:String = "conditionEffect.CurseImmune";
+    public static const CONDITIONEFFECT_CURSE:String = "Curse";
+    public static const CONDITIONEFFECT_CURSE_IMMUNE:String = "Curse Immune";
     public static const MONEY_GOLD_NEED_REGISTRATION:String = "Money.goldNeedsRegistration";
     public static const CHARACTERSLOTNEEDGOLDDIALOG_PRICE:String = "CharacterSlotNeedGoldDialog.price";
     public static const BUY_GOLD:String = "Gold.Buy";

@@ -43,16 +43,16 @@ namespace wServer.realm.entities.player
                 {"Lucky Djinn", Tuple.Create(15, 15, 1000)},
                 {"Lucky Ent", Tuple.Create(15, 15, 1000)},
                 {"Skull Shrine", Tuple.Create(16, 15, 1000)},
-                {"shtrs Defense System", Tuple.Create(16, 15, 1000)},
                 {"Pentaract", Tuple.Create(16, 15, 1000)},
                 {"Cube God", Tuple.Create(16, 15, 1000)},
-                {"Spectral Sentry", Tuple.Create(16, 15, 1000)},
-                {"Chubby Cow", Tuple.Create(16, 15, 1000)},
-                {"Grand Sphinx", Tuple.Create(16, 15, 1000)},
-                {"Lord of the Lost Lands", Tuple.Create(16, 15, 1000)},
                 {"Hermit God", Tuple.Create(16, 15, 1000)},
                 {"Ghost Ship", Tuple.Create(16, 15, 1000)},
-                {"Unknown Giant Golem", Tuple.Create(16, 15, 1000)},
+                {"Grand Sphinx", Tuple.Create(17, 16, 1000)},
+                {"Chubby Cow", Tuple.Create(17, 16, 1000)},
+                {"Boshy", Tuple.Create(17, 16, 1000)},
+                {"Spectral Sentry", Tuple.Create(18, 17, 1000)},
+                {"shtrs Defense System", Tuple.Create(19, 18, 1000)},
+                {"Lord of the Lost Lands", Tuple.Create(19, 18, 1000)},
                 {"Evil Chicken God", Tuple.Create(20, 1, 1000)},
                 {"Bonegrind The Butcher", Tuple.Create(20, 1, 1000)},
                 {"Dreadstump the Pirate King", Tuple.Create(20, 1, 1000)},
@@ -100,10 +100,12 @@ namespace wServer.realm.entities.player
 
         private static int GetFameGoal(int fame)
         {
-            if (fame >= 50000) return 0;
+            if (fame >= 200000) return 0;
+            if (fame >= 100000) return 200000;
+            if (fame >= 50000) return 100000;
             if (fame >= 20000) return 50000;
             if (fame >= 5000) return 20000;
-            if (fame >= 1000) return 5000;
+            if (fame < 5000) return 5000;
             return fame >= 100 ? 1000 : 0;
         }
 
@@ -112,11 +114,11 @@ namespace wServer.realm.entities.player
             var ret = 0;
             foreach (var i in Client.Account.Stats.ClassStates)
             {
-                if (i.BestFame >= 50000) ret += 5;
-                else if (i.BestFame >= 20000) ret += 4;
-                else if (i.BestFame >= 5000) ret += 3;
-                else if (i.BestFame >= 1000) ret += 2;
-                else if (i.BestFame >= 100) ret += 1;
+                if (i.BestFame >= 200000) ret += 5;
+                else if (i.BestFame >= 100000) ret += 4;
+                else if (i.BestFame >= 50000) ret += 3;
+                else if (i.BestFame >= 20000) ret += 2;
+                else if (i.BestFame >= 5000) ret += 1;
             }
             return ret;
         }

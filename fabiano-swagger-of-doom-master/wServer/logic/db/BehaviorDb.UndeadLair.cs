@@ -15,435 +15,110 @@ namespace wServer.logic
             .Init("Septavius the Ghost God",
                 new State(
                     new State("Idle",
-                        new PlayerWithinTransition(15, "Cycle")
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new PlayerWithinTransition(8, "LeWait")
                     ),
-                    new State("Cycle",
-                        new Shoot(15, projectileIndex: 3, coolDown: 1000),
-                        new State("Cycle Begin",
-                            new State("Cycle 1",
-                                new Shoot(15, count: 3, fixedAngle: 0),
-                                new TimedTransition(150, "Cycle 2")
-                            ),
-                            new State("Cycle 2",
-                                new Shoot(15, count: 3, fixedAngle: 18),
-                                new TimedTransition(150, "Cycle 3")
-                            ),
-                            new State("Cycle 3",
-                                new Shoot(15, count: 3, fixedAngle: 36),
-                                new TimedTransition(150, "Cycle 4")
-                            ),
-                            new State("Cycle 4",
-                                new Shoot(15, count: 3, fixedAngle: 54),
-                                new TimedTransition(150, "Cycle 5")
-                            ),
-                            new State("Cycle 5",
-                                new Shoot(15, count: 3, fixedAngle: 72),
-                                new TimedTransition(150, "Cycle 6")
-                            ),
-                            new State("Cycle 6",
-                                new ConditionalEffect(ConditionEffectIndex.Invulnerable, true),
-                                new Shoot(15, count: 3, fixedAngle: 90),
-                                new TimedTransition(150, "Cycle 7")
-                            ),
-                            new State("Cycle 7",
-                                new Shoot(15, count: 3, fixedAngle: 108),
-                                new TimedTransition(150, "Cycle 8")
-                            ),
-                            new State("Cycle 8",
-                                new Shoot(15, count: 3, fixedAngle: 126),
-                                new TimedTransition(150, "Cycle 9")
-                            ),
-                            new State("Cycle 9",
-                                new Shoot(15, count: 3, fixedAngle: 144),
-                                new TimedTransition(150, "Cycle 10")
-                            ),
-                            new State("Cycle 10",
-                                new Shoot(15, count: 3, fixedAngle: 162),
-                                new TimedTransition(150, "Cycle 11")
-                            ),
-                            new State("Cycle 11",
-                                new Shoot(15, count: 3, fixedAngle: 180),
-                                new TimedTransition(150, "Cycle 12")
-                            ),
-                            new State("Cycle 12",
-                                new Shoot(15, count: 3, fixedAngle: 198),
-                                new TimedTransition(150, "Cycle 13")
-                            ),
-                            new State("Cycle 13",
-                                new Shoot(15, count: 3, fixedAngle: 216),
-                                new TimedTransition(150, "Cycle 14")
-                            ),
-                            new State("Cycle 14",
-                                new Shoot(15, count: 3, fixedAngle: 234),
-                                new TimedTransition(150, "Cycle 15")
-                            ),
-                            new State("Cycle 15",
-                                new Shoot(15, count: 3, fixedAngle: 252),
-                                new TimedTransition(150, "Cycle 16")
-                            ),
-                            new State("Cycle 16",
-                                new Shoot(15, count: 3, fixedAngle: 270),
-                                new TimedTransition(150, "Cycle 17")
-                            ),
-                            new State("Cycle 17",
-                                new Shoot(15, count: 3, fixedAngle: 288),
-                                new TimedTransition(150, "Cycle 18")
-                            ),
-                            new State("Cycle 18",
-                                new Shoot(15, count: 3, fixedAngle: 306),
-                                new TimedTransition(150, "Cycle 19")
-                            ),
-                            new State("Cycle 19",
-                                new Shoot(15, count: 3, fixedAngle: 324),
-                                new TimedTransition(150, "Cycle 20")
-                            ),
-                            new State("Cycle 20",
-                                new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                                new Shoot(15, count: 3, fixedAngle: 342),
-                                new TimedTransition(250, "Cycle 21")
-                            ),
-                            new State("Cycle 21",
-                                new Shoot(15, count: 3, fixedAngle: 360),
-                                new TimedTransition(100, "Cycle_2")
-                            )
-                        ),
-                        new State("Cycle_2",
-                            new State("Cycle_2 1",
-                                new Shoot(15, count: 3, fixedAngle: 0),
-                                new TimedTransition(150, "Cycle_2 2")
-                            ),
-                            new State("Cycle_2 2",
-                                new Shoot(15, count: 3, fixedAngle: 18),
-                                new TimedTransition(150, "Cycle_2 3")
-                            ),
-                            new State("Cycle_2 3",
-                                new Shoot(15, count: 3, fixedAngle: 36),
-                                new TimedTransition(150, "Cycle_2 4")
-                            ),
-                            new State("Cycle_2 4",
-                                new Shoot(15, count: 3, fixedAngle: 54),
-                                new TimedTransition(150, "Cycle_2 5")
-                            ),
-                            new State("Cycle_2 5",
-                                new Shoot(15, count: 3, fixedAngle: 72),
-                                new TimedTransition(150, "Cycle_2 6")
-                            ),
-                            new State("Cycle_2 6",
-                                new ConditionalEffect(ConditionEffectIndex.Invulnerable, true),
-                                new Shoot(15, count: 3, fixedAngle: 90),
-                                new TimedTransition(150, "Cycle_2 7")
-                            ),
-                            new State("Cycle_2 7",
-                                new Shoot(15, count: 3, fixedAngle: 108),
-                                new TimedTransition(150, "Cycle_2 8")
-                            ),
-                            new State("Cycle_2 8",
-                                new Shoot(15, count: 3, fixedAngle: 126),
-                                new TimedTransition(150, "Cycle_2 9")
-                            ),
-                            new State("Cycle_2 9",
-                                new Shoot(15, count: 3, fixedAngle: 144),
-                                new TimedTransition(150, "Cycle_2 10")
-                            ),
-                            new State("Cycle_2 10",
-                                new Shoot(15, count: 3, fixedAngle: 162),
-                                new TimedTransition(150, "Cycle_2 11")
-                            ),
-                            new State("Cycle_2 11",
-                                new Shoot(15, count: 3, fixedAngle: 180),
-                                new TimedTransition(150, "Cycle_2 12")
-                            ),
-                            new State("Cycle_2 12",
-                                new Shoot(15, count: 3, fixedAngle: 198),
-                                new TimedTransition(150, "Cycle_2 13")
-                            ),
-                            new State("Cycle_2 13",
-                                new Shoot(15, count: 3, fixedAngle: 216),
-                                new TimedTransition(150, "Cycle_2 14")
-                            ),
-                            new State("Cycle_2 14",
-                                new Shoot(15, count: 3, fixedAngle: 234),
-                                new TimedTransition(150, "Cycle_2 15")
-                            ),
-                            new State("Cycle_2 15",
-                                new Shoot(15, count: 3, fixedAngle: 252),
-                                new TimedTransition(150, "Cycle_2 16")
-                            ),
-                            new State("Cycle_2 16",
-                                new Shoot(15, count: 3, fixedAngle: 270),
-                                new TimedTransition(150, "Cycle_2 17")
-                            ),
-                            new State("Cycle_2 17",
-                                new Shoot(15, count: 3, fixedAngle: 288),
-                                new TimedTransition(150, "Cycle_2 18")
-                            ),
-                            new State("Cycle_2 18",
-                                new Shoot(15, count: 3, fixedAngle: 306),
-                                new TimedTransition(150, "Cycle_2 19")
-                            ),
-                            new State("Cycle_2 19",
-                                new Shoot(15, count: 3, fixedAngle: 324),
-                                new TimedTransition(150, "Cycle_2 20")
-                            ),
-                            new State("Cycle_2 20",
-                                new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                                new Shoot(15, count: 3, fixedAngle: 342),
-                                new TimedTransition(250, "Cycle_2 21")
-                            ),
-                            new State("Cycle_2 21",
-                                new Shoot(15, count: 3, fixedAngle: 360),
-                                new TimedTransition(100, "Ring Attack + Flashing")
-                            )
-                        )
+                    new State("LeWait",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Flash(0x0000FF0C, 0.5, 4),
+                        new TimedTransition(2000, "SpawnTime")
                     ),
-                    new State("Ring Attack + Flashing",
-                        new HpLessTransition(0.1, "Spawn Minions"),
-                        new State("Flash 1",
+                    new State("SpawnTime",
                             new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                            new Flash(0x0000FF0C, 0.5, 4),
-                            new TimedTransition(2000, "Ring Attack")
-                        ),
-                        new State("Ring Attack",
-                            new Shoot(12, count: 10, fixedAngle: 12, projectileIndex: 3, coolDown: 2500),
-                            new State("Ring Attack Idle",
-                                new TimedTransition(2500, "SetEffect")
-                            ),
-                            new State("SetEffect",
-                                new ConditionalEffect(ConditionEffectIndex.Invulnerable, true),
-                                new TimedTransition(7500, "Flash 2")
-                            )
-                        ),
-                        new State("Flash 2",
-                            new Flash(0x0000FF0C, 0.2, 8),
-                            new TimedTransition(1600, "Confuse + Quiet")
-                        )
+                            new Spawn("Ghost Warrior of Septavius", 4, 0.8),
+                            new Spawn("Ghost Mage of Septavius", 4, 0.8),
+                            new Spawn("Ghost Rogue of Septavius", 4, 0.8),
+                            new TimedTransition(0, "NewCycle")
                     ),
-                    new State("Confuse + Quiet",
-                        new HpLessTransition(0.1, "Spawn Minions"),
-                        new State("Shoot",
-                            new Shoot(15, count: 3, shootAngle: 15, projectileIndex: 2, coolDown: new Cooldown(750, 250)),
-                            new Shoot(25, count: 12, fixedAngle: 0, projectileIndex: 1, coolDown: 500),
-                            new State("Confuse + Quiet Shoot Idle",
-                                new TimedTransition(5000, "Start UnsetConditionEffect")
-                            ),
-                            new State("Start UnsetConditionEffect",
-                                new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                                new TimedTransition(0, "Unset")
-                            ),
-                            new State("Unset",
-                                new TimedTransition(5000, "Stop Shooting")
-                            )
-                        ),
-                        new State("Stop Shooting",
-                            new ConditionalEffect(ConditionEffectIndex.Invulnerable, true),
-                            new Flash(0x0000FF0C, 0.5, 4),
-                            new TimedTransition(3000, "Spawn Minions"))
+                    new State("NewCycle",
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 45, coolDown: 900000, coolDownOffset: 0),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 49, coolDown: 900000, coolDownOffset: 200),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 53, coolDown: 900000, coolDownOffset: 400),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 57, coolDown: 900000, coolDownOffset: 600),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 61, coolDown: 900000, coolDownOffset: 800),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 65, coolDown: 900000, coolDownOffset: 1000),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 69, coolDown: 900000, coolDownOffset: 1200),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 73, coolDown: 900000, coolDownOffset: 1400),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 77, coolDown: 900000, coolDownOffset: 1600),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 81, coolDown: 900000, coolDownOffset: 1800),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 85, coolDown: 900000, coolDownOffset: 2000),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 89, coolDown: 900000, coolDownOffset: 2200),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 93, coolDown: 900000, coolDownOffset: 2400),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 97, coolDown: 900000, coolDownOffset: 2600),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 101, coolDown: 900000, coolDownOffset: 2800),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 105, coolDown: 900000, coolDownOffset: 3000),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 109, coolDown: 900000, coolDownOffset: 3200),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 113, coolDown: 900000, coolDownOffset: 3400),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 117, coolDown: 900000, coolDownOffset: 3600),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 121, coolDown: 900000, coolDownOffset: 3800),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 125, coolDown: 900000, coolDownOffset: 4000),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 129, coolDown: 900000, coolDownOffset: 4200),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 133, coolDown: 900000, coolDownOffset: 4400),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 137, coolDown: 900000, coolDownOffset: 4600),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 141, coolDown: 900000, coolDownOffset: 4800),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 145, coolDown: 900000, coolDownOffset: 5000),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 149, coolDown: 900000, coolDownOffset: 5200),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 153, coolDown: 900000, coolDownOffset: 5400),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 157, coolDown: 900000, coolDownOffset: 5600),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 161, coolDown: 900000, coolDownOffset: 5800),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 165, coolDown: 900000, coolDownOffset: 6000),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 169, coolDown: 900000, coolDownOffset: 6200),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 173, coolDown: 900000, coolDownOffset: 6400),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 177, coolDown: 900000, coolDownOffset: 6600),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 181, coolDown: 900000, coolDownOffset: 6800),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 185, coolDown: 900000, coolDownOffset: 7000),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 189, coolDown: 900000, coolDownOffset: 7200),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 193, coolDown: 900000, coolDownOffset: 7400),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 197, coolDown: 900000, coolDownOffset: 7600),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 201, coolDown: 900000, coolDownOffset: 7800),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 205, coolDown: 900000, coolDownOffset: 8000),
+                        new Shoot(25, projectileIndex: 0, count: 5, shootAngle: 72, fixedAngle: 209, coolDown: 900000, coolDownOffset: 8200),
+                        new Shoot(12, projectileIndex: 4, count: 12, shootAngle: 30, coolDown: 1200, coolDownOffset: 400),
+                        new TimedTransition(8200, "QuietPhase"),
+                        new HpLessTransition(.45, "Invuln")
                     ),
-                    new State("Spawn Minions",
-                        new State("Spawn the Fegits",
+                    new State("QuietPhase",
+                        new Wander(0.25),
+                        new Shoot(15, count: 12, shootAngle: 14, projectileIndex: 1, coolDown: 700, coolDownOffset: 200),
+                        new Shoot(15, count: 3, shootAngle: 10, predictive: 0.4, projectileIndex: 3, coolDown: 200),
+                        new HpLessTransition(.45, "Invuln")
+                    ),
+                    new State("Invuln",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Flash(0x0000FF0C, 0.5, 4),
+                        new Wander(0.3),
+                        new TimedTransition(2500, "SpawnTimeTwo")
+                    ),
+                    new State("SpawnTimeTwo",
                             new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                            new Spawn("Ghost Warrior of Septavius", 6, 0.8),
-                            new Spawn("Ghost Mage of Septavius", 6, 0.8),
-                            new Spawn("Ghost Rogue of Septavius", 6, 0.8),
-                            new TimedTransition(0, "Lets Shoot Fegits")
-                        ),
-                        new State("Lets Shoot Fegits",
-                            new Shoot(15, count: 3, shootAngle: 15, projectileIndex: 4, coolDown: new Cooldown(750, 250)),
-                            new Spawn("Ghost Warrior of Septavius", 2, 0.7, coolDown: 1000),
-                            new Spawn("Ghost Mage of Septavius", 2, 0.7, coolDown: 1000),
-                            new Spawn("Ghost Rogue of Septavius", 2, 0.7, coolDown: 1000),
-                            new State("Cycle_Spawn",
-                                new State("Cycle_Spawn_2 Begin",
-                                    new State("Cycle_Spawn 1",
-                                        new Shoot(15, count: 3, fixedAngle: 0),
-                                        new TimedTransition(150, "Cycle_Spawn 2")
-                                    ),
-                                    new State("Cycle_Spawn 2",
-                                        new Shoot(15, count: 3, fixedAngle: 18),
-                                        new TimedTransition(150, "Cycle_Spawn 3")
-                                    ),
-                                    new State("Cycle_Spawn 3",
-                                        new Shoot(15, count: 3, fixedAngle: 36),
-                                        new TimedTransition(150, "Cycle_Spawn 4")
-                                    ),
-                                    new State("Cycle_Spawn 4",
-                                        new Shoot(15, count: 3, fixedAngle: 54),
-                                        new TimedTransition(150, "Cycle_Spawn 5")
-                                    ),
-                                    new State("Cycle_Spawn 5",
-                                        new Shoot(15, count: 3, fixedAngle: 72),
-                                        new TimedTransition(150, "Cycle_Spawn 6")
-                                    ),
-                                    new State("Cycle_Spawn 6",
-                                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, true),
-                                        new Shoot(15, count: 3, fixedAngle: 90),
-                                        new TimedTransition(150, "Cycle_Spawn 7")
-                                    ),
-                                    new State("Cycle_Spawn 7",
-                                        new Shoot(15, count: 3, fixedAngle: 108),
-                                        new TimedTransition(150, "Cycle_Spawn 8")
-                                    ),
-                                    new State("Cycle_Spawn 8",
-                                        new Shoot(15, count: 3, fixedAngle: 126),
-                                        new TimedTransition(150, "Cycle_Spawn 9")
-                                    ),
-                                    new State("Cycle_Spawn 9",
-                                        new Shoot(15, count: 3, fixedAngle: 144),
-                                        new TimedTransition(150, "Cycle_Spawn 10")
-                                    ),
-                                    new State("Cycle_Spawn 10",
-                                        new Shoot(15, count: 3, fixedAngle: 162),
-                                        new TimedTransition(150, "Cycle_Spawn 11")
-                                    ),
-                                    new State("Cycle_Spawn 11",
-                                        new Shoot(15, count: 3, fixedAngle: 180),
-                                        new TimedTransition(150, "Cycle_Spawn 12")
-                                    ),
-                                    new State("Cycle_Spawn 12",
-                                        new Shoot(15, count: 3, fixedAngle: 198),
-                                        new TimedTransition(150, "Cycle_Spawn 13")
-                                    ),
-                                    new State("Cycle_Spawn 13",
-                                        new Shoot(15, count: 3, fixedAngle: 216),
-                                        new TimedTransition(150, "Cycle_Spawn 14")
-                                    ),
-                                    new State("Cycle_Spawn 14",
-                                        new Shoot(15, count: 3, fixedAngle: 234),
-                                        new TimedTransition(150, "Cycle_Spawn 15")
-                                    ),
-                                    new State("Cycle_Spawn 15",
-                                        new Shoot(15, count: 3, fixedAngle: 252),
-                                        new TimedTransition(150, "Cycle_Spawn 16")
-                                    ),
-                                    new State("Cycle_Spawn 16",
-                                        new Shoot(15, count: 3, fixedAngle: 270),
-                                        new TimedTransition(150, "Cycle_Spawn 17")
-                                    ),
-                                    new State("Cycle_Spawn 17",
-                                        new Shoot(15, count: 3, fixedAngle: 288),
-                                        new TimedTransition(150, "Cycle_Spawn 18")
-                                    ),
-                                    new State("Cycle_Spawn 18",
-                                        new Shoot(15, count: 3, fixedAngle: 306),
-                                        new TimedTransition(150, "Cycle_Spawn 19")
-                                    ),
-                                    new State("Cycle_Spawn 19",
-                                        new Shoot(15, count: 3, fixedAngle: 324),
-                                        new TimedTransition(150, "Cycle_Spawn 20")
-                                    ),
-                                    new State("Cycle_Spawn 20",
-                                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                                        new Shoot(15, count: 3, fixedAngle: 342),
-                                        new TimedTransition(250, "Cycle_Spawn 21")
-                                    ),
-                                    new State("Cycle_Spawn 21",
-                                        new Shoot(15, count: 3, fixedAngle: 360),
-                                        new TimedTransition(100, "Cycle_Spawn_2")
-                                    )
-                                ),
-                                new State("Cycle_Spawn_2",
-                                    new State("Cycle_Spawn_2 1",
-                                        new Shoot(15, count: 3, fixedAngle: 0),
-                                        new TimedTransition(150, "Cycle_Spawn_2 2")
-                                    ),
-                                    new State("Cycle_Spawn_2 2",
-                                        new Shoot(15, count: 3, fixedAngle: 18),
-                                        new TimedTransition(150, "Cycle_Spawn_2 3")
-                                    ),
-                                    new State("Cycle_Spawn_2 3",
-                                        new Shoot(15, count: 3, fixedAngle: 36),
-                                        new TimedTransition(150, "Cycle_Spawn_2 4")
-                                    ),
-                                    new State("Cycle_Spawn_2 4",
-                                        new Shoot(15, count: 3, fixedAngle: 54),
-                                        new TimedTransition(150, "Cycle_Spawn_2 5")
-                                    ),
-                                    new State("Cycle_Spawn_2 5",
-                                        new Shoot(15, count: 3, fixedAngle: 72),
-                                        new TimedTransition(150, "Cycle_Spawn_2 6")
-                                    ),
-                                    new State("Cycle_Spawn_2 6",
-                                        new ConditionalEffect(ConditionEffectIndex.Invulnerable, true),
-                                        new Shoot(15, count: 3, fixedAngle: 90),
-                                        new TimedTransition(150, "Cycle_Spawn_2 7")
-                                    ),
-                                    new State("Cycle_Spawn_2 7",
-                                        new Shoot(15, count: 3, fixedAngle: 108),
-                                        new TimedTransition(150, "Cycle_Spawn_2 8")
-                                    ),
-                                    new State("Cycle_Spawn_2 8",
-                                        new Shoot(15, count: 3, fixedAngle: 126),
-                                        new TimedTransition(150, "Cycle_Spawn_2 9")
-                                    ),
-                                    new State("Cycle_Spawn_2 9",
-                                        new Shoot(15, count: 3, fixedAngle: 144),
-                                        new TimedTransition(150, "Cycle_Spawn_2 10")
-                                    ),
-                                    new State("Cycle_Spawn_2 10",
-                                        new Shoot(15, count: 3, fixedAngle: 162),
-                                        new TimedTransition(150, "Cycle_Spawn_2 11")
-                                    ),
-                                    new State("Cycle_Spawn_2 11",
-                                        new Shoot(15, count: 3, fixedAngle: 180),
-                                        new TimedTransition(150, "Cycle_Spawn_2 12")
-                                    ),
-                                    new State("Cycle_Spawn_2 12",
-                                        new Shoot(15, count: 3, fixedAngle: 198),
-                                        new TimedTransition(150, "Cycle_Spawn_2 13")
-                                    ),
-                                    new State("Cycle_Spawn_2 13",
-                                        new Shoot(15, count: 3, fixedAngle: 216),
-                                        new TimedTransition(150, "Cycle_Spawn_2 14")
-                                    ),
-                                    new State("Cycle_Spawn_2 14",
-                                        new Shoot(15, count: 3, fixedAngle: 234),
-                                        new TimedTransition(150, "Cycle_Spawn_2 15")
-                                    ),
-                                    new State("Cycle_Spawn_2 15",
-                                        new Shoot(15, count: 3, fixedAngle: 252),
-                                        new TimedTransition(150, "Cycle_Spawn_2 16")
-                                    ),
-                                    new State("Cycle_Spawn_2 16",
-                                        new Shoot(15, count: 3, fixedAngle: 270),
-                                        new TimedTransition(150, "Cycle_Spawn_2 17")
-                                    ),
-                                    new State("Cycle_Spawn_2 17",
-                                        new Shoot(15, count: 3, fixedAngle: 288),
-                                        new TimedTransition(150, "Cycle_Spawn_2 18")
-                                    ),
-                                    new State("Cycle_Spawn_2 18",
-                                        new Shoot(15, count: 3, fixedAngle: 306),
-                                        new TimedTransition(150, "Cycle_Spawn_2 19")
-                                    ),
-                                    new State("Cycle_Spawn_2 19",
-                                        new Shoot(15, count: 3, fixedAngle: 324),
-                                        new TimedTransition(150, "Cycle_Spawn_2 20")
-                                    ),
-                                    new State("Cycle_Spawn_2 20",
-                                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                                        new Shoot(15, count: 3, fixedAngle: 342),
-                                        new TimedTransition(250, "Cycle_Spawn_2 21")
-                                    ),
-                                    new State("Cycle_Spawn_2 21",
-                                        new Shoot(15, count: 3, fixedAngle: 360),
-                                        new TimedTransition(1000, "Ring Attack + Flashing")
-                                    )
-                                )
-                            )
-                        )
+                            new Spawn("Ghost Warrior of Septavius", 3, 0.8),
+                            new Spawn("Ghost Mage of Septavius", 3, 0.8),
+                            new Spawn("Ghost Rogue of Septavius", 3, 0.8),
+                            new TimedTransition(0, "Chase")
+                    ),
+                    new State("Chase",
+                        new Follow(.4, 8, 1),
+                        new Shoot(12, count: 3, shootAngle: 15, predictive: 0.1, projectileIndex: 0, coolDown: 400, coolDownOffset: 400),
+                        new Shoot(10, projectileIndex: 4, count: 10, shootAngle: 36, coolDown: 800)
                     )
                 ),
                 new Threshold(0.001,
+                new ItemLoot("The One True Ring", 0.00001),
+                new ItemLoot("The Realmdex", 0.0001),
                 new ItemLoot("Boneshatter", 0.004),
                 new ItemLoot("Ectoplasm Blade", 0.005),
+                new ItemLoot("Soul Buster", 0.01),
                 new ItemLoot("Soulkeeper", 0.01),
                 new ItemLoot("Mercy of Yazanahar", 0.01),
                 new ItemLoot("Shattered War Axe", 0.01),
                 new ItemLoot("Spectral Armor", 0.04),
-                new ItemLoot("Doom Bow", 0.05),
+                new ItemLoot("Ghostly Disguise", 0.05),
+                new ItemLoot("Doom Bow", 0.04),
                 new ItemLoot("The Necronomicon", 0.05),
                 new ItemLoot("Bow of the Morning Star", 0.02),
                 new ItemLoot("Path of Loot Key", 0.000125),
+                new ItemLoot("Transformation Shard", 0.001),
+                new ItemLoot("Gold Cache", 0.1),
                 new ItemLoot("Potion of Wisdom", 1.0),
                 new ItemLoot("Potion of Wisdom", 0.8),
                 new ItemLoot("Potion of Attack", 0.25),
@@ -463,15 +138,15 @@ namespace wServer.logic
             )
             .Init("Ghost Warrior of Septavius",
                 new State(
-                    new Shoot(10, coolDown: new Cooldown(2000, 1000)),
+                    new Shoot(8, coolDown: 800),
                     new State("Follow",
                         new Prioritize(
-                            new Follow(.4, 7, 1),
+                            new Wander(0.2),
                             new Protect(1, "Septavius the Ghost God", protectionRange: 1, reprotectRange: 2)
                         )
                     ),
                     new State("Wander",
-                        new Wander(0.4)
+                        new Wander(0.3)
                     )
                 ),
                 new ItemLoot("Health Potion", 0.2),
@@ -479,15 +154,15 @@ namespace wServer.logic
             )
             .Init("Ghost Mage of Septavius",
                 new State(
-                    new Shoot(10, coolDown: new Cooldown(2000, 1000)),
+                    new Shoot(14, coolDown: 1200),
                     new State("Follow",
                         new Prioritize(
-                            new Follow(.4, 7, 1),
+                            new Wander(0.2),
                             new Protect(1, "Septavius the Ghost God", protectionRange: 1, reprotectRange: 2)
                         )
                     ),
                     new State("Wander",
-                        new Wander(0.4)
+                        new Wander(0.3)
                     )
                 ),
                 new ItemLoot("Health Potion", 0.2),
@@ -495,15 +170,15 @@ namespace wServer.logic
             )
             .Init("Ghost Rogue of Septavius",
                 new State(
-                    new Shoot(10, coolDown: new Cooldown(2000, 1000)),
+                    new Shoot(10, coolDown: 1000),
                     new State("Follow",
                         new Prioritize(
-                            new Follow(.4, 7, 1),
+                            new Wander(0.2),
                             new Protect(1, "Septavius the Ghost God", protectionRange: 1, reprotectRange: 2)
                         )
                     ),
                     new State("Wander",
-                        new Wander(0.4)
+                        new Wander(0.3)
                     )
                 ),
                 new ItemLoot("Health Potion", 0.2),

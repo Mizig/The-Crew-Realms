@@ -1105,8 +1105,8 @@
    </Ground>
    <Ground type="0xbf" id="Quicksand">
       <Texture>
-         <File>lofiEnvironment2</File>
-         <Index>0x08</Index>
+        <File>lofiProjs</File>
+        <Index>0xa0</Index>
       </Texture>
       <BlendPriority>3</BlendPriority>
       <Sinking/>
@@ -3750,28 +3750,24 @@
       <File>lofiObj6</File>
       <Index>0x0f</Index>
     </Texture>
-    <BlendPriority>18</BlendPriority>
   </Ground>
   <Ground type="0x325c" id="Volcano Rock Medium">
     <Texture>
       <File>lofiObj6</File>
       <Index>0x1f</Index>
     </Texture>
-    <BlendPriority>18</BlendPriority>
   </Ground>
   <Ground type="0x325d" id="Volcano Rock Dark">
     <Texture>
       <File>lofiObj6</File>
       <Index>0x2f</Index>
     </Texture>
-    <BlendPriority>18</BlendPriority>
   </Ground>
   <Ground type="0x325e" id="Volcano Rock Warm">
     <Texture>
       <File>lofiObj6</File>
       <Index>0x0e</Index>
     </Texture>
-    <BlendPriority>18</BlendPriority>
   </Ground>
   <Ground type="0x325f" id="Volcano Fire">
     <Texture>
@@ -3781,7 +3777,6 @@
     <MinDamage>45</MinDamage>
     <MaxDamage>45</MaxDamage>
     <Animate dx=".6" dy=".6">Flow</Animate>
-    <BlendPriority>3</BlendPriority>
   </Ground>
   <Ground type="0x3260" id="Volcano Magma">
     <Texture>
@@ -3793,6 +3788,5 @@
     <Animate dx=".3" dy=".3">Flow</Animate>
     <Sink/>
     <Speed>.666</Speed>
-    <BlendPriority>2</BlendPriority>
   </Ground>
 </GroundTypes>

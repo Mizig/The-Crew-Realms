@@ -276,12 +276,12 @@ namespace wServer.realm.commands
                     return false;
                 }
                 int c = int.Parse(args[0]);
-                if (!(player.Client.Account.Rank > 4) && c > 25)
+                if (!(player.Client.Account.Rank > 4) && c > 500)
                 {
-                    player.SendError("Maximum spawn count is set to 25!");
+                    player.SendError("Maximum spawn count is set to 500!");
                     return false;
                 }
-                if (player.Client.Account.Rank > 4 && c > 25)
+                if (player.Client.Account.Rank > 4 && c > 500)
                 {
                     player.SendInfo("Bypass made!");
                 }
@@ -652,40 +652,6 @@ namespace wServer.realm.commands
             }
             string saytext = string.Join(" ", args);
             player.SendEnemy("Oryx the Mad God", saytext);
-            return true;
-        }
-    }
-
-    internal class OnlineCommand : Command //get all players from all worlds (this may become too large!)
-    {
-        public OnlineCommand()
-            : base("online", 1)
-        {
-        }
-
-        protected override bool Process(Player player, RealmTime time, string[] args)
-        {
-            StringBuilder sb = new StringBuilder("Online players: ");
-
-            foreach (KeyValuePair<int, World> w in player.Manager.Worlds)
-            {
-                World world = w.Value;
-                if (w.Key != 0)
-                {
-                    Player[] copy = world.Players.Values.ToArray();
-                    if (copy.Length != 0)
-                    {
-                        for (int i = 0; i < copy.Length; i++)
-                        {
-                            sb.Append(copy[i].Name);
-                            sb.Append(", ");
-                        }
-                    }
-                }
-            }
-            string fixedString = sb.ToString().TrimEnd(',', ' '); //clean up trailing ", "s
-
-            player.SendInfo(fixedString);
             return true;
         }
     }

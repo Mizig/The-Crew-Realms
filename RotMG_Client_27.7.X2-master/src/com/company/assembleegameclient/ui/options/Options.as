@@ -137,7 +137,7 @@ public class Options extends Sprite {
     }
 
     private static function makeCursorSelectLabels():Vector.<StringBuilder> {
-        return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("ProX"), new StaticStringBuilder("X2"), new StaticStringBuilder("X3"), new StaticStringBuilder("X4"), new StaticStringBuilder("Corner1"), new StaticStringBuilder("Corner2"), new StaticStringBuilder("Symb"), new StaticStringBuilder("Alien"), new StaticStringBuilder("Xhair"), new StaticStringBuilder("Dystopia+")]);
+        return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("OG"), new StaticStringBuilder("Heart"), new StaticStringBuilder("Revamp"), new StaticStringBuilder("OG 2"), new StaticStringBuilder("Corner"), new StaticStringBuilder("Square"), new StaticStringBuilder("Symb"), new StaticStringBuilder("Alien"), new StaticStringBuilder("Xhair"), new StaticStringBuilder("Dystopia")]);
     }
 
     private static function makeLineBuilder(_arg_1:String):LineBuilder {

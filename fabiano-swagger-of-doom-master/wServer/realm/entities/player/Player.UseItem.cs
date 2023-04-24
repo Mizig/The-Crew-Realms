@@ -639,7 +639,7 @@ namespace wServer.realm.entities.player
                         this.Aoe(eff.Radius, true, player =>
                         {
                             players.Add(player as Player);
-                            ActivateHealHp(player as Player, totalDmg, pkts);
+                            ActivateHealHp(player as Player, totalDmg / 5, pkts); //added division
                         });
 
                         if (enemies.Count > 0)
@@ -738,6 +738,28 @@ namespace wServer.realm.entities.player
                         });
                         BroadcastSync(pkts, p => this.Dist(p) < 25);
                     }
+                        break;
+
+                    case ActivateEffects.GoldCache:
+                        {
+                            int Fame = Random.Next(0, 0);
+                            switch (Fame)
+                            {
+                                case 0:
+                                    {
+
+                                        var db = new db.Database();
+
+                                        Fame = db.UpdateFame(Client.Account, 250);
+                                        UpdateCount++;
+                                        db.Dispose();
+                                        SendHelp("+250 Fame!");
+                                    }
+                                    break;
+
+                            }
+
+                        }
                         break;
 
                     case ActivateEffects.Decoy:

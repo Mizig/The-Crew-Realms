@@ -45,6 +45,10 @@ public class Slot extends Sprite {
     public static const PRISM_TYPE:int = 22;
     public static const SCEPTER_TYPE:int = 23;
     public static const SHURIKEN_TYPE:int = 24;
+    public static const SHEATH_TYPE:int = 29;
+    public static const DICE_TYPE:int = 30;
+    public static const MASK_TYPE:int = 31;
+    public static const ANCHOR_TYPE:int = 32;
     public static const WIDTH:int = 40;
     public static const HEIGHT:int = 40;
     public static const BORDER:int = 4;
@@ -121,6 +125,14 @@ public class Slot extends Sprite {
                 return ("Scepter");
             case SHURIKEN_TYPE:
                 return ("Shuriken");
+            case SHEATH_TYPE:
+                return ("Sheath");
+            case DICE_TYPE:
+                return ("Dice");
+            case MASK_TYPE:
+                return ("Mask");
+            case ANCHOR_TYPE:
+                return ("Anchor");
         }
         return ("Invalid Type!");
     }
@@ -218,6 +230,18 @@ public class Slot extends Sprite {
                 break;
             case SCEPTER_TYPE:
                 _local_1 = AssetLibrary.getImageFromSet("lofiObj6", 192);
+                break;
+            case SHEATH_TYPE:
+                _local_1 = AssetLibrary.getImageFromSet("lofiObj6", 167);
+                break;
+            case DICE_TYPE:
+                _local_1 = AssetLibrary.getImageFromSet("lofiObj6", 200);
+                break;
+            case MASK_TYPE:
+                _local_1 = AssetLibrary.getImageFromSet("lofiProjs", 255);
+                break;
+            case ANCHOR_TYPE:
+                _local_1 = AssetLibrary.getImageFromSet("lofiProjs", 254);
                 break;
         }
         if (this.backgroundImage_ == null) {

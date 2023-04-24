@@ -62,19 +62,25 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.001,
+                new ItemLoot("The One True Ring", 0.00001),
                 new ItemLoot("Flesh Trap", 0.004),
                 new ItemLoot("Helldom Shell", 0.004),
                 new ItemLoot("Demon Lord's Wrath", 0.005),
+                new ItemLoot("Blade of the Underworld", 0.01),
+                new ItemLoot("Shattered Caliburn", 0.01),
                 new ItemLoot("Robe of Bloodbath", 0.01),
                 new ItemLoot("Abaddon's Bracelet", 0.01),
                 new ItemLoot("Hellstone", 0.01),
                 new ItemLoot("Burning Tome", 0.01),
                 new ItemLoot("Destructor Armor", 0.05),
+                new ItemLoot("Melting Ring", 0.05),
                 new ItemLoot("Ring of the Demon Lord", 0.05),
                 new ItemLoot("Demon Blade", 0.05),
                 new ItemLoot("Sword of Illumination", 0.02),
                 new ItemLoot("Thousand Suns Spell", 0.05),
                 new ItemLoot("Path of Loot Key", 0.000125),
+                new ItemLoot("Transformation Shard", 0.001),
+                new ItemLoot("Gold Cache", 0.1),
                 new ItemLoot("Potion of Vitality", 1.0),
                 new ItemLoot("Potion of Defense", 1.0),
                 new ItemLoot("Potion of Vitality", 0.25),
@@ -112,6 +118,31 @@ namespace wServer.logic
                         new Decay(100)
                         )
                     )
+            )
+            .Init("White Demon of the Abyss",
+                new State(
+                    new Prioritize(
+                        new StayAbove(1, 200),
+                        new Follow(1, range: 7),
+                        new Wander(0.4)
+                        ),
+                    new Shoot(10, 3, 20, predictive: 1, coolDown: 500)
+                    ),
+                new Threshold(0.001,
+                new ItemLoot("Potion of Attack", 0.05),
+                new ItemLoot("Health Potion", 0.10),
+                new ItemLoot("Magic Potion", 0.10),
+                new TierLoot(7, ItemType.Weapon, 0.12),
+                new TierLoot(8, ItemType.Weapon, 0.12),
+                new TierLoot(3, ItemType.Ability, 0.14),
+                new TierLoot(4, ItemType.Ability, 0.14),
+                new TierLoot(8, ItemType.Armor, 0.09),
+                new TierLoot(9, ItemType.Armor, 0.09),
+                new TierLoot(3, ItemType.Ring, 0.10),
+                new TierLoot(4, ItemType.Ring, 0.10),
+                new EggLoot(EggRarity.Common, 0.05),
+                new EggLoot(EggRarity.Uncommon, 0.025)
+                )
             )
             .Init("Imp of the Abyss",
                 new State(

@@ -56,11 +56,11 @@ public class MyPlayerToolTip extends ToolTip {
         this.player_.animatedChar_ = this.factory.makeCharacter(_local_4.template);
         this.playerPanel_ = new GameObjectListItem(0xB3B3B3, true, this.player_);
         addChild(this.playerPanel_);
-        this.hpBar_ = new StatusBar(176, 16, 14693428, 0x545454, TextKey.STATUS_BAR_HEALTH_POINTS);
+        this.hpBar_ = new StatusBar(176, 16, 15936042, 0x545454, TextKey.STATUS_BAR_HEALTH_POINTS); //14693428 old hp color
         this.hpBar_.x = 6;
         this.hpBar_.y = 40;
         addChild(this.hpBar_);
-        this.mpBar_ = new StatusBar(176, 16, 6325472, 0x545454, TextKey.STATUS_BAR_MANA_POINTS);
+        this.mpBar_ = new StatusBar(176, 16, 5273343, 0x545454, TextKey.STATUS_BAR_MANA_POINTS); //6325472 old mp color
         this.mpBar_.x = 6;
         this.mpBar_.y = 64;
         addChild(this.mpBar_);

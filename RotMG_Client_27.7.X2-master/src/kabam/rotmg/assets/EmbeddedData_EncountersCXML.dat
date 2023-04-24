@@ -1133,7 +1133,7 @@
          <ObjectId>Vortex</ObjectId>
          <Speed>35</Speed>
          <Damage>250</Damage>
-         <Size>300</Size>
+         <Size>200</Size>
          <LifetimeMS>5000</LifetimeMS>
          <MultiHit/>
          <PassesCover/>
@@ -1753,27 +1753,22 @@
          <Damage>45</Damage>
          <Size>90</Size>
          <LifetimeMS>3000</LifetimeMS>
-         <ConditionEffect duration="2.6">Blind</ConditionEffect>
+         <MultiHit/>
+         <ArmorPiercing/>
+         <ConditionEffect duration="2.2">Blind</ConditionEffect>
       </Projectile>
       <Projectile id="1">
          <ObjectId>OctoBlast</ObjectId>
          <Speed>55</Speed>
-         <Damage>65</Damage>
+         <Damage>90</Damage>
          <Size>110</Size>
          <LifetimeMS>3000</LifetimeMS>
+         <MultiHit/>
       </Projectile>
       <Projectile id="2">
          <ObjectId>Deep Sea Blast</ObjectId>
          <Speed>55</Speed>
-         <Damage>100</Damage>
-         <Size>210</Size>
-         <LifetimeMS>3200</LifetimeMS>
-         <MultiHit/>
-      </Projectile>
-      <Projectile id="3">
-         <ObjectId>Deep Sea Blast Yellow</ObjectId>
-         <Speed>55</Speed>
-         <Damage>100</Damage>
+         <Damage>150</Damage>
          <Size>210</Size>
          <LifetimeMS>3200</LifetimeMS>
          <MultiHit/>
@@ -1797,18 +1792,18 @@
       </AnimatedTexture>
       <Projectile id="0">
          <ObjectId>Snake Shot Yellow</ObjectId>
-         <Damage>50</Damage>
+         <Damage>60</Damage>
          <Speed>65</Speed>
          <Size>80</Size>
          <LifetimeMS>1500</LifetimeMS>
       </Projectile>
       <Projectile id="1">
          <ObjectId>Yellow Swipe</ObjectId>
-         <Damage>60</Damage>
+         <Damage>35</Damage>
          <Speed>45</Speed>
          <Size>100</Size>
          <LifetimeMS>2000</LifetimeMS>
-         <ConditionEffect duration=".4">Paralyzed</ConditionEffect>
+         <ConditionEffect duration="0.8">Paralyzed</ConditionEffect>
       </Projectile>
       <DisplayId>{encounters.Hermit_Minion}</DisplayId>
    </Object>
@@ -1828,13 +1823,22 @@
       <MaxHitPoints>10000</MaxHitPoints>
       <XpMult>0.0</XpMult>
       <Size>110</Size>
-      <Defense>0</Defense>
+      <Defense>12</Defense>
       <Projectile id="0">
          <ObjectId>Water Shot</ObjectId>
          <Speed>35</Speed>
-         <Damage>50</Damage>
+         <Damage>55</Damage>
          <Size>100</Size>
          <LifetimeMS>2000</LifetimeMS>
+         <MultiHit/>
+      </Projectile>
+      <Projectile id="0">
+         <ObjectId>Water Shot</ObjectId>
+         <Speed>55</Speed>
+         <Damage>65</Damage>
+         <Size>100</Size>
+         <LifetimeMS>800</LifetimeMS>
+         <MultiHit/>
       </Projectile>
       <DisplayId>{encounters.Whirlpool}</DisplayId>
    </Object>
@@ -1865,6 +1869,8 @@
          <Damage>45</Damage>
          <Size>100</Size>
          <LifetimeMS>600</LifetimeMS>
+         <ArmorPiercing/>
+         <MultiHit/>
       </Projectile>
       <Projectile id="1">
          <ObjectId>Tentacle Ball</ObjectId>
@@ -1872,6 +1878,8 @@
          <Damage>40</Damage>
          <Size>80</Size>
          <LifetimeMS>600</LifetimeMS>
+         <ArmorPiercing/>
+         <MultiHit/>
       </Projectile>
       <DisplayId>{encounters.Hermit_God_Tentacle}</DisplayId>
    </Object>

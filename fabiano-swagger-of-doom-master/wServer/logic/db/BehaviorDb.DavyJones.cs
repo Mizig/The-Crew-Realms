@@ -15,7 +15,7 @@ namespace wServer.logic
                 new State(
                     new State("Wait",
                         new Wander(.1),
-                        new TimedTransition(5000, "Floating")
+                        new TimedTransition(100, "Floating")
                         ),
                     new State("Floating",
                         new Wander(.25),
@@ -24,6 +24,8 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.001,
+                new ItemLoot("The One True Ring", 0.00001),
+                new ItemLoot("Whisper of the Seven Seas", 0.0005),
                 new ItemLoot("Soul Warden", 0.004),
                 new ItemLoot("Seal of the Necropolis", 0.004),
                 new ItemLoot("The Nuruaj", 0.01),
@@ -36,6 +38,8 @@ namespace wServer.logic
                 new ItemLoot("Spectral Cloth Armor", 0.08),
                 new ItemLoot("Captain's Ring", 0.10),
                 new ItemLoot("Path of Loot Key", 0.000125),
+                new ItemLoot("Transformation Shard", 0.001),
+                new ItemLoot("Gold Cache", 0.4),
                 new ItemLoot("Potion of Attack", 1.0),
                 new ItemLoot("Potion of Wisdom", 1.0),
                 new ItemLoot("Potion of Attack", 0.75),

@@ -306,6 +306,7 @@ public enum ActivateEffects
     RemoveNegativeConditionsSelf,
     IncrementStat,
     Pet,
+    GoldCache,
     PermaPet,
     Create,
     UnlockPortal,

@@ -3,110 +3,90 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using wServer.realm;
-using wServer.logic.attack;
-using wServer.logic.movement;
+using wServer.logic.behaviors;
 using wServer.logic.loot;
-using wServer.logic.taunt;
-using wServer.logic.cond;
+using wServer.logic.transitions;
 
 namespace wServer.logic
 {
     partial class BehaviorDb
     {
-        static _ CubeGod = Behav()
-            .Init(0x0d59, Behaves("Cube God",
-                    SimpleWandering.Instance(1, .5f),
-                    new RunBehaviors(
-                        Cooldown.Instance(750, PredictiveMultiAttack.Instance(25, 10 * (float)Math.PI / 180, 9, 1, projectileIndex: 0)),
-                        Cooldown.Instance(1500, PredictiveMultiAttack.Instance(25, 10 * (float)Math.PI / 180, 4, 1, projectileIndex: 1)),
-                        If.Instance(
-                            IsEntityPresent.Instance(15, null),
-                            OrderGroup.Instance(20, "Cube Minions", new SetKey(-1, 0)),
-                            If.Instance(
-                                IsEntityNotPresent.Instance(20, null),
-                                OrderGroup.Instance(20, "Cube Minions", new SetKey(-1, 1))
-                            )
-                        )
-                    ),
-                    IfNot.Instance(
-                        Once.Instance(
-                            new RunBehaviors(
-                                SpawnMinionImmediate.Instance(0x0d5a, 5, 3, 4),
-                                SpawnMinionImmediate.Instance(0x0d5b, 5, 5, 10),
-                                SpawnMinionImmediate.Instance(0x0d5c, 5, 5, 10)
-                            )
-                        ),
-                        Rand.Instance(
-                            Reproduce.Instance(0x0d5a, 4, 5000, 20),
-                            Reproduce.Instance(0x0d5b, 20, 1000, 20),
-                            Reproduce.Instance(0x0d5c, 20, 1000, 20)
-                        )
-                    ),
-                    loot: new LootBehavior(LootDef.Empty,
-                        Tuple.Create(100, new LootDef(0, 3, 0, 8,
-                            Tuple.Create(0.001, (ILoot)new ItemLoot("Dirk of Cronus")),
-
-                            Tuple.Create(0.01, (ILoot)new TierLoot(11, ItemType.Weapon)),
-                            Tuple.Create(0.01, (ILoot)new TierLoot(11, ItemType.Armor)),
-                            Tuple.Create(0.01, (ILoot)new TierLoot(5, ItemType.Ring)),
-
-                            Tuple.Create(0.02, (ILoot)new TierLoot(10, ItemType.Weapon)),
-                            Tuple.Create(0.02, (ILoot)new TierLoot(10, ItemType.Armor)),
-
-                            Tuple.Create(0.03, (ILoot)new TierLoot(9, ItemType.Weapon)),
-                            Tuple.Create(0.03, (ILoot)new TierLoot(5, ItemType.Ability)),
-                            Tuple.Create(0.03, (ILoot)new TierLoot(9, ItemType.Armor)),
-
-                            Tuple.Create(0.05, (ILoot)new StatPotionsLoot(1, 2)),
-                            Tuple.Create(0.05, (ILoot)new TierLoot(4, ItemType.Ring)),
-
-                            Tuple.Create(0.1, (ILoot)new TierLoot(4, ItemType.Ability)),
-                            Tuple.Create(0.1, (ILoot)new TierLoot(8, ItemType.Armor)),
-
-                            Tuple.Create(0.2, (ILoot)new TierLoot(8, ItemType.Weapon)),
-                            Tuple.Create(0.2, (ILoot)new TierLoot(7, ItemType.Armor)),
-                            Tuple.Create(0.2, (ILoot)new TierLoot(3, ItemType.Ring))
-                        ))
-                    )
-                ))
-            .Init(0x0d5a, Behaves("Cube Overseer",
-                    IfNot.Instance(
-                        Circling.Instance(5, 25, 4, 0x0d59),
-                        SimpleWandering.Instance(2)
-                    ),
-                    new RunBehaviors(
-                        Cooldown.Instance(1000, PredictiveMultiAttack.Instance(10, 5 * (float)Math.PI / 180, 4, 1, projectileIndex: 0)),
-                        Cooldown.Instance(2000, PredictiveAttack.Instance(10, 1, projectileIndex: 1))
-                    )
-                ))
-            .Init(0x0d5b, Behaves("Cube Defender",
-                    IfNot.Instance(
-                        IfEqual.Instance(-1, 0,
-                            Chasing.Instance(7, 20, 1, null),
-                            IfNot.Instance(
-                                Chasing.Instance(7, 25, 7.5f, 0x0d5a),
-                                Circling.Instance(7.5f, 25, 7, 0x0d59)
-                            )
-                        ),
-                        SimpleWandering.Instance(5)
-                    ),
-                    Cooldown.Instance(500, SimpleAttack.Instance(10))
-                ))
-            .Init(0x0d5c, Behaves("Cube Blaster",
-                    IfNot.Instance(
-                        IfEqual.Instance(-1, 0,
-                            Chasing.Instance(7, 20, 1, null),
-                            IfNot.Instance(
-                                Chasing.Instance(7, 25, 7.5f, 0x0d5a),
-                                Circling.Instance(7.5f, 25, 7, 0x0d59)
-                            )
-                        ),
-                        SimpleWandering.Instance(5)
-                    ),
-                    Cooldown.Instance(1000, new RunBehaviors(
-                        SimpleAttack.Instance(10, projectileIndex: 1),
-                        MultiAttack.Instance(10, 5 * (float)Math.PI / 180, 2, projectileIndex: 0)
-                    ))
-                ));
+        _ CubeGod = () => Behav()
+            .Init("Cube God",
+                new State(
+                    new DropPortalOnDeath("Chicken House Portal", 100),
+                    new StayCloseToSpawn(0.3, range: 7),
+                           new Wander(0.5),
+                             new Shoot(10, count: 14, predictive: 0.6, shootAngle: 11, coolDown: 900),
+                             new Shoot(10, count: 9, projectileIndex: 1, predictive: 0.2, shootAngle: 6, coolDown: 1500, coolDownOffset: 300),
+                             new Spawn("Cube Overseer", maxChildren: 3, initialSpawn: 1, coolDown: 100000),
+                             new Spawn("Cube Defender", maxChildren: 3, initialSpawn: 2, coolDown: 100000),
+                             new Spawn("Cube Blaster", maxChildren: 3, initialSpawn: 2, coolDown: 100000)
+                ),
+                new Threshold(0.001,
+                new ItemLoot("The One True Ring", 0.00001),
+                new ItemLoot("Cherry Jello", 0.0001),
+                new ItemLoot("Karen Jacket", 0.0005),
+                new ItemLoot("Essence of Death", 0.004),
+                new ItemLoot("Phantom Cleaver", 0.004),
+                new ItemLoot("Tome of Fleshly Desires", 0.004),
+                new ItemLoot("Sanic Head", 0.005),
+                new ItemLoot("Treasure of the Universe", 0.0095),
+                new ItemLoot("Blade of the Titan", 0.01),
+                new ItemLoot("The Gravedigger's Disguise", 0.01),
+                new ItemLoot("Merit of Rebellion", 0.05),
+                new ItemLoot("Ring of the Cubes", 0.05),
+                new ItemLoot("Dirk of Cronus", 0.05),
+                new ItemLoot("Path of Loot Key", 0.00025),
+                new ItemLoot("Transformation Shard", 0.001),
+                new ItemLoot("Gold Cache", 0.5),
+                new ItemLoot("Potion of Life", 0.5),
+                new ItemLoot("Potion of Mana", 0.5),
+                new ItemLoot("Potion of Attack", 1.0),
+                new ItemLoot("Potion of Defense", 1.0),
+                new ItemLoot("Potion of Speed", 1.0),
+                new ItemLoot("Greater Potion of Dexterity", 1.0),
+                new ItemLoot("Potion of Vitality", 1.0),
+                new ItemLoot("Potion of Wisdom", 1.0),
+                new TierLoot(9, ItemType.Weapon, 0.15),
+                new TierLoot(10, ItemType.Weapon, 0.15),
+                new TierLoot(11, ItemType.Weapon, 0.15),
+                new TierLoot(4, ItemType.Ability, 0.17),
+                new TierLoot(5, ItemType.Ability, 0.17),
+                new TierLoot(10, ItemType.Armor, 0.12),
+                new TierLoot(11, ItemType.Armor, 0.12),
+                new TierLoot(12, ItemType.Armor, 0.12),
+                new TierLoot(4, ItemType.Ring, 0.13),
+                new TierLoot(5, ItemType.Ring, 0.13),
+                new EggLoot(EggRarity.Common, 0.1),
+                new EggLoot(EggRarity.Uncommon, 0.05),
+                new EggLoot(EggRarity.Rare, 0.01),
+                new EggLoot(EggRarity.Legendary, 0.001)
+                )
+            )
+            .Init("Cube Overseer",
+                new State(
+                    new StayCloseToSpawn(0.3, range: 7),
+                             new Wander(1),
+                             new Shoot(10, count: 4, predictive: 0.9, projectileIndex: 0, coolDown: 1250)
+                )
+            )
+            .Init("Cube Defender",
+                new State(
+                    new Wander(0.5),
+                             new StayCloseToSpawn(0.03, range: 7),
+                             new Follow(0.4, acquireRange: 9, range: 2),
+                             new Shoot(10, count: 1, coolDown: 1000, predictive: 0.9, projectileIndex: 0)
+                )
+            )
+            .Init("Cube Blaster",
+                new State(
+                    new Wander(0.5),
+                             new StayCloseToSpawn(0.03, range: 7),
+                             new Follow(0.4, acquireRange: 9, range: 2),
+                             new Shoot(10, count: 2, predictive: 0.9, projectileIndex: 0, coolDown: 1500),
+                             new Shoot(10, count: 1, predictive: 0.9, projectileIndex: 0, coolDown: 1500)
+                )
+            );
     }
 }

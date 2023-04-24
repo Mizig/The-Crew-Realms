@@ -17,11 +17,10 @@
       <XpMult>0.0</XpMult>
       <Projectile id="0">
          <ObjectId>Ice Bullet</ObjectId>
-         <Speed>35</Speed>
+         <Speed>75</Speed>
          <ArmorPiercing/>
-         <MinDamage>20</MinDamage>
-         <MaxDamage>32</MaxDamage>
-         <LifetimeMS>1500</LifetimeMS>
+         <Damage>60</Damage>
+         <LifetimeMS>500</LifetimeMS>
          <ConditionEffect duration="1.5">Quiet</ConditionEffect>
          <ConditionEffect duration="1.5">Dazed</ConditionEffect>
       </Projectile>
@@ -178,27 +177,27 @@
       <DeathSound>monster/skeletons_death</DeathSound>
       <Size>200</Size>
       <ShadowSize>100</ShadowSize>
-      <MaxHitPoints>90000</MaxHitPoints>
-      <Defense>20</Defense>
+      <MaxHitPoints>98000</MaxHitPoints>
+      <Defense>30</Defense>
       <XpMult>0.0</XpMult>
       <StasisImmune/>
       <StunImmune/>
       <ParalyzeImmune/>
       <DazedImmune/>
-      <AltTexture id="1">
+      <AltTexture id="0">
          <Texture>
             <File>invisible</File>
             <Index>0</Index>
          </Texture>
          <Effect particle="SwirlingMist" cooldown="0.5">XMLEffect</Effect>
       </AltTexture>
-      <AltTexture id="2">
+      <AltTexture id="1">
          <AnimatedTexture>
             <File>chars8x8rEncounters</File>
             <Index>116</Index>
          </AnimatedTexture>
       </AltTexture>
-      <AltTexture id="3">
+      <AltTexture id="2">
          <AnimatedTexture>
             <File>chars16x16rEncounters</File>
             <Index>122</Index>
@@ -207,28 +206,28 @@
       <Projectile id="0">
          <ObjectId>Sound Wave</ObjectId>
          <Speed>60</Speed>
-         <MinDamage>70</MinDamage>
-         <MaxDamage>70</MaxDamage>
+         <Damage>90</Damage>
          <LifetimeMS>8000</LifetimeMS>
-         <ConditionEffect duration="7">Unstable</ConditionEffect>
+         <MultiHit/>
+         <ConditionEffect duration="3">Unstable</ConditionEffect>
          <Size>100</Size>
       </Projectile>
       <Projectile id="1">
          <ObjectId>Armor Pierce Bullet</ObjectId>
-         <Damage>75</Damage>
+         <Damage>125</Damage>
          <Speed>60</Speed>
          <LifetimeMS>8000</LifetimeMS>
          <ArmorPiercing/>
-         <MultiHit/>
          <Size>100</Size>
       </Projectile>
       <Projectile id="2">
          <ObjectId>Ice Burst</ObjectId>
-         <Damage>70</Damage>
+         <Damage>90</Damage>
          <Speed>60</Speed>
          <LifetimeMS>8000</LifetimeMS>
          <ArmorPiercing/>
          <MultiHit/>
+         <ConditionEffect duration="3">Slowed</ConditionEffect>
          <Size>100</Size>
       </Projectile>
       <Projectile id="3">
@@ -237,8 +236,7 @@
          <MinDamage>40</MinDamage>
          <MaxDamage>50</MaxDamage>
          <LifetimeMS>8000</LifetimeMS>
-         <ConditionEffect duration="3.5">Quiet</ConditionEffect>
-         <ConditionEffect duration="3.5">Dazed</ConditionEffect>
+         <ConditionEffect duration="3">Quiet</ConditionEffect>
          <Size>100</Size>
       </Projectile>
    </Object>
@@ -259,7 +257,7 @@
       <Size>120</Size>
       <ShadowSize>80</ShadowSize>
       <Projectile id="0">
-         <ObjectId>Confuse Shuriken</ObjectId>
+         <ObjectId>Icey Magic Attack</ObjectId>
          <Damage>80</Damage>
          <Speed>50</Speed>
          <Size>100</Size>
@@ -267,12 +265,12 @@
          <ConditionEffect duration="0.5">Dazed</ConditionEffect>
       </Projectile>
       <Projectile id="1">
-         <ObjectId>Confuse Shuriken</ObjectId>
+         <ObjectId>Blue Magic Attack</ObjectId>
          <Damage>80</Damage>
          <Speed>50</Speed>
          <Size>100</Size>
          <LifetimeMS>1500</LifetimeMS>
-         <ConditionEffect duration="1.0">Confused</ConditionEffect>
+         <ConditionEffect duration="1.0">Weak</ConditionEffect>
       </Projectile>
       <Projectile id="2">
          <ObjectId>Confuse Shuriken</ObjectId>
@@ -280,7 +278,7 @@
          <Speed>50</Speed>
          <Size>100</Size>
          <LifetimeMS>1500</LifetimeMS>
-         <ConditionEffect duration="2.75">Confused</ConditionEffect>
+         <ConditionEffect duration="3">Confused</ConditionEffect>
       </Projectile>
       <Projectile id="3">
          <ObjectId>Sonic Bat Spinner</ObjectId>
@@ -309,11 +307,11 @@
       <Size>80</Size>
       <ShadowSize>80</ShadowSize>
       <Projectile id="0">
-         <ObjectId>Invisible</ObjectId>
+         <ObjectId>Sonic Bat Boom</ObjectId>
          <Damage>77</Damage>
-         <Speed>0</Speed>
+         <Speed>100</Speed>
          <Size>80</Size>
-         <LifetimeMS>100</LifetimeMS>
+         <LifetimeMS>500</LifetimeMS>
       </Projectile>
       <DisplayId>{icecave.Snow_Bat}</DisplayId>
    </Object>

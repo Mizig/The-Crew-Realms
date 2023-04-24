@@ -40,7 +40,7 @@ namespace wServer.logic
                         new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 1000, angleOffset: 90, coolDown: 2000),
                         new Shoot(12, count: 7, shootAngle: 7, coolDown: 2000),
                         new Shoot(12, count: 7, shootAngle: 7, angleOffset: 180, coolDown: 2000),
-                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 2400, randomToss: false),
+                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 2200, randomToss: false),
                         new HpLessTransition(0.66, "shotgun")
                         ),
                     new State("shotgun",
@@ -52,7 +52,7 @@ namespace wServer.logic
                         new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 1000, angleOffset: 90, coolDown: 2000),
                         new Shoot(12, count: 7, shootAngle: 7, coolDown: 2000),
                         new Shoot(12, count: 7, shootAngle: 7, angleOffset: 180, coolDown: 2000),
-                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 2400, randomToss: false),
+                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 3000, randomToss: false),
                         new HpLessTransition(0.33, "crystalstart")
                         ),
                     new State("crystalstart",
@@ -71,7 +71,7 @@ namespace wServer.logic
                     new State("checkforcrystals",
                         new SetAltTexture(1),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 3000, randomToss: false),
+                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 2000, randomToss: false),
                         new EntitiesNotExistsTransition(9999, "final", "Protection Crystal")
                         ),
                     new State("final",
@@ -83,7 +83,7 @@ namespace wServer.logic
                         new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 800, angleOffset: 90, coolDown: 1000),
                         new Shoot(12, count: 7, shootAngle: 7, coolDownOffset: 200, coolDown: 1000),
                         new Shoot(12, count: 7, shootAngle: 7, angleOffset: 180, coolDown: 1000),
-                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 1700, randomToss: false),
+                        new TossObject("Guardian of the Lost Lands", 10, coolDown: 2000, randomToss: false),
                         new HpLessTransition(0.05, "death")
                         ),
                     new State("death",
@@ -91,7 +91,7 @@ namespace wServer.logic
                         new SetAltTexture(3),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable, true),
                         new Flash(0xFF0000, 0.2, 3),
-                        new Shoot(25, count: 30, shootAngle: 12, fixedAngle: 0, projectileIndex: 0, coolDownOffset: 3800, coolDown: 99999),
+                        new Shoot(25, count: 36, shootAngle: 10, fixedAngle: 0, projectileIndex: 0, coolDownOffset: 3800, coolDown: 99999),
                         new Shoot(25, count: 25, shootAngle: 15, fixedAngle: 9, projectileIndex: 2, coolDownOffset: 4000, coolDown: 99999),
                         new Shoot(25, count: 12, shootAngle: 30, fixedAngle: 4, projectileIndex: 1, coolDownOffset: 4200, coolDown: 99999),
                         new TimedTransition(4400, "dead")
@@ -101,14 +101,20 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.001,
+                new ItemLoot("The One True Ring", 0.00001),
                 new ItemLoot("Lucky Slasher", 0.0005),
-                new ItemLoot("Lightspeed Travel Cloak", 0.005),
+                new ItemLoot("Lightspeed Travel Cloak", 0.003),
+                new ItemLoot("Soul of Havoc", 0.004),
                 new ItemLoot("Thusala's Slasher", 0.004),
                 new ItemLoot("Gravachrome", 0.004),
+                new ItemLoot("Mega Blaster", 0.005),
                 new ItemLoot("Queen's Crown", 0.01),
-                new ItemLoot("Garbs of the Frozen Queen", 0.01),
-                new ItemLoot("Shield of Ogmur", 0.04),
+                new ItemLoot("Dranbiel Garbs", 0.01),
+                new ItemLoot("Shield of Ogmur", 0.05),
+                new ItemLoot("Treasure of Asgard", 0.05),
                 new ItemLoot("Path of Loot Key", 0.00025),
+                new ItemLoot("Transformation Shard", 0.001),
+                new ItemLoot("Gold Cache", 0.7),
                 new ItemLoot("Potion of Life", 0.5),
                 new ItemLoot("Potion of Mana", 0.5),
                 new ItemLoot("Potion of Attack", 1.0),
@@ -176,8 +182,9 @@ namespace wServer.logic
             )
             .Init("Guardian of the Lost Lands",
                 new State(
+                    new TimedTransition(12000, "Suicide"),
                     new State("Tough",
-                        new Follow(0.35, 8, 1),
+                        new Follow(0.18, 8, 1),
                         new Spawn("Knight of the Lost Lands", initialSpawn: 1, maxChildren: 1),
                         new Shoot(8.4, count: 6, shootAngle: 60, projectileIndex: 1, coolDown: 2000),
                         new Shoot(8.4, count: 6, projectileIndex: 0, coolDown: 1300),
@@ -187,17 +194,24 @@ namespace wServer.logic
                         new StayBack(0.75, 5),
                         new Shoot(8.4, count: 6, shootAngle: 60, projectileIndex: 1, coolDown: 2000),
                         new Shoot(8.4, count: 5, projectileIndex: 0, coolDown: 1300)
-                        )
+                        ),
+                    new State("Suicide",
+                        new Suicide()
+                    )
                 ),
                 new ItemLoot("Health Potion", 0.09),
                 new ItemLoot("Magic Potion", 0.09)
             )
             .Init("Knight of the Lost Lands",
                 new State(
+                    new TimedTransition(12000, "Suicide"),
                     new State("Fighting",
-                        new Follow(0.4, 8, 1),
+                        new Follow(0.28, 8, 1),
                         new Shoot(8.4, count: 3, shootAngle: 12, projectileIndex: 0, coolDown: 1500)
-                        )
+                        ),
+                    new State("Suicide",
+                        new Suicide()
+                    )
                     ),
                 new ItemLoot("Health Potion", 0.06),
                 new ItemLoot("Magic Potion", 0.06)

@@ -108,7 +108,7 @@
       </AnimatedTexture>
       <MaxHitPoints>65000</MaxHitPoints>
       <Defense>55</Defense>
-      <XpMult>0.35</XpMult>
+      <XpMult>1</XpMult>
       <Size>40</Size>
       <ShadowSize>80</ShadowSize>
       <StasisImmune/>
@@ -133,7 +133,7 @@
       </Projectile>
       <Projectile id="2">
          <ObjectId>Rainbow Magic Star Super</ObjectId>
-         <Damage>300</Damage>
+         <Damage>200</Damage>
          <Speed>20</Speed>
          <Size>200</Size>
          <LifetimeMS>3500</LifetimeMS>

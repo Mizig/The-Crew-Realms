@@ -50,7 +50,7 @@ namespace wServer.realm
             if (host.HasConditionEffect(ConditionEffectIndex.ArmorBroken))
                 def = 0;
 
-            float limit = dmg*0.15f;
+            float limit = dmg*0.2f;
 
             float ret;
             if (dmg - def < limit) ret = limit;
@@ -71,7 +71,7 @@ namespace wServer.realm
                 noDef)
                 def = 0;
 
-            float limit = dmg*0.15f;
+            float limit = dmg*0.2f;
 
             float ret;
             if (dmg - def < limit) ret = limit;
@@ -105,7 +105,7 @@ namespace wServer.realm
             int vit = GetStats(5);
             if (player.HasConditionEffect(ConditionEffectIndex.Sick))
                 vit = 0;
-            return 1 + 0.22f * vit;
+            return 0.25f * vit;
         }
 
         public float GetMPRegen()
@@ -113,7 +113,7 @@ namespace wServer.realm
             int wis = GetStats(6);
             if (player.HasConditionEffect(ConditionEffectIndex.Quiet))
                 return 0;
-            return 0.6f + 0.17f * wis;
+            return 0.18f * wis;
         }
 
         public float GetDex()

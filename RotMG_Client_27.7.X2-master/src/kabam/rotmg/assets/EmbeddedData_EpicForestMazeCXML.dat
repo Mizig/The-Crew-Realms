@@ -330,20 +330,20 @@
       <Projectile id="0">
          <ObjectId>Fire Boomerang</ObjectId>
          <Damage>125</Damage>
-         <Speed>50</Speed>
+         <Speed>70</Speed>
          <Size>75</Size>
-         <LifetimeMS>5000</LifetimeMS>
-         <ConditionEffect duration="3">Quiet</ConditionEffect>
+         <LifetimeMS>3000</LifetimeMS>
+         <ConditionEffect duration="2.5">Quiet</ConditionEffect>
          <Boomerang/>
          <MultiHit/>
       </Projectile>
       <Projectile id="1">
          <ObjectId>Yellow Energy Shot</ObjectId>
-         <Damage>125</Damage>
-         <Speed>70</Speed>
-         <Size>100</Size>
+         <Damage>120</Damage>
+         <Speed>55</Speed>
+         <Size>120</Size>
          <LifetimeMS>2000</LifetimeMS>
-         <ConditionEffect duration="3">Weak</ConditionEffect>
+         <ConditionEffect duration="2.5">Weak</ConditionEffect>
       </Projectile>
    </Object>
 </Objects>

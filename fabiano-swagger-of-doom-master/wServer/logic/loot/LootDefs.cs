@@ -110,7 +110,7 @@ namespace wServer.logic.loot
     public class TierLoot : ILootDef
     {
         public static readonly int[] WeaponT = {1, 2, 3, 8, 17, 24};
-        public static readonly int[] AbilityT = {4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 25};
+        public static readonly int[] AbilityT = {4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 25, 29, 30, 31, 32};
         public static readonly int[] ArmorT = {6, 7, 14};
         public static readonly int[] RingT = {9};
         public static readonly int[] PotionT = {10};

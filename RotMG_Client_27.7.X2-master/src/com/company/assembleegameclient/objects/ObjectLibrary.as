@@ -213,9 +213,17 @@ public class ObjectLibrary {
         {
             return TextureRedrawer.redraw(_local6,_arg2,_arg3,14942448,_arg4,_arg5);
         }
+        if(_local8 == null && _local9.hasOwnProperty("AngelicTier"))
+        {
+            return TextureRedrawer.redraw(_local6,_arg2,_arg3,9745108,_arg4,_arg5);
+        }
         if(_local8 == null && _local9.hasOwnProperty("CosmicTier"))
         {
-            return TextureRedrawer.redraw(_local6,_arg2,_arg3,8518143,_arg4,_arg5);
+            return TextureRedrawer.redraw(_local6,_arg2,_arg3,15939724,_arg4,_arg5);
+        }
+        if(_local8 == null && _local9.hasOwnProperty("OmniversalTier"))
+        {
+            return TextureRedrawer.redraw(_local6,_arg2,_arg3,65280,_arg4,_arg5);
         }
         var _local10:int = Boolean(_local9.hasOwnProperty("Tex1"))?int(int(_local9.Tex1)):int(0);
         var _local11:int = Boolean(_local9.hasOwnProperty("Tex2"))?int(int(_local9.Tex2)):int(0);

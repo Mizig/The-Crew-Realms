@@ -124,6 +124,40 @@ namespace wServer.realm.commands
         }
     }
 
+    internal class OnlineCommand : Command //get all players from all worlds (this may become too large!)
+    {
+        public OnlineCommand()
+            : base("online")
+        {
+        }
+
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+            StringBuilder sb = new StringBuilder("Online players: ");
+
+            foreach (KeyValuePair<int, World> w in player.Manager.Worlds)
+            {
+                World world = w.Value;
+                if (w.Key != 0)
+                {
+                    Player[] copy = world.Players.Values.ToArray();
+                    if (copy.Length != 0)
+                    {
+                        for (int i = 0; i < copy.Length; i++)
+                        {
+                            sb.Append(copy[i].Name);
+                            sb.Append(", ");
+                        }
+                    }
+                }
+            }
+            string fixedString = sb.ToString().TrimEnd(',', ' '); //clean up trailing ", "s
+
+            player.SendInfo(fixedString);
+            return true;
+        }
+    }
+
     internal class VaultCommand : Command
     {
         public VaultCommand()

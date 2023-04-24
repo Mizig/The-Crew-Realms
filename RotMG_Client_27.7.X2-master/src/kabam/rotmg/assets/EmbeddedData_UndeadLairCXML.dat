@@ -11,58 +11,59 @@
       <HitSound>monster/ghost_god_hit</HitSound>
       <DeathSound>monster/ghost_god_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>14000</MaxHitPoints>
-      <Defense>12</Defense>
+      <MaxHitPoints>16000</MaxHitPoints>
+      <Defense>15</Defense>
       <Flying/>
       <Quest/>
       <God/>
       <StasisImmune/>
       <Level>1</Level>
-      <XpMult>0.7</XpMult>
+      <XpMult>1</XpMult>
       <NoArticle/>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Speed>80</Speed>
-         <Damage>75</Damage>
-         <Size>25</Size>
+         <Damage>100</Damage>
+         <Size>40</Size>
          <LifetimeMS>1500</LifetimeMS>
          <ArmorPiercing/>
          <MultiHit/>
+         <ConditionEffect duration="2.6">ArmorBroken</ConditionEffect>
       </Projectile>
       <Projectile id="1">
          <ObjectId>Brown Magic</ObjectId>
-         <Speed>90</Speed>
-         <MinDamage>40</MinDamage>
-         <MaxDamage>45</MaxDamage>
-         <Size>40</Size>
-         <LifetimeMS>2600</LifetimeMS>
+         <Speed>60</Speed>
+         <Damage>35</Damage>
+         <Size>70</Size>
+         <LifetimeMS>3000</LifetimeMS>
          <MultiHit/>
          <Boomerang/>
-         <Amplitude>2</Amplitude>
+         <Amplitude>0.5</Amplitude>
          <Frequency>2.5</Frequency>
-         <ConditionEffect duration="1">Quiet</ConditionEffect>
+         <ConditionEffect duration="0.4">Quiet</ConditionEffect>
       </Projectile>
       <Projectile id="2">
          <ObjectId>Yellow Star</ObjectId>
          <Speed>57</Speed>
-         <Damage>65</Damage>
+         <Damage>70</Damage>
          <Size>80</Size>
          <LifetimeMS>3000</LifetimeMS>
+         <ConditionEffect duration="3">Confused</ConditionEffect>
+      </Projectile>
+      <Projectile id="3">
+         <ObjectId>Ice Magic</ObjectId>
+         <Speed>75</Speed>
+         <Damage>100</Damage>
+         <Size>85</Size>
+         <LifetimeMS>1800</LifetimeMS>
+         <Frequency>0.8</Frequency>
+         <Amplitude>0.33</Amplitude>
          <MultiHit/>
-         <ConditionEffect duration="1.5">Confused</ConditionEffect>
       </Projectile>
       <Projectile id="4">
          <ObjectId>White Bullet</ObjectId>
-         <Speed>40</Speed>
-         <Damage>160</Damage>
-         <Size>80</Size>
-         <LifetimeMS>4000</LifetimeMS>
-         <MultiHit/>
-      </Projectile>
-      <Projectile id="5">
-         <ObjectId>White Bullet</ObjectId>
          <Speed>70</Speed>
-         <Damage>60</Damage>
+         <Damage>88</Damage>
          <Size>60</Size>
          <LifetimeMS>2000</LifetimeMS>
          <MultiHit/>

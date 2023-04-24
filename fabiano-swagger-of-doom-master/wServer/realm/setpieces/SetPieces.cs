@@ -18,14 +18,14 @@ namespace wServer.realm.setpieces
         {
             SetPiece(new Building(), 80, 100, WmapTerrain.LowForest, WmapTerrain.LowPlains, WmapTerrain.MidForest),
             SetPiece(new Graveyard(), 20, 22, WmapTerrain.LowSand, WmapTerrain.LowPlains, WmapTerrain.LowForest),
-            SetPiece(new Grove(), 10, 11, WmapTerrain.MidForest, WmapTerrain.MidPlains),
+            SetPiece(new Oasis(), 10, 11, WmapTerrain.LowSand, WmapTerrain.MidSand),
+            SetPiece(new TempleA(), 9, 10, WmapTerrain.MidForest, WmapTerrain.MidPlains),
+            SetPiece(new TempleB(), 9, 10, WmapTerrain.MidForest, WmapTerrain.MidPlains),
             SetPiece(new LichyTemple(), 10, 11, WmapTerrain.MidForest, WmapTerrain.MidPlains),
+            SetPiece(new Grove(), 10, 11, WmapTerrain.MidForest, WmapTerrain.MidPlains),
+            SetPiece(new Pyre(), 10, 11, WmapTerrain.MidSand, WmapTerrain.HighSand),
             SetPiece(new Castle(), 10, 11, WmapTerrain.HighForest, WmapTerrain.HighPlains),
             SetPiece(new Tower(), 10, 11, WmapTerrain.HighForest, WmapTerrain.HighPlains),
-            SetPiece(new TempleA(), 10, 11, WmapTerrain.MidForest, WmapTerrain.MidPlains),
-            SetPiece(new TempleB(), 10, 11, WmapTerrain.MidForest, WmapTerrain.MidPlains),
-            SetPiece(new Oasis(), 10, 11, WmapTerrain.LowSand, WmapTerrain.MidSand),
-            SetPiece(new Pyre(), 10, 11, WmapTerrain.MidSand, WmapTerrain.HighSand),
             SetPiece(new LavaFissure(), 10, 11, WmapTerrain.Mountains)
         };
 

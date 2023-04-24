@@ -29,8 +29,32 @@ namespace wServer.logic.loot
     {
         private static readonly Random rand = new Random();
 
+        private static string[] notifOMNIVERSALItem = {
+            //weapons
+            "Radiant Vanity", //wand, crystal prisoner
+            "Boshy's Minigun", //bow, boshy
+            "Staff of Drannol's Aura", //staff, grand sphinx
+            "Retro Clarent", //sword, red demon
+            "The Dirk of Chickenslaying", //dagger, chicken
+            //abilities
+            "The Realmdex", //tome, septavius
+            "Cherry Jello", //poison, cube god
+            "maiuash's Blessing", //scepter, ugajuajn
+            //armors
+            "Mari's Vest", //light - marble brick colossus
+            "True Shielding of Oryx", //heavy - oryx 1 & 2
+            "Robe of Oddish", //robe - light lord
+            //rings
+            "Admin Crown", //wisdom - shatters third
+            "The One True Ring", //general - all bosses
+            "Giant Asian Hornet", //damage - killer bee queen
+            //admin items
+            "The Crusher",
+            "Grape Jello"
+};
+
         private static string[] notifCOSMICItem = {
-            "Z Saber",
+            "Z Saber", //ingame cosmics
             "Ultimate Crown",
             "Ultimate Gemstone",
             "Ultimate Bracer",
@@ -56,7 +80,34 @@ namespace wServer.logic.loot
             "Snare of the Lurking Titan",
             "Quasar Piercer",
             "Old Farmer's Leather Book",
-            "Poseidon's Trident"
+            "Poseidon's Trident",
+            "Whisper of the Seven Seas",
+            "Defender's Last Stand",
+            "Ceasar's Armor",
+            "The Realm Eye",
+            "Yukari Sakuragi's Umbrella",
+            "Mari's Spirit",
+            "Tsar Bomba",
+            "Cleopatra's Sheath",
+            "Mask of Thunders",
+            "Dice of the Royals",
+            "Deep Blue Anchor",
+            "Orange Juice Robe", //volcano cosmics
+            "Cinderflame",
+            "True Dragon Imbued Seal",
+            "Volcano Fragment",
+            "A Following Phoenix",
+            "Vengeance Helm", //haunted castle cosmics
+            "Mantle of the Departed",
+            "Reality Shift",
+            "Cape of the Observant"
+};
+
+        private static string[] notifANGELICItem = {
+            "Skystriker",
+            "Trap Above the Clouds",
+            "Wear of Angels",
+            "Trinket of the Air"
 };
 
         private static string[] notifLIGHTItem = {
@@ -73,7 +124,8 @@ namespace wServer.logic.loot
             "Star of Light",
             "Beacon of Light",
             "Mark of Loot",
-            "Lightspeed Travel Cloak"
+            "Lightspeed Travel Cloak",
+            "Spaceship's Anchor"
 };
 
         private static string[] notifARItem = {
@@ -97,7 +149,19 @@ namespace wServer.logic.loot
             "Helldom Shell",
             "Saturn's Orbit",
             "Sor Reactor",
-            "Blades of the Bridge"
+            "Blades of the Bridge",
+            "A Gruesome Concept",
+            "The Eye",
+            "Sebafra's Soulcatcher",
+            "Arcanuo's Zol Lance",
+            "Philosopher's Stone",
+            "Garugen",
+            "Beastly Dice",
+            "Protagonite Chassis",
+            "Sor Nucleus",
+            "Poseidon's Gauntlet",
+            "Amulet of Oryx",
+            "Flaming Horizons Anchor"
 };
 
         private static string[] notifDEMONICItem = {
@@ -118,7 +182,19 @@ namespace wServer.logic.loot
             "Seal of Oryx",
             "Vanguard of Oryx",
             "Amulet of Pure Madness",
-            "Morningstar of Honey"
+            "Face of Hades",
+            "Elytra",
+            "Nightmare Gem Gem's Gem",
+            "Blade of the Sprites",
+            "Pyrus Draconia",
+            "Crest of Ruin",
+            "Rhongomyniad",
+            "Primal Flame",
+            "Drakenguard",
+            "Reinforced Ribcage",
+            "The Eternal Kinstone",
+            "Battleaxe of the Ent",
+            "Executioner's Guillotine"
 };
 
         private static string[] notifPRIMALItem = {
@@ -133,6 +209,7 @@ namespace wServer.logic.loot
             "Ring of Oryx",
             "Reaper's Bow",
             "Omnipotence Ring",
+            "A Yeti's Horn",
             "The Forsaken Ring",
             "Ghost Robe",
             "Scythe of Death",
@@ -157,12 +234,18 @@ namespace wServer.logic.loot
             "Limbsplit Quiver",
             "The Apex Bulwark",
             "The Twilight Grimoire",
+            "Morningstar of Honey",
             "Elithor's Soul Bottle",
             "Star of Bones",
             "Scepter of the Ancients",
             "Lycaon's Heart",
             "Boneshatter",
-            "Helm of the Necropolis"
+            "Helm of the Necropolis",
+            "Paladin's Waraxe",
+            "Soul of Havoc",
+            "General's Greatsword",
+            "Magic-Infused Dice",
+            "Slime Staff"
 };
 
         private static string[] notifICAItem = {
@@ -174,10 +257,89 @@ namespace wServer.logic.loot
             "Shadowsteel Plate",
             "Robe of the Draconic Overlord",
             "Ectoplasm Blade",
-            "Demon Lord's Wrath"
+            "Demon Lord's Wrath",
+            "Kid's Cape",
+            "Elemental Obliterator",
+            "Unholy Wand",
+            "Wavebreaker",
+            "Snakebound Slasher",
+            "Sanic Head",
+            "Mega Blaster",
+            "Firestorm",
+            "The Flamarang"
 };
 
         private static string[] notifLGItem = {
+            "Axolotl Friend",
+            "Loremaker's Staff",
+            "Hell's Inferno",
+            "Crown of the Ice",
+            "Shattered Caliburn",
+            "Legendary Stone Sword",
+            "Gargoyle Crusher",
+            "Overgrown Skull",
+            "Oathsworn's Garments",
+            "Oathsworn's Staff",
+            "Oath of Cinder",
+            "The Gilded Blade",
+            "Spiritclaw",
+            "Medusa's Trap",
+            "Waraxe of Judgement",
+            "Hunter's Chestplate",
+            "Hunter's Robe",
+            "Hunter's Garbs",
+            "Hunter's Suit",
+            "Hunter's Hide",
+            "Hunter's Ring",
+            "Hunter's Amulet",
+            "Hunter's Armor",
+            "Hunter's Staff",
+            "Hunter's Katana",
+            "Hunter's Blade",
+            "Hunter's Rod",
+            "Hunter's Crossbow",
+            "Hunter's Bow",
+            "Hunter's Wand",
+            "Hunter's Cane",
+            "Hunter's Dagger",
+            "Hunter's Throwing Knife",
+            "Hunter's Spear",
+            "Hunter's Sword",
+            "Helm of Duality",
+            "Knight's Warhammer",
+            "Enforcer Armor-2000",
+            "Bow of the Ugajuajn",
+            "Rip of Soul",
+            "Trap of Dark Magic",
+            "Colossal Skull",
+            "Gem Sword",
+            "Oracle's Nightmare",
+            "Jon's Handcannon",
+            "Legendary Forgotten Crown",
+            "Treasure of the Universe",
+            "Blade of the Underworld",
+            "Sun and Moon Expansion",
+            "Soul Buster",
+            "The King's Tablet",
+            "Aben's Stoneplate",
+            "Magician's Hide",
+            "Garments of Goblin Monarch",
+            "Elimination",
+            "Elemental Pendant",
+            "Petrified Dragonroot",
+            "Pretty Flower Amulet",
+            "Pretty Flower Wand",
+            "Sor Giant Slayer",
+            "Sky Piercer Wand",
+            "Dranbiel Garbs",
+            "Devil Dice",
+            "Righteous Dice",
+            "Twisted Earth Dice",
+            "Duck Floatie",
+            "Teh Duck Quiver",
+            "Duckie Staff",
+            "Greeni",
+            "Staff of Holy Terror",
             "Zol Elixir",
             "Ring of the New Sun",
             "The Great Lightsword",
@@ -190,26 +352,59 @@ namespace wServer.logic.loot
             "Garbs of the Sun God",
             "Santa's Battle Attire",
             "Cloak of Terradius",
+            "Holiday Ring",
             "Dagger of Tindailius",
             "King's Crossbow",
             "Kurisumasu no Uwagi",
+            "Heart of Boshy",
             "North Pole's Orb",
             "Queen's Crown",
+            "An Astonishing Happening",
             "Skull of Ravagers",
+            "Bow of Warped Coral",
             "Forgotten Robe",
+            "Words of Wisdom",
+            "Robe of Treasure",
+            "Face of Arachna",
+            "King's Visard",
+            "Mask of the Mad God",
+            "Ring of the Unstable Mind",
             "Drannol's Judgement",
             "Crown of War",
             "Garbs of the Frozen Queen",
             "Shadow Suit",
+            "Ring of Immortality",
+            "Katana of the Sun",
+            "The Odyssey",
+            "Kokorowatari",
+            "Crystal Trap",
+            "Core of Corruption",
+            "Venom Cage",
+            "Contagion Bracelet",
+            "Songstress Attire",
+            "Musician's Hat",
+            "Mad King's Crook",
+            "Aegis of the Citadel",
+            "Glazed Edge",
+            "Robe of Split Worlds",
+            "Faithless Execution",
+            "Scorching Scepter",
+            "Pernicious Fate-36",
+            "V-L Spark Armor",
             "Ruby Plated Armor",
+            "Hide of the Feral",
             "Amulet of the Underworld",
             "Ancient Pendant",
             "Attire of Chaos",
             "Gemstone of Divinity",
             "Amulet of the Ancients",
+            "The Crimson Anchor",
+            "Anchor of the Chosen",
             "Winds of Change",
             "Starcrash Ring",
             "Ancient Longbow",
+            "Necklace of Fallen Grace",
+            "Blade of the Titan",
             "Buckler of the Ancients",
             "Forest Parry Technique",
             "Hellfire Orb",
@@ -388,7 +583,7 @@ namespace wServer.logic.loot
                 {
                     if (i.LootState == enemy.LootState || i.LootState == null)
                     {
-                        double prob = dat.Item1.LootDropBoost ? i.Probabilty * 1.25 : i.Probabilty;
+                        double prob = dat.Item1.LootDropBoost ? i.Probabilty * 1.25 : i.Probabilty; //mark of loot boost 1.25
                         if (rand.NextDouble() < prob)
                         {
                             if (dat.Item1.LootTierBoost)
@@ -438,9 +633,17 @@ namespace wServer.logic.loot
 
             foreach (Item i in loots)
             {
+                if (notifOMNIVERSALItem.Contains(i.ObjectId))
+                    foreach (var p in enemy.Owner.Players.Values)
+                        p.SendNotif(owners[0].Name + " obtained the OMNIVERSAL item '" + i.ObjectId + "'.");
+
                 if (notifCOSMICItem.Contains(i.ObjectId))
                     foreach (var p in enemy.Owner.Players.Values)
                         p.SendNotif(owners[0].Name + " got the COSMIC item '" + i.ObjectId + "'!");
+
+                if (notifANGELICItem.Contains(i.ObjectId))
+                    foreach (var p in enemy.Owner.Players.Values)
+                        p.SendNotif(owners[0].Name + " got the Angelic item '" + i.ObjectId + "'!");
 
                 if (notifLIGHTItem.Contains(i.ObjectId))
                     foreach (var p in enemy.Owner.Players.Values)
@@ -458,13 +661,13 @@ namespace wServer.logic.loot
                     foreach (var p in enemy.Owner.Players.Values)
                         p.SendNotif(owners[0].Name + " got the Demonic item '" + i.ObjectId + "'!");
 
-                if (notifLGItem.Contains(i.ObjectId))
-                    foreach (var p in enemy.Owner.Players.Values)
-                        p.SendNotif(owners[0].Name + " got the Legendary item '" + i.ObjectId + "'!");
-
                 if (notifICAItem.Contains(i.ObjectId))
                     foreach (var p in enemy.Owner.Players.Values)
                         p.SendNotif(owners[0].Name + " got the Super Rare item '" + i.ObjectId + "'!");
+
+                if (notifLGItem.Contains(i.ObjectId))
+                    foreach (var p in enemy.Owner.Players.Values)
+                        p.SendNotif(owners[0].Name + " got the Legendary item '" + i.ObjectId + "'!");
 
                 if (i.BagType > bagType) bagType = i.BagType;
                 items[idx] = i;
@@ -537,8 +740,14 @@ namespace wServer.logic.loot
                 case 17: //light tier bag
                     bag = 0x3055;
                     break;
+                case 18: //angelic tier bag
+                    bag = 0x339d;
+                    break;
                 case 20: //cosmic tier bag
                     bag = 0x315e;
+                    break;
+                case 21: //omniversal bag
+                    bag = 0x3299;
                     break;
             }
 
@@ -557,7 +766,9 @@ namespace wServer.logic.loot
             if (bagType == 13) container.Size = 100;
             if (bagType == 14) container.Size = 100;
             if (bagType == 17) container.Size = 115;
+            if (bagType == 18) container.Size = 115;
             if (bagType == 20) container.Size = 130;
+            if (bagType == 21) container.Size = 140;
             enemy.Owner.EnterWorld(container);
         }
     }

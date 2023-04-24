@@ -13,6 +13,7 @@ namespace wServer.logic
         private _ GhostKing = () => Behav()
             .Init("Ghost King",
                 new State(
+                    new DropPortalOnDeath("Ice Cave Portal", 100),
                     new State("Idle",
                         new BackAndForth(0.3, 3),
                         new HpLessTransition(0.99999, "EvaluationStart1")
@@ -33,14 +34,18 @@ namespace wServer.logic
                         )
                     ),
                 new Threshold(0.001,
+                new ItemLoot("The One True Ring", 0.00001),
                 new ItemLoot("Elithor's Soul Bottle", 0.004),
-                new ItemLoot("Snowstorm Armor", 0.005),
                 new ItemLoot("Mysterious Totem", 0.01),
                 new ItemLoot("Magical Incantation", 0.01),
                 new ItemLoot("Deception", 0.01),
+                new ItemLoot("Words of Wisdom", 0.01),
                 new ItemLoot("Heart of the Mountains", 0.01),
-                new ItemLoot("Strike Amulet", 0.025),
+                new ItemLoot("Ghost King's Crown", 0.02),
+                new ItemLoot("Strike Amulet", 0.02),
                 new ItemLoot("Path of Loot Key", 0.000125),
+                new ItemLoot("Transformation Shard", 0.001),
+                new ItemLoot("Gold Cache", 0.15),
                 new ItemLoot("Potion of Mana", 0.2),
                 new ItemLoot("Potion of Wisdom", 0.7),
                 new ItemLoot("Potion of Vitality", 0.6),

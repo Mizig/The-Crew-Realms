@@ -196,9 +196,17 @@ public class EquipmentToolTip extends ToolTip {
                 this.tierText.setColor(0xE400F0);
                 this.tierText.setStringBuilder(new LineBuilder().setParams(TextKey.LIGHTTIER));
             }
+            else if (this.objectXML.hasOwnProperty("AngelicTier")) {
+                this.tierText.setColor(0x9AB2D4);
+                this.tierText.setStringBuilder(new LineBuilder().setParams(TextKey.ANGELICTIER));
+            }
             else if (this.objectXML.hasOwnProperty("CosmicTier")) {
-                this.tierText.setColor(0x81F9FF);
+                this.tierText.setColor(0xF3388C);
                 this.tierText.setStringBuilder(new LineBuilder().setParams(TextKey.COSMICTIER));
+            }
+            else if (this.objectXML.hasOwnProperty("OmniversalTier")) {
+                this.tierText.setColor(0x00FF00);
+                this.tierText.setStringBuilder(new LineBuilder().setParams(TextKey.OMNIVERSALTIER));
             }
             else {
                 if (this.objectXML.hasOwnProperty("@setType")) {
@@ -709,8 +717,14 @@ public class EquipmentToolTip extends ToolTip {
         if (this.objectXML.hasOwnProperty("LightTier")) {
             this.restrictions.push(new Restriction(("An item of Light."), 0xE400F0, false));
         }
+        if (this.objectXML.hasOwnProperty("AngelicTier")) {
+            this.restrictions.push(new Restriction(("Part of an Angelic item set."), 0x94B2D4, false));
+        }
         if (this.objectXML.hasOwnProperty("CosmicTier")) {
-            this.restrictions.push(new Restriction(("Filled with Cosmic power."), 0x81F9FF, false));
+            this.restrictions.push(new Restriction(("Filled with Cosmic power."), 0xF3388C, false));
+        }
+        if (this.objectXML.hasOwnProperty("OmniversalTier")) {
+            this.restrictions.push(new Restriction(("This item transcends universes."), 0x00FFF00, false));
         }
         if (this.objectXML.hasOwnProperty("@setType")) {
             this.restrictions.push(new Restriction(("This item is a part of " + this.objectXML.attribute("setName")), 0xFF9900, false));
