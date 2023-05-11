@@ -164,8 +164,7 @@ namespace wServer.logic
         .Init("Dr Terrible Escaped Experiment",
               new State(
                   new Wander(0.5),
-                  new Shoot(10, 1, 0, defaultAngle: 0, angleOffset: 0, projectileIndex: 1, predictive: 1,
-                  coolDown: 800, coolDownOffset: 0)
+                  new Shoot(10, projectileIndex: 1, predictive: 1, coolDown: 800)
                   )
                )
             .Init("Mini Bot",
@@ -220,8 +219,7 @@ namespace wServer.logic
         .Init("Escaped Experiment",
               new State(
                   new Wander(0.5),
-                  new Shoot(10, 1, 0, defaultAngle: 0, angleOffset: 0, projectileIndex: 0, predictive: 1,
-                  coolDown: 800, coolDownOffset: 0)
+                  new Shoot(10, projectileIndex: 1, predictive: 1, coolDown: 800)
                   )
             )
         .Init("West Automated Defense Turret",

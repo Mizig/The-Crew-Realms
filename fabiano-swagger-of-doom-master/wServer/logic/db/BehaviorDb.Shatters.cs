@@ -1822,7 +1822,6 @@ namespace wServer.logic
                 ),
                 new Threshold(0.001,
                 new ItemLoot("The One True Ring", 0.00001),
-                new ItemLoot("Admin Crown", 0.0001),
                 new ItemLoot("Ultimate Crown", 0.0005),
                 new ItemLoot("Staff of Annihilation", 0.0005),
                 new ItemLoot("The Forsaken Ring", 0.0046),

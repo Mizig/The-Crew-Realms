@@ -9,6 +9,7 @@ namespace wServer.logic
         private _ ChubbyCow = () => Behav()
             .Init("Chubby Cow",
                 new State(
+                    new DropPortalOnDeath("The Crew Dungeon Portal", 100),
                     new State("Idle",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new PlayerWithinTransition(8, "Wandering")

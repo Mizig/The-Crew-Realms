@@ -16,12 +16,28 @@ namespace wServer.logic
                 new State(
                     new DropPortalOnDeath("Chicken House Portal", 100),
                     new StayCloseToSpawn(0.3, range: 7),
-                           new Wander(0.5),
-                             new Shoot(10, count: 14, predictive: 0.6, shootAngle: 11, coolDown: 900),
-                             new Shoot(10, count: 9, projectileIndex: 1, predictive: 0.2, shootAngle: 6, coolDown: 1500, coolDownOffset: 300),
-                             new Spawn("Cube Overseer", maxChildren: 3, initialSpawn: 1, coolDown: 100000),
-                             new Spawn("Cube Defender", maxChildren: 3, initialSpawn: 2, coolDown: 100000),
-                             new Spawn("Cube Blaster", maxChildren: 3, initialSpawn: 2, coolDown: 100000)
+                    new Wander(0.5),
+                    new Spawn("Cube Overseer", maxChildren: 3, initialSpawn: 1, coolDown: 100000),
+                    new Spawn("Cube Defender", maxChildren: 3, initialSpawn: 2, coolDown: 100000),
+                    new Spawn("Cube Blaster", maxChildren: 3, initialSpawn: 2, coolDown: 100000),
+                    new State("Fight1",
+                        new Shoot(10, count: 14, predictive: 0.7, shootAngle: 11, coolDown: 1000),
+                        new Shoot(10, count: 9, projectileIndex: 1, predictive: 0.3,  shootAngle: 6, coolDown: 1600, coolDownOffset: 300),
+                        new HpLessTransition(.5, "Invulnerable")
+                    ),
+                    new State("Invulnerable",
+                        new Taunt("Gloop!"),
+                        new Spawn("Cube Overseer", maxChildren: 3, initialSpawn: 1, coolDown: 100000),
+                        new Spawn("Cube Defender", maxChildren: 3, initialSpawn: 2, coolDown: 100000),
+                        new Spawn("Cube Blaster", maxChildren: 3, initialSpawn: 2, coolDown: 100000),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Flash(0x1E83FF, 1, 10),
+                        new TimedTransition(2800, "Fight2")
+                    ),
+                    new State("Fight2",
+                        new Shoot(10, count: 14, predictive: 0.7, shootAngle: 11, coolDown: 800),
+                             new Shoot(10, count: 9, projectileIndex: 1, predictive: 0.3, shootAngle: 6, coolDown: 1600, coolDownOffset: 300)
+                    )
                 ),
                 new Threshold(0.001,
                 new ItemLoot("The One True Ring", 0.00001),

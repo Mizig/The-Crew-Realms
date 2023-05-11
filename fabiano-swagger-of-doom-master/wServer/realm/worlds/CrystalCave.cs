@@ -14,7 +14,7 @@ namespace wServer.realm.worlds
             ClientWorldName = "Crystal Cave";
             Background = 0;
             AllowTeleport = true;
-            Difficulty = 5;
+            Difficulty = 4;
         }
 
         protected override void Init()

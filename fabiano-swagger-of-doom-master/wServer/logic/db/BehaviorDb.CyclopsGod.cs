@@ -74,7 +74,6 @@ namespace wServer.logic
                 new ItemLoot("The One True Ring", 0.00001),
                 new ItemLoot("Dice of the Royals", 0.0005),
                 new ItemLoot("Mask of Thunders", 0.0005),
-                new ItemLoot("Paladin's Waraxe", 0.004),
                 new ItemLoot("General's Greatsword", 0.004),
                 new ItemLoot("Wall of Gore", 0.004),
                 new ItemLoot("Vest of Doomed Souls", 0.004),

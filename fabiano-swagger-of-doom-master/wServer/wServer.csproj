@@ -152,7 +152,12 @@
     <Compile Include="logic\behaviors\PetBehaviors\PetBehavior.cs" />
     <Compile Include="logic\behaviors\PetBehaviors\PetShoot.cs" />
     <Compile Include="logic\behaviors\RemoveEntity.cs" />
+    <Compile Include="logic\db\BehaviorDb.AncientGrounds.cs" />
+    <Compile Include="logic\db\BehaviorDb.TreasureCave.cs" />
+    <Compile Include="logic\db\BehaviorDb.Zol.cs" />
+    <Compile Include="logic\db\BehaviorDb.CrewDungeon.cs" />
     <Compile Include="logic\db\BehaviorDb.Cemetery.cs" />
+    <Compile Include="logic\db\BehaviorDb.Akron.cs" />
     <Compile Include="logic\db\BehaviorDb.OceanTrench.cs" />
     <Compile Include="logic\db\BehaviorDb.Chests.cs" />
     <Compile Include="logic\db\BehaviorDb.Boshy.cs" />
@@ -419,6 +424,9 @@
     <Compile Include="realm\PetLevel.cs" />
     <Compile Include="realm\RealmManager.cs" />
     <Compile Include="realm\RealmPortalMonitor.cs" />
+    <Compile Include="realm\setpieces\ZolTileOn.cs" />
+    <Compile Include="realm\setpieces\ZolTileOff.cs" />
+    <Compile Include="realm\setpieces\AkronMagma.cs" />
     <Compile Include="realm\setpieces\BoshyPiece.cs" />
     <Compile Include="realm\setpieces\LimonDeath.cs" />
     <Compile Include="realm\setpieces\AbyssDeath.cs" />
@@ -466,6 +474,7 @@
     <Compile Include="realm\worlds\Beachzone.cs" />
     <Compile Include="realm\worlds\BelladonnasGarden.cs" />
     <Compile Include="realm\worlds\CandylandHuntingGrounds.cs" />
+    <Compile Include="realm\worlds\CrystalCore.cs" />
     <Compile Include="realm\worlds\CrystalCave.cs" />
     <Compile Include="realm\worlds\ClothBazaar.cs" />
     <Compile Include="realm\worlds\DavyJonesLocker.cs" />
@@ -476,6 +485,7 @@
     <Compile Include="realm\worlds\HauntedCastle.cs" />
     <Compile Include="realm\worlds\IceCave.cs" />
     <Compile Include="realm\worlds\LairofLight.cs" />
+    <Compile Include="realm\worlds\TheCrewDungeon.cs" />
     <Compile Include="realm\worlds\TreasureCave.cs" />
     <Compile Include="realm\worlds\SantasDen.cs" />
     <Compile Include="realm\worlds\TheNest.cs" />
@@ -652,6 +662,8 @@
     <EmbeddedResource Include="realm\worlds\maps\icecave.jm" />
     <EmbeddedResource Include="realm\worlds\maps\tombhendy.jm" />
     <EmbeddedResource Include="realm\worlds\maps\treasurecave.jm" />
+    <EmbeddedResource Include="realm\worlds\maps\crewglace.jm" />
+    <EmbeddedResource Include="realm\worlds\maps\core.jm" />
     <None Include="wServer.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

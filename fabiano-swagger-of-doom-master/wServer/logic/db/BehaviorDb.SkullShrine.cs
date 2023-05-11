@@ -14,11 +14,22 @@ namespace wServer.logic
             .Init("Skull Shrine",
                 new State(
                     new DropPortalOnDeath("The Nest Portal", 100),
-                    new Shoot(25, 9, 10, predictive: 1),
-                    new Spawn("Red Flaming Skull", 8, coolDown: 5000),
-                    new Spawn("Blue Flaming Skull", 10, coolDown: 1000),
-                    new Reproduce("Red Flaming Skull", 10, 8, 5000),
-                    new Reproduce("Blue Flaming Skull", 10, 10, 1000)
+                    new Spawn("Red Flaming Skull", maxChildren: 10, initialSpawn: 5, coolDown: 1800),
+                    new Spawn("Blue Flaming Skull", maxChildren: 15, initialSpawn: 5, coolDown: 900),
+                    new State("Fight1",
+                        new Shoot(20, projectileIndex: 0, count: 9, shootAngle: 10, predictive: 0.7, coolDown: 800),
+                        new HpLessTransition(.5, "Invulnerable")
+                    ),
+                    new State("Invulnerable",
+                        new Taunt("You shall become my newest skulls!"),
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Flash(0xFF0000, 1, 10),
+                        new TimedTransition(2800, "Fight2")
+                    ),
+                    new State("Fight2",
+                        new Shoot(20, projectileIndex: 0, count: 9, shootAngle: 10, predictive: 0.7, coolDown: 1200),
+                        new Shoot(12, projectileIndex: 1, count: 4, shootAngle: 9, coolDown: 100)
+                    )
                 ),
                 new Threshold(0.001,
                 new ItemLoot("The One True Ring", 0.00001),

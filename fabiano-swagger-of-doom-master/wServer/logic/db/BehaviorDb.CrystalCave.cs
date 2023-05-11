@@ -76,6 +76,7 @@ namespace wServer.logic
             )
             .Init("Crystal Prisoner",
                 new State(
+                    new DropPortalOnDeath("Crystal Core Portal", 100),
                     new Spawn("Crystal Prisoner Steed", 5, 0, 200),
                     new State("pause",
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
@@ -219,16 +220,12 @@ namespace wServer.logic
                     ),
                 new Threshold(0.001,
                 new ItemLoot("The One True Ring", 0.00001),
-                new ItemLoot("Radiant Vanity", 0.0001),
                 new ItemLoot("Amulet of Ascension", 0.0005),
-                new ItemLoot("Unstable Jewel", 0.004),
                 new ItemLoot("Scorching Refraction", 0.01),
                 new ItemLoot("Gem Sword", 0.01),
-                new ItemLoot("Enchanted Uru Sword", 0.0095),
                 new ItemLoot("Winds of Change", 0.01),
                 new ItemLoot("Crystal Trap", 0.01),
                 new ItemLoot("Gemstone Attire", 0.01),
-                new ItemLoot("Platinum Argarius", 0.01),
                 new ItemLoot("Purification Crystal", 0.01),
                 new ItemLoot("MC Irons Shield", 0.04),
                 new ItemLoot("Crystal Sword", 0.05),
@@ -303,6 +300,72 @@ namespace wServer.logic
                             )
                         )
                     )
+            )
+            .Init("Crystal Bomb",
+                new State(
+                    new State("Flash",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Flash(0xFF0000, flashPeriod: 0.4, flashRepeats: 10),
+                        new TimedTransition(800, "Explode")
+                        ),
+                    new State("Explode",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new Shoot(25, projectileIndex: 0, count: 10, shootAngle: 36, fixedAngle: 0),
+                        new Suicide()
+                        )
+                    )
+            )
+            .Init("Crystal Entity",
+                new State(
+                    new State("GetNear",
+                        new ConditionalEffect(ConditionEffectIndex.Invincible),
+                        new PlayerWithinTransition(5, "Timer")
+                    ),
+                    new State("Timer",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Taunt("Do not come any closer."),
+                        new TimedTransition(3000, "Talk")
+                    ),
+                    new State("Talk",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Taunt("You have done enough damage to our magnificent crystals."),
+                        new Flash(0xffffffff, 1, 5),
+                        new TimedTransition(3600, "Invuln")
+                    ),
+                    new State("Invuln",
+                        new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                        new Shoot(25, projectileIndex: 0, count: 3, shootAngle: 10, predictive: 0.7, coolDown: 600, coolDownOffset: 200),
+                        new Shoot(25, projectileIndex: 1, count: 6, shootAngle: 24, coolDown: 2200, coolDownOffset: 800),
+                        new Shoot(25, projectileIndex: 2, count: 18, shootAngle: 20, fixedAngle: 0, coolDown: 1600),
+                        new TimedTransition(12000, "HitMe")
+                    ),
+                    new State("HitMe",
+                        new TossObject("Crystal Bomb", 25, coolDown: 2400),
+                        new Shoot(25, projectileIndex: 0, count: 3, shootAngle: 10, predictive: 0.7, coolDown: 600, coolDownOffset: 200),
+                        new Shoot(25, projectileIndex: 1, count: 6, shootAngle: 24, coolDown: 2200, coolDownOffset: 800),
+                        new Shoot(25, projectileIndex: 2, count: 18, shootAngle: 20, fixedAngle: 0, coolDown: 1600)
+                    )
+                ),
+                new Threshold(0.001,
+                new ItemLoot("The One True Ring", 0.00001),
+                new ItemLoot("Radiant Vanity", 0.0001),
+                new ItemLoot("Snare of the Lurking Titan", 0.0005),
+                new ItemLoot("Unstable Jewel", 0.004),
+                new ItemLoot("Enchanted Uru Sword", 0.01),
+                new ItemLoot("Star of Enlightenment", 0.01),
+                new ItemLoot("Fungal Breastplate", 0.01),
+                new ItemLoot("Path of Loot Key", 0.0005),
+                new ItemLoot("Transformation Shard", 0.001),
+                new ItemLoot("Gold Cache", 0.5),
+                new ItemLoot("Greater Potion of Life", 0.6),
+                new ItemLoot("Greater Potion of Mana", 0.6),
+                new ItemLoot("Greater Potion of Vitality", 1.0),
+                new ItemLoot("Greater Potion of Wisdom", 1.0),
+                new TierLoot(12, ItemType.Weapon, 0.11),
+                new TierLoot(6, ItemType.Ability, 0.12),
+                new TierLoot(13, ItemType.Armor, 0.10),
+                new TierLoot(6, ItemType.Ring, 0.10)
+                )
             )
             ;
     }

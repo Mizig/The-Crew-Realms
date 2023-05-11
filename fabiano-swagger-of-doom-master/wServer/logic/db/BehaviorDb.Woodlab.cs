@@ -13,13 +13,14 @@ namespace wServer.logic
                  new State("idle",
                      new Wander(0.2),
                      new Follow(speed: 1, acquireRange: 20, range: 0.1),
-                     new Spawn("Mini Larva", coolDown: 2500, maxChildren: 7, initialSpawn: 1),
+                     new Spawn("Mini Larva", coolDown: 1200, maxChildren: 4, initialSpawn: 1),
                      new Shoot(25, projectileIndex: 0, count: 10, shootAngle: 36, coolDown: 600, coolDownOffset: 400),
                      new Shoot(25, projectileIndex: 1, count: 1, shootAngle: 0, coolDown: 600, coolDownOffset: 600)
                      )
                  ),
                 new Threshold(0.001,
                 new ItemLoot("The One True Ring", 0.00001),
+                new ItemLoot("Kukri of the Woodlands", 0.0005),
                 new ItemLoot("Gravachrome Grass", 0.004),
                 new ItemLoot("Butterfly Dagger", 0.01),
                 new ItemLoot("Katana of Mythical Alliance", 0.01),

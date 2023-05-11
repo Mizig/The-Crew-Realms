@@ -12,17 +12,17 @@ namespace wServer.logic
         private _ RedDemon = () => Behav()
             .Init("Red Demon",
                 new State(
-                    new DropPortalOnDeath("Abyss of Demons Portal", 20),
-                    new Shoot(10, projectileIndex: 0, count: 5, shootAngle: 5, predictive: 1, coolDown: 1200),
-                    new Shoot(11, projectileIndex: 1, coolDown: 1400),
+                    new Shoot(10, projectileIndex: 0, count: 5, shootAngle: 5, predictive: 1, coolDown: 1000),
+                    new Shoot(11, projectileIndex: 1, count: 1, coolDown: 6000),
                     new Prioritize(
                         new StayCloseToSpawn(0.8, 5),
                         new Follow(1, range: 7),
                         new Wander(0.4)
                         ),
-                    new Spawn("Imp", 5, coolDown: 10000),
-                    new Spawn("Demon", 3, coolDown: 14000),
-                    new Spawn("Demon Warrior", 3, coolDown: 18000),
+                    new Grenade(range: 12, damage: 100, radius: 5, coolDown: 2000),
+                    new TossObject("Imp", 7, coolDown: 3200, randomToss: false),
+                    new TossObject("Demon", 7, coolDown: 4400, randomToss: false),
+                    new TossObject("Demon Warrior", 7, coolDown: 5600, randomToss: false),
                     new Taunt(0.7, 10000,
                         "I will deliver your soul to Oryx, {PLAYER}!",
                         "Oryx will not end our pain. We can only share it... with you!",
@@ -77,7 +77,7 @@ namespace wServer.logic
                         new StayCloseToSpawn(1.4, 15),
                         new Wander(0.8)
                         ),
-                    new Shoot(10, predictive: 0.5, coolDown: 200)
+                    new Shoot(12, predictive: 0.4, coolDown: 200)
                     ),
                 new ItemLoot("Missile Wand", 0.02),
                 new ItemLoot("Serpentine Staff", 0.02),

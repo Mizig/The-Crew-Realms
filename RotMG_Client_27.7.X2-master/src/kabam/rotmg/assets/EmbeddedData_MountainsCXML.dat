@@ -12,7 +12,7 @@
       <HitSound>monster/greater_demons_hit</HitSound>
       <DeathSound>monster/greater_demons_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>1000</MaxHitPoints>
+      <MaxHitPoints>1500</MaxHitPoints>
       <Defense>12</Defense>
       <Terrain>Mountains</Terrain>
       <SpawnProb>1.0</SpawnProb>
@@ -31,6 +31,7 @@
          <Speed>50</Speed>
          <LifetimeMS>2000</LifetimeMS>
          <Size>60</Size>
+         <ConditionEffect duration="2.5">Armor Broken</ConditionEffect>
          <ArmorPiercing/>
          <MultiHit/>
       </Projectile>
@@ -63,7 +64,7 @@
          <Damage>0</Damage>
          <Speed>60</Speed>
          <LifetimeMS>2400</LifetimeMS>
-         <ConditionEffect duration="10">Quiet</ConditionEffect>
+         <ConditionEffect duration="6">Quiet</ConditionEffect>
          <MultiHit/>
          <ParticleTrail/>
       </Projectile>
@@ -126,7 +127,7 @@
       <HitSound>monster/ents_hit</HitSound>
       <DeathSound>monster/ents_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>1000</MaxHitPoints>
+      <MaxHitPoints>2000</MaxHitPoints>
       <Defense>18</Defense>
       <Terrain>Mountains</Terrain>
       <SpawnProb>1.0</SpawnProb>
@@ -139,7 +140,7 @@
       <God/>
       <Projectile id="0">
          <ObjectId>Fire Bolt</ObjectId>
-         <Damage>70</Damage>
+         <Damage>80</Damage>
          <Speed>80</Speed>
          <LifetimeMS>2000</LifetimeMS>
          <MultiHit/>
@@ -181,7 +182,7 @@
          <Damage>0</Damage>
          <Speed>70</Speed>
          <LifetimeMS>3000</LifetimeMS>
-         <ConditionEffect duration="5">Blind</ConditionEffect>
+         <ConditionEffect duration="2">Stunned</ConditionEffect>
       </Projectile>
       <DisplayId>{mountains.Beholder}</DisplayId>
    </Object>
@@ -196,7 +197,7 @@
       <HitSound>monster/flying_brain_hit</HitSound>
       <DeathSound>monster/flying_brain_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>1000</MaxHitPoints>
+      <MaxHitPoints>1500</MaxHitPoints>
       <Defense>12</Defense>
       <Terrain>Mountains</Terrain>
       <SpawnProb>1.0</SpawnProb>
@@ -210,9 +211,10 @@
       <God/>
       <Projectile id="0">
          <ObjectId>Pink Bolt</ObjectId>
-         <Damage>50</Damage>
+         <Damage>70</Damage>
          <Speed>120</Speed>
          <LifetimeMS>1800</LifetimeMS>
+         <ConditionEffect duration="1">Unstable</ConditionEffect>
       </Projectile>
       <DisplayId>{mountains.Flying_Brain}</DisplayId>
    </Object>
@@ -227,7 +229,7 @@
       <HitSound>monster/slimes_hit</HitSound>
       <DeathSound>monster/slimes_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>1000</MaxHitPoints>
+      <MaxHitPoints>2000</MaxHitPoints>
       <Defense>12</Defense>
       <Terrain>Mountains</Terrain>
       <SpawnProb>1.0</SpawnProb>
@@ -240,10 +242,10 @@
       </Projectile>
       <Projectile id="1">
          <ObjectId>Green Star</ObjectId>
-         <Damage>0</Damage>
+         <Damage>25</Damage>
          <Speed>70</Speed>
          <LifetimeMS>2000</LifetimeMS>
-         <ConditionEffect duration="6">Slowed</ConditionEffect>
+         <ConditionEffect duration="4">Slowed</ConditionEffect>
       </Projectile>
       <DisplayId>{mountains.Slime_God}</DisplayId>
    </Object>
@@ -258,7 +260,7 @@
       <HitSound>monster/ghost_god_hit</HitSound>
       <DeathSound>monster/ghost_god_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>1000</MaxHitPoints>
+      <MaxHitPoints>1500</MaxHitPoints>
       <Defense>12</Defense>
       <Terrain>Mountains</Terrain>
       <SpawnProb>1.0</SpawnProb>
@@ -293,14 +295,14 @@
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Speed>70</Speed>
-         <Damage>80</Damage>
+         <Damage>90</Damage>
          <Size>80</Size>
          <LifetimeMS>2000</LifetimeMS>
          <MultiHit/>
       </Projectile>
-      <MaxHitPoints>2000</MaxHitPoints>
+      <MaxHitPoints>3200</MaxHitPoints>
       <Size>70</Size>
-      <Defense>20</Defense>
+      <Defense>24</Defense>
       <XpMult>2.0</XpMult>
       <Terrain>Mountains</Terrain>
       <SpawnProb>0.3</SpawnProb>
@@ -320,14 +322,14 @@
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Speed>30</Speed>
-         <Damage>50</Damage>
+         <Damage>75</Damage>
          <Size>50</Size>
          <LifetimeMS>4000</LifetimeMS>
          <MultiHit/>
       </Projectile>
-      <MaxHitPoints>2000</MaxHitPoints>
+      <MaxHitPoints>4000</MaxHitPoints>
       <Size>70</Size>
-      <Defense>20</Defense>
+      <Defense>10</Defense>
       <XpMult>0.0</XpMult>
       <Terrain>Mountains</Terrain>
    </Object>
@@ -345,14 +347,14 @@
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
          <Speed>30</Speed>
-         <Damage>50</Damage>
+         <Damage>70</Damage>
          <Size>50</Size>
          <LifetimeMS>4000</LifetimeMS>
          <MultiHit/>
       </Projectile>
-      <MaxHitPoints>2000</MaxHitPoints>
+      <MaxHitPoints>2400</MaxHitPoints>
       <Size>70</Size>
-      <Defense>20</Defense>
+      <Defense>40</Defense>
       <XpMult>0.0</XpMult>
       <Terrain>Mountains</Terrain>
    </Object>
@@ -367,7 +369,7 @@
       <HitSound>monster/djinn_hit</HitSound>
       <DeathSound>monster/djinn_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>2000</MaxHitPoints>
+      <MaxHitPoints>2500</MaxHitPoints>
       <Defense>12</Defense>
       <Terrain>Mountains</Terrain>
       <Spawn>
@@ -381,8 +383,8 @@
       <SpawnProb>0.75</SpawnProb>
       <Projectile id="0">
          <ObjectId>White Bullet</ObjectId>
-         <Damage>60</Damage>
-         <Speed>60</Speed>
+         <Damage>70</Damage>
+         <Speed>70</Speed>
          <Size>60</Size>
          <LifetimeMS>1500</LifetimeMS>
          <MultiHit/>

@@ -42,6 +42,12 @@ namespace wServer.logic
                         new InvisiToss("Great Coil Snake", 1, 0, 90000001),
                         new InvisiToss("Hermit God", 1, 0, 90000001),
                         new InvisiToss("ic Esben the Unwilling", 1, 0, 90000001),
+                        new InvisiToss("Golden Oryx Effigy", 1, 0, 90000001),
+                        new InvisiToss("Duck God", 1, 0, 90000001),
+                        new InvisiToss("Quibbley", 1, 0, 90000001),
+                        new InvisiToss("Akari", 1, 0, 90000001),
+                        new InvisiToss("Glaceon", 1, 0, 90000001),
+                        new InvisiToss("Crystal Entity", 1, 0, 90000001),
                         new InvisiToss("Lich", 1, 0, 90000001),
                         new InvisiToss("The Light Lord", 1, 0, 90000001),
                         new InvisiToss("Marble Brick Colossus", 1, 0, 90000001),
@@ -78,6 +84,79 @@ namespace wServer.logic
                         new Suicide(),
                         new Taunt("GOODBYE!!!!!!!!!!!!!!!!!")
                     )
+                )
+            )
+            .Init("Summoned Mushroom",
+                new State(
+                    new State("First",
+                    new NexusHealHp(8, 125, 200),
+                    new TimedTransition(4000, "Go")
+                   ),
+                    new State("Go",
+                        new Decay(0)
+                   )
+               )
+            )
+            .Init("Summoned Zombie",
+                new State(
+                    new DrakeFollow(),
+                    new State("Explode 1",
+                        new Aoe(8, false, 750, 750, false, 0x007f0e),
+                        new TimedTransition(400, "Explode 2")
+                   ),
+                    new State("Explode 2",
+                        new Aoe(8, false, 750, 750, false, 0x007f0e),
+                        new TimedTransition(400, "Explode 3")
+                   ),
+                    new State("Explode 3",
+                        new Aoe(8, false, 750, 750, false, 0x007f0e),
+                        new TimedTransition(400, "Explode 4")
+                   ),
+                    new State("Explode 4",
+                        new Aoe(8, false, 750, 750, false, 0x007f0e),
+                        new TimedTransition(400, "Explode 5")
+                   ),
+                    new State("Explode 5",
+                        new Aoe(8, false, 750, 750, false, 0x007f0e),
+                        new TimedTransition(400, "Explode 6")
+                   ),
+                    new State("Explode 6",
+                        new Aoe(8, false, 750, 750, false, 0x007f0e),
+                        new TimedTransition(400, "Explode 7")
+                   ),
+                    new State("Explode 7",
+                        new Aoe(8, false, 750, 750, false, 0x007f0e),
+                        new TimedTransition(400, "Explode 8")
+                   ),
+                    new State("Explode 8",
+                        new Aoe(8, false, 750, 750, false, 0x007f0e),
+                        new TimedTransition(400, "Explode 9")
+                   ),
+                    new State("Explode 9",
+                        new Aoe(8, false, 750, 750, false, 0x007f0e),
+                        new TimedTransition(400, "Explode 10")
+                   ),
+                    new State("Explode 10",
+                        new Aoe(8, false, 750, 750, false, 0x007f0e),
+                        new Decay(0)
+                   )
+                )
+            )
+            .Init("Summoned Zombie 2",
+                new State(
+                    new Wander(0.8),
+                    new State("Explode 1",
+                        new Aoe(8, false, 2000, 2500, false, 0x21007f),
+                        new TimedTransition(400, "Explode 2")
+                   ),
+                    new State("Explode 2",
+                        new Aoe(8, false, 2000, 2500, false, 0x21007f),
+                        new TimedTransition(400, "Explode 3")
+                   ),
+                    new State("Explode 3",
+                        new Aoe(8, false, 2000, 2500, false, 0x21007f),
+                        new Decay(0)
+                   )
                 )
             )
             .Init("Spirit Prism Bomb",

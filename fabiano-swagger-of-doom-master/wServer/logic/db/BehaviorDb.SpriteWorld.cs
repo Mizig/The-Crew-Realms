@@ -148,7 +148,6 @@ namespace wServer.logic
                 new ItemLoot("Elemental Obliterator", 0.005),
                 new ItemLoot("Dagger of the Endless Void", 0.011),
                 new ItemLoot("Robe of Treasure", 0.01),
-                new ItemLoot("Helm of the Fallen", 0.04),
                 new ItemLoot("Cloak of the Planewalker", 0.04),
                 new ItemLoot("Planewalker Armor", 0.04),
                 new ItemLoot("Staff of Extreme Prejudice", 0.05),

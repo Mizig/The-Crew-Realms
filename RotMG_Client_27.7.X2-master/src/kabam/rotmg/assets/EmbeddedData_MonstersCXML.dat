@@ -320,27 +320,29 @@
       <HitSound>monster/flaming_skulls_hit</HitSound>
       <DeathSound>monster/flaming_skulls_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>30000</MaxHitPoints>
-      <Defense>12</Defense>
+      <MaxHitPoints>35000</MaxHitPoints>
+      <Defense>25</Defense>
       <Flying/>
       <Hero/>
       <Quest/>
       <God/>
       <Level>19</Level>
-      <XpMult>1.2</XpMult>
+      <XpMult>2.5</XpMult>
       <Projectile id="0">
          <ObjectId>Pink Bolt</ObjectId>
-         <Damage>100</Damage>
-         <Speed>50</Speed>
-         <LifetimeMS>3000</LifetimeMS>
-         <Size>120</Size>
+         <Damage>110</Damage>
+         <Speed>80</Speed>
+         <LifetimeMS>2000</LifetimeMS>
+         <Size>100</Size>
+         <MultiHit/>
       </Projectile>
       <Projectile id="1">
          <ObjectId>Fire Mystic Shot</ObjectId>
-         <Damage>110</Damage>
+         <Damage>130</Damage>
          <Speed>9</Speed>
          <LifetimeMS>10000</LifetimeMS>
          <PassesCover/>
+         <ArmorPiercing/>
          <Parametric/>
       </Projectile>
       <DisplayId>{monsters.Red_Demon}</DisplayId>
@@ -356,13 +358,13 @@
       <HitSound>monster/demons_hit</HitSound>
       <DeathSound>monster/demons_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>200</MaxHitPoints>
+      <MaxHitPoints>900</MaxHitPoints>
       <Defense>10</Defense>
       <Flying/>
       <XpMult>0.1</XpMult>
       <Projectile id="0">
          <ObjectId>Fire Bolt</ObjectId>
-         <Damage>40</Damage>
+         <Damage>75</Damage>
          <Speed>50</Speed>
          <LifetimeMS>3000</LifetimeMS>
       </Projectile>
@@ -379,12 +381,12 @@
       <HitSound>monster/demons_hit</HitSound>
       <DeathSound>monster/demons_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>250</MaxHitPoints>
+      <MaxHitPoints>1300</MaxHitPoints>
       <Defense>12</Defense>
       <XpMult>0.1</XpMult>
       <Projectile id="0">
          <ObjectId>Red Fire</ObjectId>
-         <Damage>55</Damage>
+         <Damage>70</Damage>
          <Speed>80</Speed>
          <LifetimeMS>2000</LifetimeMS>
       </Projectile>
@@ -401,12 +403,12 @@
       <HitSound>monster/demons_hit</HitSound>
       <DeathSound>monster/demons_death</DeathSound>
       <Size>100</Size>
-      <MaxHitPoints>260</MaxHitPoints>
+      <MaxHitPoints>1700</MaxHitPoints>
       <Defense>14</Defense>
       <XpMult>0.1</XpMult>
       <Projectile id="0">
          <ObjectId>Red Fire</ObjectId>
-         <Damage>60</Damage>
+         <Damage>65</Damage>
          <Speed>70</Speed>
          <LifetimeMS>900</LifetimeMS>
       </Projectile>

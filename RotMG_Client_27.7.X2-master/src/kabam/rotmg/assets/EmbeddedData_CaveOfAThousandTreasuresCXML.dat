@@ -406,21 +406,23 @@
       <DeathSound>monster/flying_brain_death</DeathSound>
       <Size>225</Size>
       <ShadowSize>0</ShadowSize>
+      <XPMult>2</XPMult>
       <MaxHitPoints>25000</MaxHitPoints>
-      <Defense>30</Defense>
-      <Projectile id="1">
+      <Defense>35</Defense>
+      <Projectile id="0">
          <ObjectId>Golden Blast</ObjectId>
-         <Damage>80</Damage>
-         <Speed>60</Speed>
+         <Damage>100</Damage>
+         <Speed>45</Speed>
          <LifetimeMS>3000</LifetimeMS>
-         <Size>150</Size>
+         <Size>120</Size>
       </Projectile>
-      <Projectile id="2">
+      <Projectile id="1">
          <ObjectId>Gold Fireball</ObjectId>
-         <Damage>90</Damage>
-         <Speed>60</Speed>
+         <Damage>100</Damage>
+         <Speed>55</Speed>
          <LifetimeMS>3000</LifetimeMS>
-         <Size>150</Size>
+         <MultiHit/>
+         <Size>120</Size>
       </Projectile>
       <DisplayId>{cave.Golden_Oryx_Effigy}</DisplayId>
    </Object>

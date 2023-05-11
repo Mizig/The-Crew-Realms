@@ -1331,8 +1331,8 @@
       <HitSound>monster/skull_shrine_hit</HitSound>
       <DeathSound>monster/skull_shrine_death</DeathSound>
       <Size>120</Size>
-      <MaxHitPoints>75000</MaxHitPoints>
-      <Defense>40</Defense>
+      <MaxHitPoints>125000</MaxHitPoints>
+      <Defense>50</Defense>
       <Enemy/>
       <Hero/>
       <Quest/>
@@ -1340,11 +1340,21 @@
       <Encounter/>
       <StasisImmune/>
       <Level>20</Level>
-      <Projectile>
+      <Projectile id="0">
          <ObjectId>Purple Magic</ObjectId>
          <Speed>100</Speed>
-         <Damage>100</Damage>
+         <Damage>125</Damage>
+         <PassesCover/>
          <LifetimeMS>2400</LifetimeMS>
+      </Projectile>
+      <Projectile id="1">
+         <ObjectId>Big Fireball</ObjectId>
+         <Speed>100</Speed>
+         <Damage>120</Damage>
+         <ArmorPiecing/>
+         <MultiHit/>
+         <LifetimeMS>1200</LifetimeMS>
+         <ConditionEffect duration="2">Bleeding</ConditionEffect>
       </Projectile>
       <DisplayId>{encounters.Skull_Shrine}</DisplayId>
    </Object>
@@ -1358,7 +1368,7 @@
       </Texture>
       <HitSound>monster/flaming_skulls_hit</HitSound>
       <DeathSound>monster/flaming_skulls_death</DeathSound>
-      <MaxHitPoints>1000</MaxHitPoints>
+      <MaxHitPoints>2500</MaxHitPoints>
       <Size>120</Size>
       <Flying/>
       <Z>0.2</Z>
@@ -1381,7 +1391,7 @@
       </Texture>
       <HitSound>monster/flaming_skulls_hit</HitSound>
       <DeathSound>monster/flaming_skulls_death</DeathSound>
-      <MaxHitPoints>750</MaxHitPoints>
+      <MaxHitPoints>1500</MaxHitPoints>
       <Size>120</Size>
       <Flying/>
       <Z>0.2</Z>
@@ -1403,7 +1413,7 @@
       <HitSound>monster/cubes_hit</HitSound>
       <DeathSound>monster/cubes_death</DeathSound>
       <Size>120</Size>
-      <MaxHitPoints>145000</MaxHitPoints>
+      <MaxHitPoints>140000</MaxHitPoints>
       <Hero/>
       <Quest/>
       <God/>
@@ -1415,6 +1425,7 @@
          <ObjectId>Dark Blue Magic</ObjectId>
          <Speed>100</Speed>
          <Damage>130</Damage>
+         <MultiHit/>
          <LifetimeMS>2400</LifetimeMS>
       </Projectile>
       <Projectile id="1">

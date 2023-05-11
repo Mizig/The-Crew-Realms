@@ -74,6 +74,7 @@ namespace wServer.logic
                 new ItemLoot("The Dirk of Chickenslaying", 0.0001),
                 new ItemLoot("Purity", 0.0005),
                 new ItemLoot("Claw of the Beast", 0.004),
+                new ItemLoot("Flame of Misery", 0.004),
                 new ItemLoot("Lycaon's Hide", 0.004),
                 new ItemLoot("Elytra", 0.004),
                 new ItemLoot("Cosmic Cortex", 0.004),

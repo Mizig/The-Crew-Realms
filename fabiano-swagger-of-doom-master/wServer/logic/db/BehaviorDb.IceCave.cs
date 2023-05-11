@@ -68,7 +68,7 @@ namespace wServer.logic
                     new State("Inital",
                         new SetAltTexture(1),
                         new ConditionalEffect(ConditionEffectIndex.Invincible),
-                        new PlayerWithinTransition(6, "Pause")
+                        new PlayerWithinTransition(10, "Pause")
                     ),
                     new State("Pause",
                         new SetAltTexture(1),
@@ -89,8 +89,8 @@ namespace wServer.logic
                         new Shoot(12, projectileIndex: 2, count: 11, shootAngle: 15, predictive: 0.5, coolDown: 1000, coolDownOffset: 400),
                         new Shoot(12, projectileIndex: 0, count: 3, shootAngle: 25, predictive: 0.2, coolDown: 1600),
                         new Shoot(12, projectileIndex: 1, count: 10, shootAngle: 36, coolDown: 400),
-                        new TossObject("Big Yeti", 8, coolDown: 3000),
-                        new TossObject("Snow Bat Mama", 8, coolDown: 5000),
+                        new TossObject("Big Yeti", 8, coolDown: 5000),
+                        new TossObject("Snow Bat Mama", 8, coolDown: 7000),
                         new HpLessTransition(.5, "Invuln1")
                     ),
                     new State("Invuln1",
@@ -126,10 +126,6 @@ namespace wServer.logic
                         new SetAltTexture(1),
                         new Taunt("Thank you. I will be sure to reward you greatly for this."),
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
-                        new Spawn("ic CreepyTime", 12, coolDown: 10000),
-                        new Spawn("ic CreepyTime", 12, coolDown: 10000),
-                        new Spawn("ic CreepyTime", 12, coolDown: 10000),
-                        new Spawn("ic CreepyTime", 12, coolDown: 10000),
                         new Spawn("ic CreepyTime", 12, coolDown: 10000),
                         new Spawn("ic CreepyTime", 12, coolDown: 10000),
                         new Spawn("ic CreepyTime", 12, coolDown: 10000),

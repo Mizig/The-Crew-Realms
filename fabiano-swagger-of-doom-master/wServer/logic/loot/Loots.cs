@@ -45,7 +45,6 @@ namespace wServer.logic.loot
             "True Shielding of Oryx", //heavy - oryx 1 & 2
             "Robe of Oddish", //robe - light lord
             //rings
-            "Admin Crown", //wisdom - shatters third
             "The One True Ring", //general - all bosses
             "Giant Asian Hornet", //damage - killer bee queen
             //admin items
@@ -92,6 +91,9 @@ namespace wServer.logic.loot
             "Mask of Thunders",
             "Dice of the Royals",
             "Deep Blue Anchor",
+            "Kukri of the Woodlands",
+            "Admin Crown",
+            "Personal Zombie Horde",
             "Orange Juice Robe", //volcano cosmics
             "Cinderflame",
             "True Dragon Imbued Seal",
@@ -107,7 +109,15 @@ namespace wServer.logic.loot
             "Skystriker",
             "Trap Above the Clouds",
             "Wear of Angels",
-            "Trinket of the Air"
+            "Trinket of the Air",
+            "Snow's Edge",
+            "Winter Mountain Orb",
+            "Inuit Magic Robe",
+            "Sheer Titanium Ornament",
+            "Bunny's Slayer",
+            "Buckler of the Bun",
+            "Rabbit Wear",
+            "Bunny Ears"
 };
 
         private static string[] notifLIGHTItem = {
@@ -308,6 +318,7 @@ namespace wServer.logic.loot
             "Helm of Duality",
             "Knight's Warhammer",
             "Enforcer Armor-2000",
+            "Book of Bunny",
             "Bow of the Ugajuajn",
             "Rip of Soul",
             "Trap of Dark Magic",
@@ -320,11 +331,14 @@ namespace wServer.logic.loot
             "Blade of the Underworld",
             "Sun and Moon Expansion",
             "Soul Buster",
+            "Personally Trained Zombie",
             "The King's Tablet",
             "Aben's Stoneplate",
+            "Carrot Katana",
             "Magician's Hide",
             "Garments of Goblin Monarch",
             "Elimination",
+            "Hero's Garb",
             "Elemental Pendant",
             "Petrified Dragonroot",
             "Pretty Flower Amulet",
@@ -406,6 +420,10 @@ namespace wServer.logic.loot
             "Necklace of Fallen Grace",
             "Blade of the Titan",
             "Buckler of the Ancients",
+            "Star of Enlightenment",
+            "Fungal Breastplate",
+            "Fungal Tome",
+            "Crystal Shield",
             "Forest Parry Technique",
             "Hellfire Orb",
             "Death's Gem",
@@ -583,7 +601,7 @@ namespace wServer.logic.loot
                 {
                     if (i.LootState == enemy.LootState || i.LootState == null)
                     {
-                        double prob = dat.Item1.LootDropBoost ? i.Probabilty * 1.25 : i.Probabilty; //mark of loot boost 1.25
+                        double prob = dat.Item1.LootDropBoost ? i.Probabilty * 10 : i.Probabilty; //mark of loot boost 1.25
                         if (rand.NextDouble() < prob)
                         {
                             if (dat.Item1.LootTierBoost)

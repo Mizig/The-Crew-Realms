@@ -38,7 +38,6 @@ namespace wServer.logic
                 new ItemLoot("The One True Ring", 0.00001),
                 new ItemLoot("Sebafra's Soulcatcher", 0.004),
                 new ItemLoot("Cloak of Vampirism", 0.004),
-                new ItemLoot("Flame of Misery", 0.004),
                 new ItemLoot("Odin's Ravens", 0.01),
                 new ItemLoot("Oracle's Nightmare", 0.01),
                 new ItemLoot("Undead's Gross Bow", 0.009),

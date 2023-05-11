@@ -1,7 +1,27 @@
 <GroundTypes>
 
-
-
+  <Ground type="0x2984" id="Crystal Floor">
+    <Texture>
+      <File>redLootBagEmbed</File>
+      <Index>0x22</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0x2985" id="Zol Aura Off">
+    <Texture>
+      <File>lofiProjs</File>
+      <Index>0x77</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0x2986" id="Zol Aura On">
+    <Texture>
+      <File>lofiProjs</File>
+      <Index>0x87</Index>
+    </Texture>
+    <MinDamage>280</MinDamage>
+    <MaxDamage>280</MaxDamage>
+    <Sink/>
+    <Speed>.5</Speed>
+  </Ground>
   <Ground type="0x325b" id="Volcano Rock Bright">
     <Texture>
       <File>lofiObj6</File>

@@ -496,7 +496,7 @@ namespace wServer.logic
                         ),
                     new State("Attacking",
                         new Shoot(8, coolDown: 2000),
-                        new Heal(8, "Papers", 1000),
+                        new Heal(8, "Papers", 3000),
                         new Taunt(0.5, "We are impervious to non-mystic attacks!"),
                         new TimedTransition(10000, "Waiting")
                         )
@@ -553,7 +553,7 @@ namespace wServer.logic
                         ),
                     new State("Attack",
                         new Shoot(8, 3, 20, coolDown: 800),
-                        new Heal(8, "Steels", 1000),
+                        new Heal(8, "Steels", 3000),
                         new NoPlayerWithinTransition(30, "Idle"),
                         new HpLessTransition(0.2, "Explode")
                         ),
@@ -614,7 +614,7 @@ namespace wServer.logic
                         ),
                     new State("Attack",
                         new Shoot(8, 3, 20, coolDown: 800),
-                        new Heal(8, "Rocks", 1000),
+                        new Heal(8, "Rocks", 3000),
                         new Taunt(0.5, "Silly squishy. We heal our brothers in a circle."),
                         new NoPlayerWithinTransition(30, "Idle"),
                         new HpLessTransition(0.2, "Explode")

@@ -36,8 +36,6 @@ namespace wServer.logic
                 new Threshold(0.001,
                 new ItemLoot("The One True Ring", 0.00001),
                 new ItemLoot("Elithor's Soul Bottle", 0.004),
-                new ItemLoot("Mysterious Totem", 0.01),
-                new ItemLoot("Magical Incantation", 0.01),
                 new ItemLoot("Deception", 0.01),
                 new ItemLoot("Words of Wisdom", 0.01),
                 new ItemLoot("Heart of the Mountains", 0.01),

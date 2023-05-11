@@ -33,6 +33,7 @@ namespace wServer.logic
                 new Threshold(0.001,
                 new ItemLoot("The One True Ring", 0.00001),
                 new ItemLoot("Pyrus Draconia", 0.004),
+                new ItemLoot("Reaper's Bow", 0.004),
                 new ItemLoot("Spiritclaw", 0.0095),
                 new ItemLoot("Core of Corruption", 0.01),
                 new ItemLoot("Oath of Cinder", 0.01),

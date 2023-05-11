@@ -72,7 +72,6 @@ namespace wServer.logic
                 new ItemLoot("Star of Bones", 0.004),
                 new ItemLoot("Bloodstone of Enmity", 0.009),
                 new ItemLoot("Sky Piercer Wand", 0.01),
-                new ItemLoot("Loremaker's Staff", 0.01),
                 new ItemLoot("Burning Sun Scepter", 0.01),
                 new ItemLoot("Drannol's Spirit", 0.01),
                 new ItemLoot("Ancient Pendant", 0.01),

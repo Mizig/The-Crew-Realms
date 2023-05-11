@@ -68,7 +68,6 @@ namespace wServer.logic
                 ),
                 new Threshold(0.001,
                 new ItemLoot("The One True Ring", 0.00001),
-                new ItemLoot("Robe of Oddish", 0.0001),
                 new ItemLoot("Wand of the Galaxy", 0.0005),
                 new ItemLoot("Crown of the Universe", 0.0005),
                 new ItemLoot("Plasma Bee Wand", 0.003),
