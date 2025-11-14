@@ -1,0 +1,110 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MMcD0\\Desktop\\Games\\The-Crew-Realms\\fabiano-swagger-of-doom-master\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D791B2A2-F79D-4872-B6FF-EF5B4FE52ADA}|wServer\\wServer.csproj|c:\\users\\mmcd0\\desktop\\games\\the-crew-realms\\fabiano-swagger-of-doom-master\\wserver\\logic\\loot\\loots.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D791B2A2-F79D-4872-B6FF-EF5B4FE52ADA}|wServer\\wServer.csproj|solutionrelative:wserver\\logic\\loot\\loots.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A417BDBC-8D6F-4661-9B23-2BEE92E295AB}|db\\db.csproj|c:\\users\\mmcd0\\desktop\\games\\the-crew-realms\\fabiano-swagger-of-doom-master\\db\\data\\dat1.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A417BDBC-8D6F-4661-9B23-2BEE92E295AB}|db\\db.csproj|solutionrelative:db\\data\\dat1.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D791B2A2-F79D-4872-B6FF-EF5B4FE52ADA}|wServer\\wServer.csproj|c:\\users\\mmcd0\\desktop\\games\\the-crew-realms\\fabiano-swagger-of-doom-master\\wserver\\logic\\db\\behaviordb.chests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D791B2A2-F79D-4872-B6FF-EF5B4FE52ADA}|wServer\\wServer.csproj|solutionrelative:wserver\\logic\\db\\behaviordb.chests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ADA25D1-158E-4E88-B91B-F79981372136}|server\\server.csproj|c:\\users\\mmcd0\\desktop\\games\\the-crew-realms\\fabiano-swagger-of-doom-master\\server\\server.cfg||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{2ADA25D1-158E-4E88-B91B-F79981372136}|server\\server.csproj|solutionrelative:server\\server.cfg||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dat1.xml",
+              "DocumentMoniker": "C:\\Users\\MMcD0\\Desktop\\Games\\The-Crew-Realms\\fabiano-swagger-of-doom-master\\db\\data\\dat1.xml",
+              "RelativeDocumentMoniker": "db\\data\\dat1.xml",
+              "ToolTip": "C:\\Users\\MMcD0\\Desktop\\Games\\The-Crew-Realms\\fabiano-swagger-of-doom-master\\db\\data\\dat1.xml",
+              "RelativeToolTip": "db\\data\\dat1.xml",
+              "ViewState": "AgIAAP9qAQAAAAAAAAAWwOVpAQAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-11-14T05:43:48.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BehaviorDb.Chests.cs",
+              "DocumentMoniker": "C:\\Users\\MMcD0\\Desktop\\Games\\The-Crew-Realms\\fabiano-swagger-of-doom-master\\wServer\\logic\\db\\BehaviorDb.Chests.cs",
+              "RelativeDocumentMoniker": "wServer\\logic\\db\\BehaviorDb.Chests.cs",
+              "ToolTip": "C:\\Users\\MMcD0\\Desktop\\Games\\The-Crew-Realms\\fabiano-swagger-of-doom-master\\wServer\\logic\\db\\BehaviorDb.Chests.cs",
+              "RelativeToolTip": "wServer\\logic\\db\\BehaviorDb.Chests.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAQwBcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T05:06:54.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Loots.cs",
+              "DocumentMoniker": "C:\\Users\\MMcD0\\Desktop\\Games\\The-Crew-Realms\\fabiano-swagger-of-doom-master\\wServer\\logic\\loot\\Loots.cs",
+              "RelativeDocumentMoniker": "wServer\\logic\\loot\\Loots.cs",
+              "ToolTip": "C:\\Users\\MMcD0\\Desktop\\Games\\The-Crew-Realms\\fabiano-swagger-of-doom-master\\wServer\\logic\\loot\\Loots.cs",
+              "RelativeToolTip": "wServer\\logic\\loot\\Loots.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAgwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T05:01:21.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "server.cfg",
+              "DocumentMoniker": "C:\\Users\\MMcD0\\Desktop\\Games\\The-Crew-Realms\\fabiano-swagger-of-doom-master\\server\\server.cfg",
+              "RelativeDocumentMoniker": "server\\server.cfg",
+              "ToolTip": "C:\\Users\\MMcD0\\Desktop\\Games\\The-Crew-Realms\\fabiano-swagger-of-doom-master\\server\\server.cfg",
+              "RelativeToolTip": "server\\server.cfg",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswBcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-14T04:55:38.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

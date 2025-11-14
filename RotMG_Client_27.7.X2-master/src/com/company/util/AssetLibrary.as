@@ -64,6 +64,14 @@ public class AssetLibrary {
 
     public static function getImageFromSet(_arg_1:String, _arg_2:int):BitmapData {
         var _local_3:ImageSet = imageSets_[_arg_1];
+        if (_local_3 == null) {
+            trace("[AssetLibrary] Missing image set: " + _arg_1);
+            return null;
+        }
+        if (_arg_2 < 0 || _arg_2 >= _local_3.images_.length) {
+            trace("[AssetLibrary] Index out of range: " + _arg_1 + " index " + _arg_2);
+            return null;
+        }
         return (_local_3.images_[_arg_2]);
     }
 
